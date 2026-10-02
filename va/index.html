@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VS &amp; Steps · VA Training Playbook — Coach’s Tech</title>
+  <meta name="description" content="VS &amp; Steps VA Training Playbook — 12-step Facebook organic growth SOPs for Coach’s Tech VAs." />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy-950: #070b14;
+      --navy-900: #0c1220;
+      --navy-800: #121a2b;
+      --navy-700: #1a2438;
+      --gold-400: #e8c87a;
+      --gold-500: #d4af57;
+      --gold-600: #b8923e;
+      --gold-glow: rgba(212, 175, 87, 0.35);
+      --cream: #f5efe3;
+      --cream-muted: #c9c0b0;
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass-border: rgba(232, 200, 122, 0.18);
+      --line: rgba(255, 255, 255, 0.08);
+      --font-display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+      --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: var(--font-body);
+      background: var(--navy-950);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .bg-grid {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212, 175, 87, 0.12), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 40%, rgba(36, 48, 73, 0.5), transparent),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: auto, auto, 64px 64px, 64px 64px;
+      mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+    }
+    .wrap { width: min(1080px, calc(100% - 2.5rem)); margin-inline: auto; position: relative; z-index: 1; }
+    .nav {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 11, 20, 0.78);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; padding: 0.9rem 0; flex-wrap: wrap;
+    }
+    .brand { display: flex; flex-direction: column; gap: 0.1rem; }
+    .brand-mark {
+      font-family: var(--font-display); font-size: 1.35rem; font-weight: 600;
+      letter-spacing: 0.02em; color: var(--cream);
+    }
+    .brand-sub { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-500); }
+    .nav-links { display: flex; gap: 1.1rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--cream-muted); }
+    .nav-links a:hover { color: var(--gold-400); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.7rem 1.25rem; border-radius: 999px; font-size: 0.9rem; font-weight: 500;
+      transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), background 0.25s;
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
+      color: #1a1408; box-shadow: 0 0 28px var(--gold-glow);
+    }
+    .btn-gold:hover { transform: translateY(-1px); }
+    .btn-ghost {
+      border: 1px solid var(--glass-border); color: var(--cream);
+      background: var(--glass);
+    }
+    .btn-sm { padding: 0.45rem 0.9rem; font-size: 0.78rem; }
+    .hero { padding: 4.5rem 0 2.5rem; text-align: center; }
+    .eyebrow {
+      display: inline-block; margin-bottom: 1rem;
+      font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-500);
+    }
+    h1 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem); line-height: 1.12;
+      max-width: 18ch; margin: 0 auto 1.25rem;
+    }
+    .gold { color: var(--gold-400); }
+    .hero-lead {
+      max-width: 42rem; margin: 0 auto 1.75rem;
+      color: var(--cream-muted); font-size: 1.05rem;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.5rem;
+      margin-top: 1.5rem; font-size: 0.88rem; color: var(--cream-muted);
+    }
+    .hero-meta strong { color: var(--cream); font-weight: 500; }
+    .section { padding: 3rem 0; }
+    .section-head { margin-bottom: 1.75rem; }
+    .section-head.center { text-align: center; }
+    .kicker {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-500); margin-bottom: 0.6rem;
+    }
+    h2 {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem); line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .section-head p { color: var(--cream-muted); max-width: 40rem; }
+    .section-head.center p { margin-inline: auto; }
+    .overview-card {
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-lg); padding: 1.75rem 1.85rem;
+      margin-bottom: 1.25rem;
+    }
+    .overview-card h3 {
+      font-family: var(--font-display); font-size: 1.45rem; font-weight: 500; margin-bottom: 0.65rem;
+    }
+    .overview-card p { color: var(--cream-muted); margin-bottom: 0.85rem; }
+    .overview-card p:last-child { margin-bottom: 0; }
+    .pipeline {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+      margin: 1.25rem 0 0; font-size: 0.85rem;
+    }
+    .pipeline span {
+      background: var(--navy-800); border: 1px solid var(--line);
+      border-radius: 999px; padding: 0.35rem 0.85rem; color: var(--cream-muted);
+    }
+    .steps { display: grid; gap: 1rem; }
+    .step {
+      display: grid; grid-template-columns: auto 1fr; gap: 1.15rem 1.35rem;
+      align-items: start;
+      background: var(--glass); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-md); padding: 1.35rem 1.45rem;
+      transition: border-color 0.25s, transform 0.25s var(--ease-out);
+    }
+    .step:hover { border-color: rgba(232, 200, 122, 0.35); transform: translateY(-2px); }
+    .step-num {
+      width: 2.6rem; height: 2.6rem; border-radius: 50%;
+      display: grid; place-items: center;
+      font-family: var(--font-display); font-size: 1.15rem; font-weight: 600;
+      color: #1a1408;
+      background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
+      flex-shrink: 0;
+    }
+    .step h3 {
+      font-family: var(--font-display); font-size: 1.35rem; font-weight: 500;
+      margin-bottom: 0.35rem; line-height: 1.25;
+    }
+    .step .tagline {
+      font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--gold-500); margin-bottom: 0.55rem;
+    }
+    .step p { color: var(--cream-muted); font-size: 0.95rem; }
+    .toc {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.65rem; margin-top: 1.25rem;
+    }
+    .toc a {
+      display: block; padding: 0.7rem 0.9rem;
+      border-radius: 10px; border: 1px solid var(--line);
+      background: rgba(255,255,255,0.02); font-size: 0.88rem; color: var(--cream-muted);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .toc a:hover { border-color: var(--glass-border); color: var(--gold-400); }
+    .toc a strong { color: var(--cream); font-weight: 500; display: block; margin-bottom: 0.15rem; }
+    .cta-band {
+      margin: 2.5rem 0 1rem; text-align: center;
+      background: linear-gradient(160deg, rgba(26, 36, 56, 0.9), rgba(12, 18, 32, 0.95));
+      border: 1px solid var(--glass-border); border-radius: var(--radius-lg);
+      padding: 2.5rem 1.75rem; box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+    .cta-band p { color: var(--cream-muted); max-width: 34rem; margin: 0.75rem auto 1.35rem; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+    .footer {
+      border-top: 1px solid var(--line); margin-top: 3rem; padding: 1.75rem 0 2.5rem;
+      color: var(--cream-muted); font-size: 0.85rem;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer strong { color: var(--cream); }
+    @media (max-width: 640px) {
+      .step { grid-template-columns: 1fr; }
+      .step-num { margin-bottom: 0.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" aria-label="VS &amp; Steps VA Training Playbook">
+        <span class="brand-mark">VS &amp; Steps</span>
+        <span class="brand-sub">VA Training Playbook</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#overview">Overview</a>
+        <a href="#steps">12 Steps</a>
+        <a href="/deborah/">DeBorah offer</a>
+      </nav>
+      <a class="btn btn-gold btn-sm" href="#steps">Jump to steps</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div class="eyebrow">Coach’s Tech · VA training</div>
+      <h1>VS &amp; Steps · <span class="gold">VA Training Playbook</span></h1>
+      <p class="hero-lead">
+        For <strong style="color:var(--cream);">DeBorah Byrd</strong>: you can allocate <strong class="gold">any</strong> marketing task to the VAs.
+        Below are <strong style="color:var(--cream);">examples</strong> of work they’re already running for other Coach’s Tech clients — not a fixed or closed list.
+      </p>
+      <p class="hero-lead" style="margin-top:-0.5rem;">
+        The playbook sits alongside AI Business Suite: a repeatable Facebook organic pipeline (Groups → Friends → Warm chats → Group / Free Event → Tracker stats) — plus whatever else you hand them.
+      </p>
+      <div class="pipeline" aria-label="Pipeline">
+        <span>Groups</span>
+        <span>Friends</span>
+        <span>Warm chats</span>
+        <span>Group / Free Event</span>
+        <span>Tracker stats</span>
+      </div>
+      <div class="hero-meta">
+        <span><strong class="gold">VAs at $9/hr</strong> · part-time marketing execution</span>
+        <span><strong>Any task</strong> · allocate whatever you need</span>
+        <span><strong>12 examples</strong> · already running for other clients</span>
+      </div>
+    </section>
+
+    <section class="section wrap" id="overview">
+      <div class="section-head center">
+        <p class="kicker">00 · Overview</p>
+        <h2>What VS is &amp; why it matters</h2>
+      </div>
+      <div class="overview-card">
+        <h3>What VS is</h3>
+        <p><strong style="color:var(--cream);">VS (VA System / Virtual Specialist Steps)</strong> is Amal’s playbook for Facebook organic growth for Coach’s Tech / Amal J Coaching clients. VAs handle full marketing execution — DMs, booking, scheduling — available at <strong style="color:var(--gold-400);">$9/hr</strong> part-time — and you can allocate any task, not only the examples below.</p>
+        <p><strong style="color:var(--cream);">Why it matters.</strong> Organic Facebook still fills rooms when done with discipline. The algorithm rewards real engagement; Facebook punishes spam. Your job is to look human, stay consistent, and move people one step closer to the Free Event — then log it so the dashboard tells the truth.</p>
+        <p><strong style="color:var(--cream);">For DeBorah.</strong> Assign <em>any</em> task to your VAs — DMs, booking, scheduling, content support, or something new. The 12 Steps below are <strong style="color:var(--cream);">examples</strong> of what’s already working for other clients, not a closed menu.</p>
+        <p><strong style="color:var(--cream);">Goal (when running these examples).</strong> Keep friend requests and DMs clean; hit daily volume without burning the account; update the Coach’s Tech System Tracker so conversation progress becomes dashboard stats; escalate blockers in Slack #va-ops.</p>
+      </div>
+      <div class="toc" aria-label="Step index">
+        <a href="#step-01"><strong>01 · Joining FB Groups</strong>Friends pipeline</a>
+        <a href="#step-02"><strong>02 · Add Friend</strong>Like + comment → acceptance</a>
+        <a href="#step-03"><strong>03 · Posting FB Post</strong>20 min pre + 20 min post</a>
+        <a href="#step-04"><strong>04 · Chat Sequence 1</strong>New Friend → FB Group</a>
+        <a href="#step-05"><strong>05 · Chat Sequence 2</strong>Group → Free Event</a>
+        <a href="#step-06"><strong>06 · Birthday Messages</strong>Warm openers</a>
+        <a href="#step-07"><strong>07 · Past Post Boost</strong>Comment / re-comment</a>
+        <a href="#step-08"><strong>08 · Cancel Sent Requests</strong>Anti-spam hygiene</a>
+        <a href="#step-09"><strong>09 · Beautify Posts</strong>Emojis, titles, BGM, captions</a>
+        <a href="#step-10"><strong>10 · Invite to Group</strong>~30 invites / day</a>
+        <a href="#step-11"><strong>11 · Welcome Video Tagging</strong>More event joins</a>
+        <a href="#step-12"><strong>12 · Coach’s Tech System Tracker</strong>Progress → dashboard stats</a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="steps">
+      <div class="section-head center">
+        <p class="kicker">Example tasks · 12 Steps</p>
+        <h2>What VAs are already doing for other clients</h2>
+        <p>These are proven examples — not a fixed list. DeBorah can allocate any task. Work examples in order the first time, then as daily checklists. Full SOPs live in the markdown playbook source.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step" id="step-01">
+          <div class="step-num">01</div>
+          <div>
+            <p class="tagline">Friends pipeline</p>
+            <h3>Joining FB Groups</h3>
+            <p>Groups are your friend pipeline. Cold Add Friend from nowhere looks spammy and gets ignored. Members of relevant groups already share interest — warmer adds, higher acceptance, cleaner chats later. Goal: join approved niche groups, answer membership questions on-brand, and build a steady pool for Step 02 without join-spam.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-02">
+          <div class="step-num">02</div>
+          <div>
+            <p class="tagline">Like + comment → higher acceptance</p>
+            <h3>Add Friend</h3>
+            <p>Bare Add Friend = low acceptance + spam signals. Like + comment on their 1st and 4th post raises recognition and acceptance — they see a real human who noticed them, not a lead-gen bot. Goal: send requests that get accepted, warm the relationship before Chat Sequence 1, and pace adds to protect the account.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-03">
+          <div class="step-num">03</div>
+          <div>
+            <p class="tagline">20 min pre + 20 min post engagement</p>
+            <h3>Posting FB Post</h3>
+            <p>Facebook’s algorithm watches what happens around a post. Posting into silence = dead reach. Twenty minutes of engagement before and twenty after signals the post is alive — more distribution, more eyes, more DMs later. Goal: publish on-brand posts that get reach and feed the content engine behind chats, groups, and events.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-04">
+          <div class="step-num">04</div>
+          <div>
+            <p class="tagline">New Friend → Facebook Group</p>
+            <h3>Chat Sequence 1</h3>
+            <p>A new friend who sits silent is wasted reach. Sequence 1 moves them from accepted Friend → Facebook Group — the community layer where trust and Free Event invites land better. Goal: open a warm Messenger thread after accept, guide them into the client’s FB Group, and log status in the Tracker.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-05">
+          <div class="step-num">05</div>
+          <div>
+            <p class="tagline">FB Group member → Free Event</p>
+            <h3>Chat Sequence 2</h3>
+            <p>The Free Event is the conversion bridge. Group members already opted into community — Sequence 2 invites them to show up (webinar / live / challenge). More event participants = more bookings downstream for Coach’s Tech clients. Goal: move members into Free Event registration/attendance, keep tone invitational, and keep the Tracker honest.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-06">
+          <div class="step-num">06</div>
+          <div>
+            <p class="tagline">Warm openers from friend list</p>
+            <h3>Daily Birthday Messages</h3>
+            <p>Birthdays are a permissionless warm open. People expect messages that day — perfect to restart dead threads or start new rapport without feeling salesy. One of the easiest ways to keep the friend list productive. Goal: message today’s birthdays, open conversations naturally, and soft-route warm replies toward Group / Free Event when appropriate.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-07">
+          <div class="step-num">07</div>
+          <div>
+            <p class="tagline">Comment / re-comment for algorithm</p>
+            <h3>Past Post Boost</h3>
+            <p>Old posts die unless you poke them. A fresh comment or re-comment can resurface content in feeds, stretch lifespan, and keep the page looking active between new posts. Goal: revive past posts per Boss quota, spark new replies/likes on aging content, and support page health alongside new posting.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-08">
+          <div class="step-num">08</div>
+          <div>
+            <p class="tagline">Anti-spam hygiene</p>
+            <h3>Cancel Sent Friend Requests</h3>
+            <p>Unaccepted friend requests sitting for days/weeks are a spam signal. Facebook watches pending volume. Cancelling stale requests is account hygiene — same league as not blasting adds without engagement. Rule: cancel unaccepted friend requests; don’t let them rot. Goal: clear stale pending requests and protect Add Friend capacity.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-09">
+          <div class="step-num">09</div>
+          <div>
+            <p class="tagline">Emojis, titles, BGM, captions</p>
+            <h3>Beautify Text &amp; Video Posts</h3>
+            <p>Ugly posts get scrolled past. Clean formatting, smart emojis, and polished video (BGM, captions, title, studio sound) raise watch time and comments — which feeds the algorithm and the DM engine. Goal: ship scannable on-brand text and video ready for Step 03’s 20/20 engagement window.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-10">
+          <div class="step-num">10</div>
+          <div>
+            <p class="tagline">Invite button · ~30/day</p>
+            <h3>Invite Friends into FB Group</h3>
+            <p>The Group is the community hub. Inviting friends via the Invite button grows membership without relying only on DMs. Capped volume (~30/day) protects the account while still compounding growth. Goal: send ~30 Group invites per day (or Boss-set cap), prioritise warm friends, and feed Welcome Video Tagging and Sequence 2.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-11">
+          <div class="step-num">11</div>
+          <div>
+            <p class="tagline">Tag new members → more event joins</p>
+            <h3>Welcome Video Tagging</h3>
+            <p>New members who never see the Welcome Video stay cold. Tagging them on the Welcome Video notifies them, pulls attention, and lifts Free Event participation — a high-leverage Group habit. Goal: tag new members on the approved Welcome Video, drive views + event curiosity, and hand warmer leads into Sequence 2 / registration.</p>
+          </div>
+        </article>
+
+        <article class="step" id="step-12">
+          <div class="step-num">12</div>
+          <div>
+            <p class="tagline">Conversation progress → dashboard stats</p>
+            <h3>Add Data to Coach’s Tech System Tracker</h3>
+            <p>If it’s not in the Tracker, it didn’t happen for leadership. Conversation progress in Facebook only becomes dashboard stats when you log it in the Coach’s Tech System Tracker. Amal and clients steer from those numbers — messy logging = bad decisions. Goal: update the tracker from real progress, keep dashboard stats accurate, and close every shift with clean data.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="cta-band">
+        <p class="kicker">Related</p>
+        <h2>Back to DeBorah’s offer brief</h2>
+        <p>Private AI Business Suite package page — clarity, attention, paid clients, and live build support.</p>
+        <div class="cta-actions">
+          <a class="btn btn-gold" href="/deborah/">Open DeBorah offer</a>
+          <a class="btn btn-ghost" href="#steps">Review 12 Steps</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>VS &amp; Steps · VA Training Playbook</strong><br />
+        Coach’s Tech · Amal J Coaching · Melbourne-aware ops
+      </div>
+      <div>Private training preview · Not for public distribution</div>
+    </div>
+  </footer>
+</body>
+</html>

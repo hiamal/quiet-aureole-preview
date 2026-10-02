@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Aureola Field — Quantum Hypnosis & Strategic Psychotherapy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+
+:root{
+  --pearl:#FBF8F3; --pearl2:#F5F0E8; --paper:#FFFFFF;
+  --purple:#7936A6; --plum:#4E2A6A; --lavender:#EDE4F5; --lavender2:#F4EEF8;
+  --gold:#B27F3A; --gold-soft:#E8C878; --gold-pale:#FBF3DC; --gold-bright:#FAD25C;
+  --ink:#1c1424; --muted:#6b6174;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Montserrat',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--pearl);color:var(--ink);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.01em;line-height:1.12}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+.eyebrow{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.95rem 1.55rem;border-radius:999px;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:1px solid transparent;transition:transform .35s var(--ease),box-shadow .35s,background .35s,border-color .35s;cursor:pointer}
+.btn-gold{background:linear-gradient(135deg,var(--gold-soft),var(--gold));color:#1a0d08;box-shadow:0 12px 36px rgba(178,127,58,.28)}
+.btn-gold:hover{transform:translateY(-2px) scale(1.02);box-shadow:0 18px 48px rgba(232,200,120,.4)}
+.btn-plum{background:var(--plum);color:#fff;box-shadow:0 12px 32px rgba(78,42,106,.22)}
+.btn-plum:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(78,42,106,.32)}
+.btn-ghost{border-color:rgba(178,127,58,.45);color:var(--gold);background:transparent}
+.btn-ghost:hover{border-color:var(--gold);background:var(--gold-pale);transform:translateY(-2px)}
+.reveal{opacity:0;transform:translateY(32px) scale(.985);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+[data-enter]{opacity:0;transform:translateY(18px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+#helix{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+
+.nav{position:fixed;inset:0 0 auto;z-index:50;padding:1rem 0;transition:background .4s,backdrop-filter .4s,padding .4s}
+.nav.scrolled{background:rgba(251,248,243,.88);backdrop-filter:blur(16px);padding:.65rem 0;border-bottom:1px solid rgba(121,54,166,.12)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand img{height:46px;width:auto}
+.nav-links{display:none;gap:1.6rem;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.nav-links a:hover{color:var(--purple)}
+@media(min-width:860px){.nav-links{display:flex}}
+
+/* SPIRAL-DOMINANT full-bleed hero */
+.hero{position:relative;min-height:100svh;display:grid;align-items:end;padding:0;isolation:isolate;overflow:hidden}
+.hero-veil{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(251,248,243,.15) 0%,rgba(251,248,243,.35) 40%,rgba(251,248,243,.92) 78%,var(--pearl) 100%),
+  radial-gradient(ellipse 70% 55% at 55% 35%,rgba(237,228,245,.55),transparent 60%);pointer-events:none}
+.hero-content{position:relative;z-index:2;padding:8rem 0 4rem;width:min(1120px,92vw);margin:0 auto}
+.hero-content .eyebrow{margin-bottom:1rem}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);max-width:16ch;margin:0 0 1.1rem}
+.hero h1 em{font-style:italic;color:var(--purple)}
+.hero-lead{color:var(--muted);font-size:1.05rem;font-weight:300;max-width:40ch;margin-bottom:1.6rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.85rem;margin-bottom:1.5rem}
+.portrait-float{position:absolute;z-index:3;right:max(4vw,calc((100vw - 1120px)/2));bottom:18%;width:min(160px,28vw);aspect-ratio:1;border-radius:50%;padding:3px;background:conic-gradient(from 0deg,var(--gold-soft),var(--purple),var(--gold),var(--gold-soft));box-shadow:0 24px 60px rgba(78,42,106,.2);animation:floaty 6s ease-in-out infinite}
+.portrait-float img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid var(--pearl);background:var(--lavender)}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@media(max-width:720px){.portrait-float{right:6vw;bottom:auto;top:6.5rem;width:88px}}
+
+section{padding:5rem 0;position:relative}
+.sec-head{margin-bottom:2.2rem}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);margin:.45rem 0}
+.sec-head p{color:var(--muted);max-width:46ch;font-weight:300}
+
+.about-bleed{display:grid;gap:0;border-radius:1.75rem;overflow:hidden;border:1px solid rgba(121,54,166,.1);background:#fff;box-shadow:0 30px 70px rgba(28,20,36,.06)}
+@media(min-width:900px){.about-bleed{grid-template-columns:1.05fr .95fr}}
+.about-bleed .hands{width:100%;height:100%;min-height:280px;object-fit:cover}
+.about-copy{padding:2rem 1.75rem}
+@media(min-width:900px){.about-copy{padding:2.5rem}}
+.about-copy .role{color:var(--purple);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;margin:.35rem 0 1rem}
+.about-copy h3{font-size:2rem}
+.creds{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.2rem}
+.creds span{font-size:.65rem;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .65rem;border-radius:999px;border:1px solid rgba(178,127,58,.28);color:var(--muted)}
+
+.quote-band{padding:3.25rem 0;text-align:center;background:linear-gradient(180deg,var(--lavender2),var(--pearl))}
+.quote-band blockquote{font-family:var(--serif);font-size:clamp(1.4rem,3vw,2.1rem);font-style:italic;max-width:28ch;margin:0 auto 1rem;line-height:1.3;color:var(--plum)}
+.quote-band cite{font-style:normal;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
+.services{display:grid;gap:1rem}
+@media(min-width:760px){.services{grid-template-columns:1fr 1fr}}
+.svc{position:relative;padding:1.5rem 1.35rem;border-radius:1.25rem;background:#fff;border:1px solid rgba(121,54,166,.1);overflow:hidden;transition:transform .4s,border-color .4s,box-shadow .4s;--mx:50%;--my:50%}
+.svc::before{content:'';position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx) var(--my),rgba(232,200,120,.2),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.svc:hover{transform:translateY(-6px);border-color:rgba(178,127,58,.4);box-shadow:0 22px 48px rgba(78,42,106,.1)}
+.svc:hover::before{opacity:1}
+.svc .num{font-family:var(--serif);font-size:1.85rem;color:var(--gold);opacity:.75;line-height:1}
+.svc h3{font-size:1.4rem;margin:.5rem 0 .4rem}
+.svc p{color:var(--muted);font-size:.92rem;font-weight:300}
+.svc a.more{display:inline-block;margin-top:.9rem;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--purple);font-weight:600}
+
+.stories{display:grid;gap:1rem}
+@media(min-width:800px){.stories{grid-template-columns:repeat(3,1fr)}}
+.story{padding:1.35rem;border-radius:1.1rem;background:var(--lavender2);border:1px solid rgba(121,54,166,.08);transition:transform .35s,background .35s}
+.story:hover{transform:translateY(-4px);background:#fff}
+.story q{display:block;font-family:var(--serif);font-size:1.12rem;font-style:italic;line-height:1.4;margin-bottom:.85rem}
+.story .who{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
+
+.cta-band{margin-top:1rem;padding:3.25rem 2rem;border-radius:1.75rem;text-align:center;background:linear-gradient(135deg,rgba(121,54,166,.12),rgba(232,200,120,.18)),#fff;border:1px solid rgba(178,127,58,.25);position:relative;overflow:hidden}
+.cta-band h2{font-size:clamp(2rem,4vw,2.9rem)}
+.cta-band p{color:var(--muted);margin:1rem auto 1.6rem;max-width:40ch;font-weight:300}
+.cta-band .row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
+
+footer{padding:3rem 0 2.25rem;border-top:1px solid rgba(121,54,166,.12);margin-top:2rem;color:var(--muted);font-size:.85rem}
+.foot-grid{display:grid;gap:1.5rem}
+@media(min-width:700px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+.foot-grid strong{display:block;color:var(--ink);font-family:var(--serif);font-size:1.15rem;font-weight:500;margin-bottom:.35rem}
+.foot-grid a:hover{color:var(--purple)}
+.legal{margin-top:1.75rem;padding-top:1.1rem;border-top:1px solid rgba(28,20,36,.06);font-size:.7rem;opacity:.75}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><img src="logo.png" alt="Quantum Hypnosis & Strategic Psychotherapy"/></a>
+    <nav class="nav-links">
+      <a href="#about">About</a><a href="#services">Services</a><a href="#stories">Stories</a><a href="#book">Book</a>
+    </nav>
+    <a class="btn btn-gold" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book Online</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="helix" aria-hidden="true"></canvas>
+  <div class="hero-veil"></div>
+  <div class="portrait-float" data-enter><img src="portrait.png" alt="Susanne Golding"/></div>
+  <div class="hero-content">
+    <p class="eyebrow" data-enter>Aureola Field · Empower Your Mind®</p>
+    <h1 data-enter>Where the spiral <em>holds the room</em> — and change begins.</h1>
+    <p class="hero-lead" data-enter>Susanne Golding blends Ericksonian clinical hypnotherapy, strategic psychotherapy, NLP and proprietary Quantum Processes — for anxiety, trauma, abuse recovery and procrastination. Hervey Bay · Zoom worldwide.</p>
+    <div class="hero-cta" data-enter>
+      <a class="btn btn-plum" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book a session</a>
+      <a class="btn btn-ghost" href="tel:0428099997">Call 0428 099 997</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about-bleed reveal">
+      <img class="hands" src="hands.jpg" alt="Calm healing hands"/>
+      <div class="about-copy">
+        <p class="eyebrow">Meet your practitioner</p>
+        <h3>Susanne Golding</h3>
+        <p class="role">Clinical Hypnotherapist &amp; Strategic Psychotherapist</p>
+        <p style="color:var(--muted);font-weight:300">A survivor’s path turned into skilled practice. Susanne holds space that is warm, precise and results-led — so patterns that kept you stuck can finally loosen.</p>
+        <p style="color:var(--muted);font-weight:300;margin-top:.85rem">Face-to-face in Hervey Bay, Queensland 4655. Zoom for interstate and overseas clients.</p>
+        <div class="creds">
+          <span>Diploma Clinical Hypnotherapy</span>
+          <span>Masters Traditional Hypnotherapy &amp; NLP</span>
+          <span>BSc Metaphysical Science</span>
+          <span>Healing Touch · Medical Intuitive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band">
+  <div class="wrap reveal">
+    <blockquote>“The natural healing force within each one of us is the greatest force in getting well.”</blockquote>
+    <cite>Hippocrates</cite>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Modalities</p>
+      <h2>Four pillars of change</h2>
+      <p>Integrated pathways — clinical hypnotherapy, strategic psychotherapy and Quantum Processes tailored to you.</p>
+    </div>
+    <div class="services">
+<article class="svc reveal" data-spot>
+  <div class="num">01</div>
+  <h3>Strategic Psychotherapy</h3>
+  <p>Identify the behaviours running the show and install far more beneficial ones — clarity without endless loops.</p>
+  <a class="more" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book Online →</a>
+</article>
+<article class="svc reveal d1" data-spot>
+  <div class="num">02</div>
+  <h3>Clinical Hypnotherapy</h3>
+  <p>Ericksonian clinical hypnosis to reach the subconscious patterns talk therapy alone often cannot shift.</p>
+  <a class="more" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book Online →</a>
+</article>
+<article class="svc reveal d2" data-spot>
+  <div class="num">03</div>
+  <h3>Quantum Processes</h3>
+  <p>Pain release, chakra balance, hypnobreathwork, past-life regression, timeline and release work.</p>
+  <a class="more" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book Online →</a>
+</article>
+<article class="svc reveal d3" data-spot>
+  <div class="num">04</div>
+  <h3>Law of Attraction &amp; Empowerment</h3>
+  <p>Coaching that aligns intention with nervous-system safety — so desire becomes lived reality.</p>
+  <a class="more" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book Online →</a>
+</article>
+</div>
+  </div>
+</section>
+
+<section id="stories">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Client voices</p>
+      <h2>Results that speak</h2>
+    </div>
+    <div class="stories">
+<article class="story reveal"><q>Working with Susanne has been one of the most transformative therapy experiences I've ever had, after nearly a decade of talk therapy. Results after the first session.</q><div class="who">Dr. Laura Herman</div></article>
+<article class="story reveal d1"><q>Absolutely changed my life — more confidence, greater clarity, and a positive way forward.</q><div class="who">Karen Bishop</div></article>
+<article class="story reveal d2"><q>Highly skilled, professional and incredible. Working with her is life changing!</q><div class="who">Amy</div></article>
+<article class="story reveal"><q>So many things resolved and healed. Genuine warmth and empathy.</q><div class="who">Nadia Monteith</div></article>
+<article class="story reveal d1"><q>Her technique helped me dive deep and feel empowered to be me.</q><div class="who">Liz</div></article>
+<article class="story reveal d2"><q>Within only a few sessions she helped me identify unhelpful behaviours around anxiety and procrastination — and put beneficial ones in place.</q><div class="who">Jonathan</div></article>
+<article class="story reveal d3"><q>I flew a 4-hour journey last week. Usually my knee would flare, but all good… It is amazing actually!!</q><div class="who">Debs</div></article>
+</div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <p class="eyebrow">Ready when you are</p>
+      <h2>Book your session with Susanne</h2>
+      <p>Secure online booking via Cliniko. Face-to-face in Hervey Bay or Zoom wherever you are.</p>
+      <div class="row">
+        <a class="btn btn-gold" href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Book Online</a>
+        <a class="btn btn-ghost" href="tel:0428099997">0428 099 997</a>
+        <a class="btn btn-ghost" href="mailto:psychotherapy@qhsp.net">Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <strong>Quantum Hypnosis &amp; Strategic Psychotherapy</strong>
+      EMPOWER YOUR MIND®<br/>Quantum Wellness Evolution PTY. LTD.<br/>Hervey Bay, Queensland 4655
+    </div>
+    <div>
+      <strong>Contact</strong>
+      <a href="tel:0428099997">0428 099 997</a><br/>
+      <a href="mailto:psychotherapy@qhsp.net">psychotherapy@qhsp.net</a><br/>
+      <a href="https://quantum-hypnosis-and-strategic-psychotherapy.au3.cliniko.com/bookings" target="_blank" rel="noopener">Cliniko booking</a>
+    </div>
+    <div>
+      <strong>Social</strong>
+      <a href="https://www.instagram.com/quantum.integration/" target="_blank" rel="noopener">Instagram @quantum.integration</a><br/>
+      <a href="https://www.facebook.com/quantumevolutionprocess" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <div class="wrap legal">Homepage concept · Aureola Field · Preview only — not the live site.</div>
+</footer>
+
+<script>
+(() => {
+  const hero = document.querySelector('.hero');
+  requestAnimationFrame(() => {
+    hero.classList.add('ready');
+    document.querySelectorAll('[data-enter]').forEach((el,i) => {
+      setTimeout(() => { el.style.opacity='1'; el.style.transform='none'; }, 80 + i*90);
+    });
+  });
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('[data-spot]').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+  const canvas = document.getElementById('helix');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  let w, h, t = 0, mx = 0.62, my = 0.45, tx = 0.62, ty = 0.45;
+  const particles = Array.from({length:110}, () => ({
+    a: Math.random()*Math.PI*2,
+    r: 40 + Math.random()*220,
+    y: Math.random(),
+    s: 0.3 + Math.random()*1.2,
+    z: Math.random()
+  }));
+  function resize(){
+    w = canvas.width = canvas.clientWidth * devicePixelRatio;
+    h = canvas.height = canvas.clientHeight * devicePixelRatio;
+    ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  }
+  resize(); addEventListener('resize', resize);
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    tx = (e.clientX - r.left) / r.width;
+    ty = (e.clientY - r.top) / r.height;
+  });
+  function drawHelix(cx, cy, amp, turns, phase, color, lw){
+    ctx.beginPath();
+    for(let i=0;i<=360;i++){
+      const p = i/360;
+      const ang = p * Math.PI * 2 * turns + phase;
+      const x = cx + Math.cos(ang) * amp * (0.55 + 0.45*Math.sin(p*Math.PI));
+      const y = cy - amp*1.65 + p * amp * 3.3 + Math.sin(ang*0.5)*8;
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lw;
+    ctx.shadowColor = color;
+    ctx.shadowBlur = 16;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+  }
+  function frame(){
+    t += 0.008;
+    mx += (tx - mx) * 0.04;
+    my += (ty - my) * 0.04;
+    const cw = canvas.clientWidth, ch = canvas.clientHeight;
+    ctx.clearRect(0,0,cw,ch);
+    const g = ctx.createRadialGradient(cw*mx, ch*my, 0, cw*mx, ch*my, Math.max(cw,ch)*0.55);
+    g.addColorStop(0,'rgba(121,54,166,0.16)');
+    g.addColorStop(0.4,'rgba(232,200,120,0.10)');
+    g.addColorStop(1,'rgba(251,248,243,0)');
+    ctx.fillStyle = g; ctx.fillRect(0,0,cw,ch);
+    const cx = cw * mx, cy = ch * my;
+    drawHelix(cx, cy, Math.min(cw,ch)*0.16, 3.2, t, 'rgba(178,127,58,0.78)', 1.7);
+    drawHelix(cx, cy, Math.min(cw,ch)*0.13, 3.2, t + Math.PI, 'rgba(232,200,120,0.72)', 1.25);
+    drawHelix(cx, cy, Math.min(cw,ch)*0.1, 2.6, -t*0.8, 'rgba(121,54,166,0.65)', 1.15);
+    const core = ctx.createRadialGradient(cx,cy,0,cx,cy,30);
+    core.addColorStop(0,'rgba(251,243,220,0.95)');
+    core.addColorStop(0.35,'rgba(232,200,120,0.45)');
+    core.addColorStop(1,'rgba(121,54,166,0)');
+    ctx.fillStyle = core; ctx.beginPath(); ctx.arc(cx,cy,28+Math.sin(t*3)*4,0,Math.PI*2); ctx.fill();
+    particles.forEach(p => {
+      p.a += 0.004 * p.s;
+      const x = cx + Math.cos(p.a + t) * p.r * (0.7 + 0.3*Math.sin(t + p.z*6));
+      const y = cy + Math.sin(p.a*0.7) * p.r * 0.55 + (p.y-0.5)*ch*0.15;
+      const alpha = 0.22 + p.z*0.5;
+      ctx.fillStyle = p.z > 0.5 ? `rgba(178,127,58,${alpha})` : `rgba(121,54,166,${alpha})`;
+      ctx.beginPath(); ctx.arc(x,y,1.2+p.z*1.8,0,Math.PI*2); ctx.fill();
+    });
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

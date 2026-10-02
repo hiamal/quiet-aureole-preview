@@ -1,0 +1,9 @@
+.git
+Dockerfile
+.dockerignore
+README.md
+*.md
+HOST-*.txt
+LAST-*.txt
+*.pid
+*.log
