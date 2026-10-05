@@ -1,0 +1,8 @@
+{
+  "name": "Chat Tracker by CoachTech",
+  "version": "2.0.5",
+  "filename": "chat-tracker.zip",
+  "builtAt": "2026-10-05T22:14:44Z",
+  "sourceCommit": "7b368a25b84b2fd5415b9c0b0e83f1eaf2c68c64",
+  "notes": "Fresh rebuild of current main; version bump 2.0.4 → 2.0.5. Same extension code surface as prior 2.0.4 host (FB SPA name capture already included)."
+}
