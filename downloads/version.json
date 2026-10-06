@@ -1,10 +1,10 @@
 {
   "name": "Chat Tracker by CoachTech",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "filename": "chat-tracker.zip",
-  "storeZip": "chat-tracker-2.0.9-chrome-web-store.zip",
-  "builtAt": "2026-10-06T02:40:59Z",
-  "viteApiUrl": "https://api.coachstech.com",
+  "storeZip": "chat-tracker-2.0.10-chrome-web-store.zip",
+  "builtAt": "2026-10-06T02:42:52Z",
+  "viteApiUrl": "https://coachtechapi-production.up.railway.app",
   "viteAppDomain": "https://aimarketinggeni.us",
-  "notes": "APP_DOMAIN aimarketinggeni.us for /connect-extension"
+  "notes": "API railway prod + aimarketinggeni.us connect-extension (verify-connect works)"
 }
