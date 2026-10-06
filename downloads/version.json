@@ -1,10 +1,13 @@
 {
   "name": "Chat Tracker by CoachTech",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "filename": "chat-tracker.zip",
-  "storeZip": "chat-tracker-2.0.10-chrome-web-store.zip",
-  "builtAt": "2026-10-06T02:43:50Z",
-  "viteApiUrl": "https://aimarketinggeni.us",
+  "versionedFilename": "chat-tracker-2.0.11.zip",
+  "storeFilename": "chat-tracker-2.0.11-chrome-web-store.zip",
+  "storeZip": "chat-tracker-2.0.11-chrome-web-store.zip",
+  "description": "Track and send social DMs synced to your CRM.",
   "viteAppDomain": "https://aimarketinggeni.us",
-  "notes": "Both APP_DOMAIN and API_URL aimarketinggeni.us for verify-connect"
+  "viteApiUrl": "https://aimarketinggeni.us",
+  "builtAt": "2026-10-06T03:46:57.025Z",
+  "notes": "2.0.11 for Chrome Web Store resubmit. Manifest description shortened to 'Track and send social DMs synced to your CRM.' (removed platform name list) after Yellow Argon spam/keyword rejection of 2.0.10. Store zip has no manifest key and no localhost host_permissions/content_script matches; sideload zip keeps both."
 }
