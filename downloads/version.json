@@ -6,5 +6,5 @@
   "builtAt": "2026-10-06T02:21:10Z",
   "viteApiUrl": "https://api.coachstech.com",
   "viteAppDomain": "https://app.coachstech.com",
-  "notes": "Built from origin/main with Use my web login"
+  "notes": "Built from origin/main with Use my web login. Chrome Web Store zip has no key and no localhost/127.0.0.1 in host_permissions or content_scripts matches (sideload zip keeps localhost)."
 }
