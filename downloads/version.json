@@ -1,10 +1,10 @@
 {
   "name": "Chat Tracker by CoachTech",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "filename": "chat-tracker.zip",
-  "storeZip": "chat-tracker-2.0.8-chrome-web-store.zip",
-  "builtAt": "2026-10-06T02:21:10Z",
+  "storeZip": "chat-tracker-2.0.9-chrome-web-store.zip",
+  "builtAt": "2026-10-06T02:40:59Z",
   "viteApiUrl": "https://api.coachstech.com",
-  "viteAppDomain": "https://app.coachstech.com",
-  "notes": "Built from origin/main with Use my web login. Chrome Web Store zip has no key and no localhost/127.0.0.1 in host_permissions or content_scripts matches (sideload zip keeps localhost)."
+  "viteAppDomain": "https://aimarketinggeni.us",
+  "notes": "APP_DOMAIN aimarketinggeni.us for /connect-extension"
 }
