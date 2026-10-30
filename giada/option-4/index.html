@@ -31,8 +31,9 @@ img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
 .pill.hide{transform:translateY(-140%)}
 .pill a,.pill button{font:400 .74rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:.75rem 1rem;border-radius:99px;transition:background .4s;background:none;border:0;color:inherit;cursor:pointer}
 .pill a:hover,.pill button:hover{background:#ffffff1a}
-.pill a.go{background:linear-gradient(95deg,var(--vio),var(--mag));font-weight:500}
+.pill a.go{white-space:nowrap;background:linear-gradient(95deg,var(--vio),var(--mag));font-weight:500}
 .pill .nv{display:none}
+@media(max-width:559px){.hero .disp#h1,.hero h1#h1{font-size:7.6vw}}
 @media(min-width:1000px){.pill .nv{display:contents}.pill .mb{display:none}}
 .sheet{position:fixed;inset:0;z-index:150;background:#05061Af2;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);display:flex;flex-direction:column;justify-content:center;padding:var(--pad);opacity:0;visibility:hidden;transition:opacity .6s,visibility 0s .6s}
 .sheet.open{opacity:1;visibility:visible;transition:opacity .6s}
@@ -215,7 +216,7 @@ html:not(.js) .story .w{opacity:1;filter:none;transform:none}
 <canvas id="trail" aria-hidden="true"></canvas>
 <a class="logo" href="#top" aria-label="Shine Your Light — home"><img src="assets/logo-white.png" alt="Shine Your Light" width="80" height="45"></a>
 <header class="pill" id="pill">
-  <nav class="nv" aria-label="Primary" style="display:contents"><a href="#offerings">Offerings</a><a href="#about">About</a><a href="#modalities">Modalities</a><a href="#awaken">Circles</a><a href="#stories">Words</a></nav>
+  <nav class="nv" aria-label="Primary"><a href="#offerings">Offerings</a><a href="#about">About</a><a href="#modalities">Modalities</a><a href="#awaken">Circles</a><a href="#stories">Words</a></nav>
   <button class="mb" aria-expanded="false" aria-controls="sheet">Menu</button>
   <a class="go" href="https://shineyourlight.com.au/contact-us/">Free clarity call</a>
 </header>
