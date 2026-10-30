@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shine Your Light · Giada Lovelight — Nocturne (homepage concept 04)</title>
+<meta name="description" content="In the darkness you will come to know your light. Mind-body coaching and awakening mentoring with Giada Lovelight, Koonawarra NSW.">
+<meta name="theme-color" content="#05061A">
+<meta property="og:title" content="Shine Your Light — Giada Lovelight">
+<meta property="og:description" content="In the darkness you will come to know your light.">
+<meta property="og:image" content="assets/surf.jpg">
+<link rel="icon" href="assets/icon.png">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--void:#05061A;--ind:#0D1245;--vio:#7B5CFF;--mag:#FF4FA3;--star:#F4F3FF;--ice:#C9C4FF;--ease:cubic-bezier(.22,1,.36,1);--pad:clamp(1.2rem,4.4vw,4.5rem);--disp:'Syne',system-ui,sans-serif;--sans:'Outfit',system-ui,sans-serif;--mono:ui-monospace,'SFMono-Regular',Menlo,Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip;background:var(--void)}
+html{background:#05061A}body{background:transparent;color:var(--star);font-family:var(--sans);font-weight:300;line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--mag);outline-offset:4px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--mag);color:#000;padding:.7rem 1rem;z-index:300}.skip:focus{left:0}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-2;display:block}
+#trail{position:fixed;inset:0;width:100%;height:100%;z-index:200;pointer-events:none}
+.mono{font:400 .68rem/1.4 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ice)}
+.disp{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.03em;line-height:.92}
+.grad{background:linear-gradient(95deg,var(--vio) 10%,var(--mag) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding:.04em .04em .08em;margin:-.04em}
+.js .rv{opacity:0;transform:translateY(36px);filter:blur(8px);transition:opacity 1.2s var(--ease) var(--d,0s),transform 1.2s var(--ease) var(--d,0s),filter 1.2s var(--ease) var(--d,0s)}.js .rv.in{opacity:1;transform:none;filter:none}
+/* header */
+.logo{position:fixed;left:var(--pad);top:1.1rem;z-index:100;mix-blend-mode:screen}.logo img{width:80px;height:auto}
+.pill{position:fixed;left:50%;top:1rem;translate:-50% 0;z-index:100;display:flex;align-items:center;gap:.3rem;padding:.4rem;border-radius:99px;background:#0d124588;border:1px solid #c9c4ff33;backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);transition:transform .6s var(--ease),opacity .4s}
+.pill.hide{transform:translateY(-140%)}
+.pill a,.pill button{font:400 .74rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:.75rem 1rem;border-radius:99px;transition:background .4s;background:none;border:0;color:inherit;cursor:pointer}
+.pill a:hover,.pill button:hover{background:#ffffff1a}
+.pill a.go{background:linear-gradient(95deg,var(--vio),var(--mag));font-weight:500}
+.pill .nv{display:none}
+@media(min-width:1000px){.pill .nv{display:contents}.pill .mb{display:none}}
+.sheet{position:fixed;inset:0;z-index:150;background:#05061Af2;backdrop-filter:blur(26px);-webkit-backdrop-filter:blur(26px);display:flex;flex-direction:column;justify-content:center;padding:var(--pad);opacity:0;visibility:hidden;transition:opacity .6s,visibility 0s .6s}
+.sheet.open{opacity:1;visibility:visible;transition:opacity .6s}
+.sheet a.l{font:800 clamp(2rem,9vw,4rem)/1.15 var(--disp);text-transform:uppercase;letter-spacing:-.02em;display:block;transform:translateY(20px);opacity:0;transition:transform .8s var(--ease),opacity .8s}
+.sheet.open a.l{transform:none;opacity:1}.sheet a.l:hover{color:var(--mag)}
+.sheet .x{position:absolute;top:1rem;right:var(--pad);font:400 .74rem var(--sans);letter-spacing:.1em;text-transform:uppercase;background:#ffffff1a;color:#fff;border:0;border-radius:99px;padding:.8rem 1.2rem;cursor:pointer}
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:7rem var(--pad) 6rem}
+.hero h1{font-size:clamp(2.4rem,6.1vw,7rem);max-width:13em;line-height:.98}
+.ch{display:inline-block}
+.grad .ch{-webkit-text-fill-color:currentColor;color:color-mix(in srgb,#FF4FA3 calc(var(--g,0)*100%),#8F6BFF)}
+.js .ch{opacity:0;transform:translateY(-.55em);filter:blur(14px);animation:drop 1.3s var(--ease) calc(.5s + var(--i)*28ms) forwards}
+@keyframes drop{to{opacity:1;transform:none;filter:none}}
+.hero .sub{max-width:42ch;margin:1.8rem 0 2.4rem;font-size:clamp(1.05rem,1.4vw,1.28rem);color:var(--ice)}
+.hero .ctas{display:flex;align-items:center;gap:2.4rem;flex-wrap:wrap}
+.orbwrap{position:relative;display:inline-grid;place-items:center;padding:1.7rem}
+.orbwrap svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.orbwrap .ringp{fill:none;stroke:#c9c4ff66;stroke-width:1;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s var(--ease) 1.6s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.orbwrap .pl{position:absolute;inset:0;animation:orbit 12s linear infinite}
+.orbwrap .pl::after{content:"";position:absolute;left:50%;top:-4px;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:var(--mag);box-shadow:0 0 14px 3px var(--mag)}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.btn{display:inline-flex;gap:.8rem;align-items:center;padding:1.15rem 1.9rem;border-radius:99px;font:500 .82rem/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:#fff;background:linear-gradient(95deg,var(--vio),var(--mag));position:relative;will-change:transform;transition:box-shadow .5s,filter .4s;box-shadow:0 10px 40px -10px #7b5cffaa,inset 0 1px 0 #ffffff55}
+.btn:hover{box-shadow:0 14px 60px -6px #ff4fa3cc,inset 0 1px 0 #fff8;filter:saturate(1.2)}
+.btn.g{background:#ffffff10;box-shadow:inset 0 0 0 1px #c9c4ff55;backdrop-filter:blur(10px)}.btn.g:hover{background:#ffffff22}
+.hero .meta{position:absolute;left:var(--pad);right:var(--pad);bottom:1.8rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hero .meta span:last-child{display:none}
+@media(min-width:800px){.hero .meta span:last-child{display:inline}}
+.scrl{display:inline-flex;align-items:center;gap:.8rem}.scrl i{width:1px;height:34px;background:linear-gradient(var(--mag),transparent);animation:sc 2s ease-in-out infinite;transform-origin:top}
+@keyframes sc{50%{transform:scaleY(.4)}}
+/* story */
+.story{position:relative;height:260vh}
+.story .st{position:sticky;top:0;height:100svh;display:grid;place-items:center;padding:var(--pad)}
+.story p.q{font:600 clamp(1.8rem,4.4vw,4.4rem)/1.12 var(--disp);letter-spacing:-.025em;max-width:19em;text-align:left}
+.story .w{display:inline-block;opacity:.12;filter:blur(7px);transform:translateY(.25em);transition:opacity .8s,filter .8s,transform .8s var(--ease);margin-right:.26em}
+.story .w.on{opacity:1;filter:none;transform:none}
+.story .w.k.on{background:linear-gradient(95deg,var(--vio),var(--mag));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+html:not(.js) .story .w{opacity:1;filter:none;transform:none}
+.story .by{position:absolute;left:var(--pad);bottom:2.4rem}
+.story .by b{display:inline-block;width:46px;height:1px;background:var(--mag);vertical-align:middle;margin-right:.9rem}
+/* sections */
+.sec{position:relative;padding:clamp(5rem,11vw,10rem) var(--pad)}
+.sec-h{margin-bottom:clamp(2.5rem,6vw,5rem);display:grid;gap:1.2rem}
+.h2{font-size:clamp(2.2rem,5.6vw,5.8rem)}
+.awk .h2{font-size:clamp(2.2rem,4.6vw,4.9rem)}
+.sec-h p{max-width:40ch;color:var(--ice);font-size:1.08rem}
+@media(min-width:900px){.sec-h{grid-template-columns:7fr 4fr;align-items:end}}
+/* constellation */
+.cons{display:grid;gap:1.6rem}
+.consl{display:none;position:relative;height:min(68vh,600px);min-height:460px}
+.consl svg{position:absolute;inset:0;width:100%;height:100%}
+.consl path{fill:none;stroke:#c9c4ff66;stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:var(--o,1)}
+.node{position:absolute;left:var(--x);top:var(--y);translate:-50% -50%;background:none;border:0;color:var(--star);cursor:pointer;display:flex;align-items:center;gap:.7rem;padding:.7rem}
+.node i{position:relative;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px #7b5cff55,0 0 24px 6px #7b5cffaa;transition:transform .5s var(--ease),box-shadow .5s,background .4s;flex:none}
+.node i::after{content:"";position:absolute;inset:-14px;border-radius:50%;border:1px solid #c9c4ff55;animation:pulse 3.2s ease-out infinite;animation-delay:var(--dl)}
+@keyframes pulse{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.node span{font:400 .66rem/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;max-width:15ch;color:var(--ice);transition:color .3s;text-align:left;text-shadow:0 0 12px #05061A}
+.node:hover i,.node[aria-expanded=true] i{transform:scale(1.5);background:var(--mag);box-shadow:0 0 0 5px #ff4fa355,0 0 34px 10px #ff4fa3aa}
+.node:hover span,.node[aria-expanded=true] span{color:#fff}
+.glass{background:linear-gradient(160deg,#ffffff1c,#ffffff08);border:1px solid #ffffff2b;border-radius:22px;backdrop-filter:blur(22px) saturate(1.3);-webkit-backdrop-filter:blur(22px) saturate(1.3);box-shadow:0 30px 80px -30px #000c,inset 0 1px 0 #ffffff33}
+.panel{padding:clamp(1.6rem,3vw,2.6rem);display:none;align-self:center;position:relative;min-height:310px;flex-direction:column;justify-content:space-between}
+.panel .no{font:800 4.4rem/1 var(--disp);background:linear-gradient(95deg,var(--vio),var(--mag));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.panel h3{font:700 clamp(1.5rem,2.2vw,2.1rem)/1.1 var(--disp);letter-spacing:-.02em;margin:.8rem 0}
+.panel p{color:var(--ice)}.panel a{margin-top:1.4rem;display:inline-flex;gap:.6rem}
+.panel .swap{animation:sw .7s var(--ease)}@keyframes sw{from{opacity:0;transform:translateY(14px);filter:blur(6px)}}
+@media(min-width:800px){.cons{grid-template-columns:8fr 4fr;gap:3rem}.consl,.panel{display:flex}.consl{display:block}.olist{display:none}}
+.olist{display:grid;gap:1rem}.olist a{display:block;padding:1.4rem}.olist b{font:700 1.3rem/1.1 var(--disp);display:block;margin:.3rem 0 .5rem;letter-spacing:-.01em}.olist p{color:var(--ice);font-size:.95rem}
+/* why */
+.why .g{display:grid;gap:3rem;align-items:center}
+.por{position:relative;width:min(84vw,460px);aspect-ratio:3/4;margin:0 auto}
+.por .fr{position:absolute;inset:0;border-radius:50% 50% 24px 24px/38% 38% 24px 24px;overflow:hidden;box-shadow:0 0 120px -10px #7b5cff88,0 0 0 1px #ffffff2a}
+.por img{width:100%;height:116%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(.95);will-change:transform}
+.por .fr::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(165deg,#7B5CFF,#FF4FA3);mix-blend-mode:color}
+.por .fr::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(0deg,#05061Acc,transparent 55%),radial-gradient(60% 40% at 50% 0,#c9c4ff55,transparent);mix-blend-mode:screen}
+.orbit{position:absolute;inset:-12%;animation:orbit 40s linear infinite;pointer-events:none}
+.orbit span{position:absolute;left:50%;top:50%;font:400 .6rem/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;padding:.5rem .8rem;border-radius:99px;background:#0d1245cc;border:1px solid #c9c4ff44;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transform:rotate(var(--a)) translateX(var(--r)) rotate(calc(var(--a)*-1))}
+.orbit span b{display:inline-block;animation:orbit 40s linear infinite reverse;font-weight:400}
+.why h2{margin:1rem 0 2rem}
+.why p{max-width:50ch;margin-bottom:1.2rem;color:#e7e5ff}
+.why p.lead{font:600 clamp(1.3rem,2.1vw,1.8rem)/1.25 var(--disp);color:var(--star);letter-spacing:-.015em}
+@media(min-width:900px){.why .g{grid-template-columns:5fr 6fr;gap:7vw}}
+/* craft */
+.cyl{height:clamp(300px,34vw,440px);perspective:1500px;position:relative;margin:0 -1rem 4rem;overflow:hidden;cursor:grab;touch-action:pan-y;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.cyl:active{cursor:grabbing}
+.cyl .ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+.cyl .it{position:absolute;left:0;top:0;width:var(--w);height:4.6em;margin:-2.3em 0 0 calc(var(--w)/-2);display:grid;place-items:center;text-align:center;font:700 clamp(1.1rem,2.2vw,1.9rem)/1.1 var(--disp);text-transform:uppercase;letter-spacing:-.01em;border-top:1px solid #c9c4ff44;border-bottom:1px solid #c9c4ff44;background:linear-gradient(180deg,#7b5cff22,#ff4fa311);transform:rotateY(calc(var(--i)*24deg)) translateZ(var(--R));backface-visibility:hidden;border-left:1px solid #c9c4ff22;border-right:1px solid #c9c4ff22;padding:0 .6rem;user-select:none}
+.cyl{--w:250px;--R:600px}
+@media(max-width:700px){.cyl{--w:150px;--R:358px}}
+.cl{display:grid;gap:0;grid-template-columns:1fr;border-top:1px solid #c9c4ff44;list-style:none}
+.cl li{display:grid;grid-template-columns:3rem 1fr;gap:.1rem .8rem;padding:1.05rem .2rem;border-bottom:1px solid #c9c4ff22;transition:background .4s,padding .5s var(--ease)}
+.cl li:hover{background:linear-gradient(90deg,#7b5cff30,transparent);padding-left:1rem}
+.cl b{font:400 .7rem/1.9 var(--mono);color:var(--mag);letter-spacing:.1em}.cl span{font:600 1.1rem/1.25 var(--disp);letter-spacing:-.01em}.cl em{grid-column:2;font:400 .62rem/1.3 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ice);font-style:normal}
+@media(min-width:800px){.cl{grid-template-columns:1fr 1fr;column-gap:3.4rem}}
+/* awaken */
+.awk .g{display:grid;gap:3rem;align-items:center}
+.portal{position:relative;width:min(88vw,520px);aspect-ratio:1;margin:0 auto}
+.portal .im{position:absolute;inset:8%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px #ffffff33,0 0 100px 10px #7b5cff66,0 0 220px 40px #ff4fa322}
+.portal img{width:100%;height:100%;object-fit:cover;object-position:46% 50%;transform:scale(1.15)}
+.portal .im::after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent 50%,#05061Aaa);mix-blend-mode:multiply}
+.portal svg{position:absolute;inset:0;width:100%;height:100%;animation:orbit 80s linear infinite}
+.portal svg text{fill:var(--ice);font:400 5.6px var(--mono);letter-spacing:.34em;text-transform:uppercase}
+.awk h2{margin:1rem 0 1.2rem}.awk p.lead{max-width:46ch;color:#e7e5ff;font-size:1.1rem}
+.tl{position:relative;margin:2.6rem 0;padding-top:2.4rem}
+.tl .line{height:1px;background:#c9c4ff44;position:relative}
+.tl .line b{position:absolute;left:0;top:-9px;width:19px;height:19px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fff,#c9c4ff 60%,#7b5cff);box-shadow:0 0 24px 4px #c9c4ffaa;transition:left .2s linear}
+.tl ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.2rem}
+.tl li strong{font:700 1.05rem/1.1 var(--disp);text-transform:uppercase;display:block;margin-bottom:.4rem;letter-spacing:-.01em}.tl li p{font-size:.88rem;color:var(--ice);line-height:1.45}
+.tl li{opacity:.45;transition:opacity .6s}.tl li.on{opacity:1}
+@media(min-width:900px){.awk .g{grid-template-columns:5fr 6fr;gap:6vw}}
+@media(max-width:600px){.tl ul{grid-template-columns:1fr}}
+/* tst */
+.tst{overflow:hidden;padding-inline:0}
+.tst .sec-h{padding-inline:var(--pad)}
+.rowd{display:flex;gap:1.2rem;width:max-content;padding:0 var(--pad);margin-bottom:1.2rem;will-change:transform}
+.tc{width:clamp(290px,30vw,440px);padding:1.8rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.4rem}
+.tc q{quotes:none;font:300 1.12rem/1.5 var(--sans);color:#f0efff}
+.tc q::before{content:"“";display:block;font:800 3rem/.6 var(--disp);color:var(--mag);margin-bottom:.4rem}
+.tc cite{font:400 .66rem/1.3 var(--mono);letter-spacing:.18em;text-transform:uppercase;font-style:normal;color:var(--ice)}
+.tc:hover{border-color:#ff4fa388}
+/* cta */
+.cta{text-align:center;padding:clamp(6rem,14vw,13rem) var(--pad);position:relative;overflow:hidden}
+.cta h2{font-size:clamp(2.4rem,8.2vw,8.6rem);max-width:12em;margin:1rem auto 2.4rem}
+.cta p{max-width:48ch;margin:0 auto 3rem;color:var(--ice);font-size:1.12rem}
+.starbtn{position:relative;display:inline-grid;place-items:center;width:clamp(190px,24vw,260px);aspect-ratio:1;border-radius:50%;font:700 clamp(.82rem,1.2vw,1rem)/1.2 var(--disp);text-transform:uppercase;letter-spacing:.02em;text-align:center;color:#fff;isolation:isolate;will-change:transform}
+.starbtn::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,#ff4fa3,#7b5cff 70%);z-index:-1;animation:pul 3.4s ease-in-out infinite;box-shadow:0 0 90px 20px #ff4fa366,0 0 220px 60px #7b5cff44}
+@keyframes pul{50%{transform:scale(1.07);box-shadow:0 0 130px 36px #ff4fa388,0 0 260px 80px #7b5cff55}}
+.starbtn svg{position:absolute;inset:-40%;width:180%;height:180%;z-index:-1;animation:orbit 60s linear infinite;pointer-events:none}
+.starbtn span{padding:0 18%}
+/* footer */
+.ftr{position:relative;padding:3rem var(--pad) 1.6rem;border-top:1px solid #ffffff1c;background:linear-gradient(180deg,transparent,#05061A 40%)}
+.ftr .g{display:grid;gap:2rem;grid-template-columns:1fr 1fr}.ftr h4{font:400 .66rem/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--mag);margin-bottom:1rem}
+.ftr li{list-style:none;margin-bottom:.4rem;color:var(--ice);font-size:.96rem}.ftr a:hover{color:#fff}
+.ftr .bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;margin-top:3rem}
+.ftr img{mix-blend-mode:screen}
+@media(min-width:800px){.ftr .g{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.js .rv,.js .ch{opacity:1;transform:none;filter:none}.story{height:auto}.story .st{position:relative;height:auto;padding-block:6rem}.story .w{opacity:1;filter:none;transform:none}.orbwrap .ringp{stroke-dashoffset:0}.consl path{stroke-dashoffset:0}.rowd{width:auto;overflow-x:auto}}
+</style>
+<style id="local-fonts">
+/* latin-ext */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 200 500;
+  font-display: swap;
+  src: url(fonts/35e12df6d2.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 200 500;
+  font-display: swap;
+  src: url(fonts/357083765a.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/fb3f9d7ee5.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(fonts/1a8bc9270d.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="bg" aria-hidden="true"></canvas>
+<canvas id="trail" aria-hidden="true"></canvas>
+<a class="logo" href="#top" aria-label="Shine Your Light — home"><img src="assets/logo-white.png" alt="Shine Your Light" width="80" height="45"></a>
+<header class="pill" id="pill">
+  <nav class="nv" aria-label="Primary" style="display:contents"><a href="#offerings">Offerings</a><a href="#about">About</a><a href="#modalities">Modalities</a><a href="#awaken">Circles</a><a href="#stories">Words</a></nav>
+  <button class="mb" aria-expanded="false" aria-controls="sheet">Menu</button>
+  <a class="go" href="https://shineyourlight.com.au/contact-us/">Free clarity call</a>
+</header>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu"><button class="x">Close ✕</button>
+  <a class="l" href="#top" style="transition-delay:.1s">Home</a><a class="l" href="#about" style="transition-delay:.17s">About</a><a class="l" href="#offerings" style="transition-delay:.24s">Offerings</a><a class="l" href="#modalities" style="transition-delay:.31s">Modalities</a><a class="l" href="#awaken" style="transition-delay:.38s">Circles &amp; Workshops</a><a class="l" href="#contact" style="transition-delay:.45s">Contact</a></div>
+
+<main id="main">
+<section class="hero" id="top" aria-label="In the darkness you will come to know your light">
+  <div class="mono rv" style="--d:.3s;margin-bottom:1.6rem">Giada Lovelight — Mind-Body Coach &amp; Awakening Mentor</div>
+  <h1 class="disp" id="h1">In the darkness you will come to know your <span class="grad">light.</span></h1>
+  <p class="sub rv" style="--d:1.5s">Welcome, sister, to a nurturing space designed for your healing, empowerment, and awakening.</p>
+  <div class="ctas rv" style="--d:1.7s">
+    <span class="orbwrap"><svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><rect class="ringp" x="1" y="1" width="98" height="98" rx="49" pathLength="1" vector-effect="non-scaling-stroke"/></svg><span class="pl" aria-hidden="true"></span><a class="btn" href="https://shineyourlight.com.au/contact-us/" data-mag>Book a free clarity call</a></span>
+    <a class="btn g" href="#offerings" data-mag>Explore offerings</a>
+  </div>
+  <div class="meta mono"><span class="scrl"><i></i>Scroll</span><span id="coord">Star 0.00 · 0.00</span><span>Koonawarra NSW · Mind-Body Connection</span></div>
+</section>
+
+<section class="story" id="story" aria-label="Giada's story">
+  <div class="st">
+    <p class="q" id="sq">“While I was meditating I saw an unknown shining star in the dark void space and I felt an incredible connection and pure unconditional love for the Divine Mother.”</p>
+    <div class="by mono"><b></b>Giada Lovelight, in her own words</div>
+  </div>
+</section>
+
+<section class="sec" id="offerings" aria-label="Ways to work together">
+  <div class="sec-h"><div><div class="mono rv" style="margin-bottom:1.2rem">01 / Ways to work together</div><h2 class="disp h2 rv" style="--d:.1s">Seven <span class="grad">stars</span><br>to navigate by</h2></div><p class="rv" style="--d:.2s">Sessions tailored to you — 1:1 in Dapto and Sydney, or online — plus circles, workshops and retreats across NSW.</p></div>
+  <div class="cons">
+    <div class="consl" id="consl">
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path id="cpath" pathLength="1" d="M10 64 L27 30 L36 72 L52 42 L65 74 L79 34 L91 66"/></svg>
+<button class="node" style="--x:10%;--y:64%;--dl:0s" data-i="0" aria-expanded="false" aria-controls="panel" data-t="Sacred 1:1 Sessions for Women" data-d="Womb awakening, divine feminine empowerment, mind-body-soul integration, energy work, shamanic journeys, lunar wisdom, sacred sexuality &amp; relationship healing." data-u="https://shineyourlight.com.au/session-for-women/"><i></i><span>Sacred 1:1 Sessions for Women</span></button>
+<button class="node" style="--x:27%;--y:30%;--dl:1s" data-i="1" aria-expanded="false" aria-controls="panel" data-t="Empowering 1:1 Sessions for Men" data-d="Guiding men to reclaim their power, embrace their sensuality, and heal through the transformative practices of Tantra." data-u="https://shineyourlight.com.au/session-for-men/"><i></i><span>Empowering 1:1 Sessions for Men</span></button>
+<button class="node" style="--x:36%;--y:72%;--dl:2s" data-i="2" aria-expanded="false" aria-controls="panel" data-t="Sessions for Partners" data-d="Sensual awakening — explore the sacred portals of Mother Gaia through the Divine Feminine and Masculine gateways." data-u="https://shineyourlight.com.au/session-for-partners/"><i></i><span>Sessions for Partners</span></button>
+<button class="node" style="--x:52%;--y:42%;--dl:3s" data-i="3" aria-expanded="false" aria-controls="panel" data-t="Healing Modalities" data-d="A diverse range of modalities to support your awakening and transformation — each practised with love and intention." data-u="https://shineyourlight.com.au/modalities/"><i></i><span>Healing Modalities</span></button>
+<button class="node" style="--x:65%;--y:74%;--dl:4s" data-i="4" aria-expanded="false" aria-controls="panel" data-t="Mind Body Womb – Empowering Coaching" data-d="Discover your True Self within your heart and womb. Gain self-worth and confidence and transform with your beautiful feminine power." data-u="https://shineyourlight.com.au/offerings/"><i></i><span>Mind Body Womb – Empowering Coaching</span></button>
+<button class="node" style="--x:79%;--y:34%;--dl:5s" data-i="5" aria-expanded="false" aria-controls="panel" data-t="Womb-Baby Doula" data-d="Welcome your baby in your sacred and powerful womb. Heal and nourish your fertile garden of love." data-u="https://shineyourlight.com.au/offerings/"><i></i><span>Womb-Baby Doula</span></button>
+<button class="node" style="--x:91%;--y:66%;--dl:6s" data-i="6" aria-expanded="false" aria-controls="panel" data-t="Womb-Heart Circle" data-d="A circle for women only, held in Dapto and Sydney." data-u="https://shineyourlight.com.au/offerings/"><i></i><span>Womb-Heart Circle</span></button>
+
+    </div>
+    <div class="panel glass" id="panel" aria-live="polite"><div id="pbody"></div></div>
+    <div class="olist" aria-label="Offerings">
+<a class="glass rv" href="https://shineyourlight.com.au/session-for-women/"><span class="mono">01</span><b>Sacred 1:1 Sessions for Women</b><p>Womb awakening, divine feminine empowerment, mind-body-soul integration, energy work, shamanic journeys, lunar wisdom, sacred sexuality &amp; relationship healing.</p></a>
+<a class="glass rv" href="https://shineyourlight.com.au/session-for-men/"><span class="mono">02</span><b>Empowering 1:1 Sessions for Men</b><p>Guiding men to reclaim their power, embrace their sensuality, and heal through the transformative practices of Tantra.</p></a>
+<a class="glass rv" href="https://shineyourlight.com.au/session-for-partners/"><span class="mono">03</span><b>Sessions for Partners</b><p>Sensual awakening — explore the sacred portals of Mother Gaia through the Divine Feminine and Masculine gateways.</p></a>
+<a class="glass rv" href="https://shineyourlight.com.au/modalities/"><span class="mono">04</span><b>Healing Modalities</b><p>A diverse range of modalities to support your awakening and transformation — each practised with love and intention.</p></a>
+<a class="glass rv" href="https://shineyourlight.com.au/offerings/"><span class="mono">05</span><b>Mind Body Womb – Empowering Coaching</b><p>Discover your True Self within your heart and womb. Gain self-worth and confidence and transform with your beautiful feminine power.</p></a>
+<a class="glass rv" href="https://shineyourlight.com.au/offerings/"><span class="mono">06</span><b>Womb-Baby Doula</b><p>Welcome your baby in your sacred and powerful womb. Heal and nourish your fertile garden of love.</p></a>
+<a class="glass rv" href="https://shineyourlight.com.au/offerings/"><span class="mono">07</span><b>Womb-Heart Circle</b><p>A circle for women only, held in Dapto and Sydney.</p></a>
+
+    </div>
+  </div>
+</section>
+
+<section class="sec why" id="about" aria-label="About Giada">
+  <div class="g">
+    <div class="por rv">
+      <div class="fr"><img src="assets/surf.jpg" alt="Giada Lovelight walking barefoot through the shallows, arms open" width="1400" height="1657" loading="lazy" id="porimg"></div>
+      <div class="orbit" aria-hidden="true"><span style="--a:-70deg;--r:min(48vw,265px)"><b>Womb Spirit Keeper</b></span><span style="--a:20deg;--r:min(48vw,265px)"><b>Awakening Mentor</b></span><span style="--a:110deg;--r:min(48vw,265px)"><b>Hypnotherapist</b></span><span style="--a:200deg;--r:min(48vw,265px)"><b>Energy Healer</b></span></div>
+    </div>
+    <div>
+      <div class="mono rv">02 / About Giada</div>
+      <h2 class="disp h2 rv" style="--d:.1s">Why <span class="grad">me?</span></h2>
+      <p class="lead rv">I have a strong connection to Mother Earth, the natural elements and the Womb of Creation.</p>
+      <p class="rv">I help women and men to find their own truth, their blockages and traumas, hidden in their minds, bodies and wombs, so they can rise up and ignite their own power, creativity, feel love from within and flourish.</p>
+      <p class="rv">I specialize in preparing women for a healthy and lovely pregnancy and to birth their baby naturally. I work intuitively and serve you through energy work and my tailored empowering programs. I honour every client as a unique and authentic being.</p>
+      <p class="rv">If you feel lost or confused I can guide you to clarity, and help you set success-driven goals so you can shine your light brighter.</p>
+      <a class="btn g rv" style="margin-top:1rem" href="https://shineyourlight.com.au/about-us/" data-mag>Read the full story →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="modalities" aria-label="Modalities and credentials">
+  <div class="sec-h"><div><div class="mono rv" style="margin-bottom:1.2rem">03 / Craft</div><h2 class="disp h2 rv" style="--d:.1s">A <span class="grad">toolbox</span><br>of light</h2></div><p class="rv" style="--d:.2s">Drag the ring. Each modality is practised with love and intention.</p></div>
+  <div class="cyl" id="cyl" role="group" aria-label="Modalities carousel"><div class="ring" id="ring"><div class="it" style="--i:0">NLP</div><div class="it" style="--i:1">Positive Psychology</div><div class="it" style="--i:2">Energy Psychology</div><div class="it" style="--i:3">Kinesiology</div><div class="it" style="--i:4">EFT Tapping</div><div class="it" style="--i:5">Hypnotherapy</div><div class="it" style="--i:6">Reiki</div><div class="it" style="--i:7">Meditation</div><div class="it" style="--i:8">Elemental &amp; Flow Dance</div><div class="it" style="--i:9">Shakti Dance</div><div class="it" style="--i:10">Womb Healing</div><div class="it" style="--i:11">Art-making</div><div class="it" style="--i:12">Breathwork</div><div class="it" style="--i:13">Shamanic Journeys</div><div class="it" style="--i:14">Time Line Therapy</div></div></div>
+  <div class="mono rv" style="margin-bottom:1.2rem">Training &amp; certification</div>
+  <ol class="cl rv"><li><b>01</b><span>Reiki Jin Kei Do, Level 2</span><em>Dr. Ranga J. Premaratna</em></li><li><b>02</b><span>Touch for Health</span><em>Katha Jones</em></li><li><b>03</b><span>Certified NLP Practitioner</span><em>MBX Institute</em></li><li><b>04</b><span>Certified Time Line Therapy™ Practitioner</span><em>MBX Institute</em></li><li><b>05</b><span>Certified Hypnotherapy Practitioner</span><em>MBX Institute</em></li><li><b>06</b><span>Certified Positive Psychology Coach</span><em>MBX Institute</em></li><li><b>07</b><span>Certified in NLP Energy Psychology</span><em>MBX Institute</em></li><li><b>08</b><span>Certified in Modern Hypnosis</span><em>MBX Institute</em></li><li><b>09</b><span>Certified Specialized Kinesiology Practitioner</span><em>MBX Institute</em></li><li><b>10</b><span>Certified Energy Psychology Practitioner</span><em>MBX Institute</em></li><li><b>11</b><span>Certified in Emotional Freedom Technique</span><em>MBX Institute</em></li><li><b>12</b><span>Womb Awakening Facilitator</span><em>Institute of Feminine Arts</em></li></ol>
+</section>
+
+<section class="sec awk" id="awaken" aria-label="Awaken Your Freedom">
+  <div class="g">
+    <div class="portal rv"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="pp" d="M50 50m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"/></defs><text><textPath href="#pp">New Moon · New Self · New Earth · Cacao · Dance · Tapping · Breath · Soul Circle ·</textPath></text></svg><div class="im"><img src="assets/candle.jpg" alt="A single candle among crystals on a tree stump" width="1800" height="1200" loading="lazy"></div></div>
+    <div>
+      <div class="mono rv">04 / Soul Circle · Dapto &amp; Sydney</div>
+      <h2 class="disp h2 rv" style="--d:.1s">Awaken your <span class="grad">freedom</span></h2>
+      <p class="lead rv">Connect with a lovely and earthy tribe of people. Have fun dancing, expressing yourself, and healing together. Breathe and feel the love around you.</p>
+      <div class="tl rv" id="tl"><div class="line"><b id="moon"></b></div>
+        <ul><li class="on"><strong>New Moon</strong><p>Elemental flow dance — a free-moving, mindful practice of self-expression. No need to be a dancer or a yogi.</p></li><li><strong>New Self</strong><p>EFT tapping, breath-work, energy healing and guided journeys.</p></li><li><strong>New Earth</strong><p>Sacred cacao ceremony — organic ceremonial cacao from Peru — and Mystery School teachings.</p></li></ul></div>
+      <a class="btn rv" href="https://shineyourlight.com.au/awaken-your-freedom/" data-mag>Join the circle</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec tst" id="stories" aria-label="Testimonials">
+  <div class="sec-h"><div><div class="mono rv" style="margin-bottom:1.2rem">05 / Kind words</div><h2 class="disp h2 rv" style="--d:.1s">In their <span class="grad">own</span> words</h2></div><p class="rv" style="--d:.2s">Real notes from people Giada has worked with.</p></div>
+  <div class="rowd" id="r1">
+<figure class="tc glass"><q>I felt very held by her presence. I felt she has a very natural and authentic approach which opened up my heart to receiving her offering.</q><cite>Masami Shimizu</cite></figure>
+<figure class="tc glass"><q>I am forever thankful to Giada for guiding me through one of the toughest time of my life. Now I am blessed to have a healthy baby.</q><cite>Valesca Zarricueta</cite></figure>
+<figure class="tc glass"><q>I highly recommend her, her service, manner, time efficiency and overall quality and general care is above and beyond. Lots of love to you beautiful woman.</q><cite>Lisa Young</cite></figure>
+<figure class="tc glass"><q>Your help was a gift to me, you gave me an amazing opportunity to breathe again healthy and have a normal life without poisoning myself.</q><cite>Catherine Jude</cite></figure>
+<figure class="tc glass"><q>Giada is an amazing, insightful, and empathic practitioner. I was at ease with her and able to talk.</q><cite>Kamila Zacharek</cite></figure>
+
+  </div>
+  <div class="rowd" id="r2">
+<figure class="tc glass" data-k="0"><q>I felt very held by her presence. I felt she has a very natural and authentic approach which opened up my heart to receiving her offering.</q><cite>Masami Shimizu</cite></figure>
+<figure class="tc glass" data-k="1"><q>I am forever thankful to Giada for guiding me through one of the toughest time of my life. Now I am blessed to have a healthy baby.</q><cite>Valesca Zarricueta</cite></figure>
+<figure class="tc glass" data-k="2"><q>I highly recommend her, her service, manner, time efficiency and overall quality and general care is above and beyond. Lots of love to you beautiful woman.</q><cite>Lisa Young</cite></figure>
+<figure class="tc glass" data-k="3"><q>Your help was a gift to me, you gave me an amazing opportunity to breathe again healthy and have a normal life without poisoning myself.</q><cite>Catherine Jude</cite></figure>
+<figure class="tc glass" data-k="4"><q>Giada is an amazing, insightful, and empathic practitioner. I was at ease with her and able to talk.</q><cite>Kamila Zacharek</cite></figure>
+<figure class="tc glass" data-k="5"><q>She has helped me to tap into my intuition and gain more wisdom, more confidence and more freedom in my body.</q><cite>Ania Dlaczego</cite></figure>
+<figure class="tc glass" data-k="6"><q>THANK YOU for making my head lighter and clearer…</q><cite>Ekaterina Petukhova</cite></figure>
+<figure class="tc glass" data-k="7"><q>I feel like I am a new me, so thank you, my dear!</q><cite>Charlotte Lantai</cite></figure>
+<figure class="tc glass" data-k="8"><q>Giada made it easy because she is a wonderful guide and therapist. 100% recommended!!</q><cite>Tabata Jardim Jessouroun</cite></figure>
+
+  </div>
+</section>
+
+<section class="cta" id="contact" aria-label="Book a free clarity call">
+  <div class="mono rv">06 / Imagine achieving your goals now?</div>
+  <h2 class="disp rv" style="--d:.1s">Your life, your health and your well-being are <span class="grad">worth it.</span></h2>
+  <p class="rv" style="--d:.2s">Schedule a free Discovery &amp; Clarity consultation to explore your goals, get your questions answered and discuss the best way to achieve them together.</p>
+  <a class="starbtn rv" style="--d:.3s" href="https://shineyourlight.com.au/contact-us/" data-mag aria-label="Book a free clarity call"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 2 53 47 98 50 53 53 50 98 47 53 2 50 47 47Z" fill="#ffffff10"/></svg><span>Book a free clarity call</span></a>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="g">
+    <div><img src="assets/logo-white.png" alt="Shine Your Light" width="110" height="62" loading="lazy"><p style="margin-top:1rem;font:800 1.5rem/1 var(--disp);text-transform:uppercase">All is <span class="grad">love.</span></p></div>
+    <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#offerings">Offerings</a></li><li><a href="#modalities">Modalities</a></li><li><a href="#awaken">Circles &amp; Workshops</a></li></ul></div>
+    <div><h4>Connect</h4><ul><li><a href="mailto:giada@shineyourlight.com.au">giada@shineyourlight.com.au</a></li><li><a href="tel:+610424974401">+61 0424 974401</a></li><li><a href="https://www.instagram.com/giadalovelight/" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/Shine-Your-Light-102352968823206/" rel="noopener">Facebook</a></li><li><a href="https://www.youtube.com/channel/UCJT5cFVruZlL0gaRUl_dSNQ" rel="noopener">YouTube</a></li></ul></div>
+    <div><h4>Where</h4><ul><li>Koonawarra NSW 2530</li><li>Sessions in Dapto &amp; Sydney</li><li>Online worldwide</li><li>By appointment only</li></ul></div>
+  </div>
+  <div class="bot mono"><span>© Shine Your Light · Giada Lovelight</span><span>Homepage concept 04 · Nocturne — design preview only</span></div>
+</footer>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,HV=matchMedia('(hover:hover)').matches;
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+/* split hero headline letters */
+(function(){const h=$('#h1');let i=0;const walk=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(w=>{if(!w)return;if(/^\s+$/.test(w)){f.append(' ');return}const sp=document.createElement('span');sp.style.display='inline-block';sp.setAttribute('aria-hidden','true');[...w].forEach(ch=>{const s=document.createElement('span');s.className='ch';s.style.setProperty('--i',i++);s.textContent=ch;sp.append(s)});f.append(sp)});c.replaceWith(f)}else if(c.nodeType===1&&!c.classList.contains('ch')){walk(c)}})};h.setAttribute('aria-label',h.textContent);walk(h);h.querySelectorAll('.grad .ch').forEach((c,k,a)=>c.style.setProperty('--g',k/Math.max(1,a.length-1)))})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -5% 0px'});
+$$('.rv').forEach(el=>io.observe(el));if(RM)$$('.rv').forEach(el=>el.classList.add('in'));
+/* menu */
+const sh=$('#sheet'),mb=$('.pill .mb');const setM=o=>{sh.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';(o?$('.x',sh):mb).focus({preventScroll:true})};
+mb.onclick=()=>setM(true);$('.x',sh).onclick=()=>setM(false);$$('a',sh).forEach(a=>a.addEventListener('click',()=>setM(false)));addEventListener('keydown',e=>{if(e.key==='Escape')setM(false)});
+/* magnetic */
+if(HV&&!RM)$$('[data-mag]').forEach(el=>{el.addEventListener('pointermove',e=>{const b=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-b.left-b.width/2)*.22}px,${(e.clientY-b.top-b.height/2)*.3}px)`});el.addEventListener('pointerleave',()=>{el.style.transform=''})});
+/* story words */
+const sq=$('#sq');const words=[];
+(function(){const t=sq.textContent;sq.textContent='';t.split(' ').forEach(w=>{const s=document.createElement('span');s.className='w'+(/shining|star|void|Divine/.test(w)?' k':'');s.textContent=w;sq.append(s);words.push(s)})})();
+/* constellation */
+const nodes=$$('.node'),pb=$('#pbody'),cpath=$('#cpath');
+const show=i=>{const n=nodes[i];nodes.forEach(x=>x.setAttribute('aria-expanded',x===n));pb.innerHTML=`<div class="swap"><div class="no">${String(i+1).padStart(2,'0')}</div><h3>${n.dataset.t}</h3><p>${n.dataset.d}</p><a class="btn g" href="${n.dataset.u}">Explore →</a></div>`};
+nodes.forEach((n,i)=>{['mouseenter','focus','click'].forEach(ev=>n.addEventListener(ev,()=>show(i)))});show(0);
+/* scroll state */
+const pill=$('#pill'),hero=$('.hero'),story=$('#story'),porimg=$('#porimg'),tl=$('#tl'),moon=$('#moon'),tli=$$('#tl li'),consl=$('#consl'),r1=$('#r1'),r2=$('#r2'),awk=$('#awaken'),tst=$('#stories');
+let lastY=0,S=0,scrollP=0,D=1;
+function fr(){const y=scrollY,vh=innerHeight;pill.classList.toggle('hide',y>lastY+4&&y>vh*.6&&!(y<lastY-4));if(y<lastY-4)pill.classList.remove('hide');lastY=y;
+ const tot=document.documentElement.scrollHeight-vh;scrollP=y/Math.max(1,tot);
+ // story
+ let r=story.getBoundingClientRect();let p=clamp(-r.top/(r.height-vh));const lit=Math.floor(p*1.15*words.length);words.forEach((w,i)=>w.classList.toggle('on',i<lit||RM));
+ // constellation lines
+ r=consl.getBoundingClientRect();p=clamp((vh*.85-r.top)/(r.height*.9));cpath.style.setProperty('--o',(1-p).toFixed(3));
+ if(!RM){
+  r=porimg.parentElement.getBoundingClientRect();porimg.style.transform=`translate3d(0,${(r.top+r.height/2-vh/2)*-.08-24}px,0)`;
+  r=r1.getBoundingClientRect();let q=clamp((vh-tst.getBoundingClientRect().top)/(vh+tst.offsetHeight));
+  r1.style.transform=`translate3d(${-q*(r1.scrollWidth-innerWidth*.6)}px,0,0)`;r2.style.transform=`translate3d(${-(1-q)*(r2.scrollWidth-innerWidth*.6)*1.0}px,0,0)`;
+ }
+ // moon timeline
+ r=tl.getBoundingClientRect();p=clamp((vh*.9-r.top)/(vh*.6));moon.style.left=`calc(${(p*100).toFixed(1)}% - ${(p*19).toFixed(1)}px)`;tli.forEach((l,i)=>l.classList.toggle('on',p>=i/2.4-.02));
+ D=1-clamp(y/(vh*.9))*.5;
+ requestAnimationFrame(fr)}
+requestAnimationFrame(fr);
+/* 3D cylinder */
+const ring=$('#ring'),cyl=$('#cyl');let ang=0,vel=RM?0:.12,drag=false,lx=0,vis=true;
+new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cyl);
+cyl.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;cyl.setPointerCapture(e.pointerId)});
+cyl.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;ang+=dx*.22;vel=dx*.22});
+['pointerup','pointercancel'].forEach(ev=>cyl.addEventListener(ev,()=>{drag=false;if(Math.abs(vel)<.05)vel=RM?0:.12}));
+(function c(){if(vis){if(!drag){ang+=vel;vel+=((RM?0:.12)-vel)*.02}ring.style.transform=`translateZ(calc(var(--R)*-1)) rotateX(-7deg) rotateY(${ang}deg)`}requestAnimationFrame(c)})();
+/* WEBGL nebula */
+const cv=$('#bg');let gl=cv.getContext('webgl',{antialias:false,alpha:false,preserveDrawingBuffer:true,powerPreference:'low-power'});
+let mx=innerWidth*.7,my=innerHeight*.45,tmx=mx,tmy=my,lastMove=-1e5;
+addEventListener('pointermove',e=>{tmx=e.clientX;tmy=e.clientY;lastMove=performance.now()},{passive:true});
+if(gl){
+ const vs='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+ const fs=`precision highp float;uniform vec2 R;uniform float T;uniform vec2 M;uniform float S;uniform float D;
+ float h(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}
+ float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1.,0.)),f.x),mix(h(i+vec2(0.,1.)),h(i+vec2(1.)),f.x),f.y);}
+ float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}
+ vec3 stars(vec2 uv,float sc,float th){vec2 g=uv*sc;vec2 id=floor(g);vec2 f=fract(g)-.5;float r=h(id);vec2 o=vec2(h(id+3.1),h(id+7.7))-.5;float d=length(f-o*.6);float m=smoothstep(.07,.0,d)*step(th,r);float tw=.65+.35*sin(T*(1.+r*3.)+r*40.);vec3 c=mix(vec3(.7,.75,1.),vec3(1.,.8,.95),h(id+9.));return c*m*tw;}
+ void main(){vec2 uv=(gl_FragCoord.xy-.5*R)/R.y;vec2 m=(M-.5*R)/R.y;vec2 d=uv-m;float r=length(d);
+  vec2 u2=uv+d/(r*r+.03)*.014;float t=T*.035;vec2 p=u2*1.5+vec2(0.,S*1.4);
+  float q=fbm(p+t);float w=fbm(p*1.3+vec2(q*2.,t*1.4)+vec2(3.,1.));float neb=smoothstep(.22,.95,fbm(p+vec2(w*2.2,q*1.8)));
+  vec3 c1=vec3(.02,.025,.1),c2=vec3(.16,.17,.62),c3=vec3(.48,.36,1.),c4=vec3(1.,.31,.64);
+  float mg=mix(.25,1.,.5+.5*sin(S*6.+1.));
+  vec3 col=c1+c2*neb*1.15+c3*pow(neb,2.2)*.95+c4*pow(w,3.)*mg*neb*1.1;
+  col*=D;
+  col+=stars(u2+vec2(S*.04,S*.1),9.,.55)*1.1+stars(u2*1.7+3.+vec2(S*.09,S*.18),18.,.62)*.8+stars(u2*.8+1.-vec2(S*.02),5.,.82)*1.7;
+  float gla=.011/(r+.012);col+=vec3(1.,.72,.96)*gla*.9+vec3(.45,.35,1.)*.016/(r*r*26.+.05);
+  float fl=exp(-abs(d.y)*70.)*exp(-abs(d.x)*3.2)+exp(-abs(d.x)*70.)*exp(-abs(d.y)*3.2);col+=vec3(1.,.8,.98)*fl*.35;
+  col*=1.-.55*dot(uv*.8,uv*.8);
+  gl_FragColor=vec4(col,1.);}`;
+ const sh=(t,s)=>{const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o};
+ const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);
+ if(!gl.getProgramParameter(pr,gl.LINK_STATUS)){gl=null;cv.style.display='none'}else{
+ gl.useProgram(pr);const b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+ const U=n=>gl.getUniformLocation(pr,n);const uR=U('R'),uT=U('T'),uM=U('M'),uS=U('S'),uD=U('D');
+ const SCALE=.5;const rs=()=>{const dpr=Math.min(devicePixelRatio||1,1.5)*SCALE;cv.width=Math.max(2,innerWidth*dpr|0);cv.height=Math.max(2,innerHeight*dpr|0);gl.viewport(0,0,cv.width,cv.height)};rs();addEventListener('resize',rs);
+ let on=!document.hidden,t0=performance.now(),smooth=0;document.addEventListener('visibilitychange',()=>{on=!document.hidden;if(on)requestAnimationFrame(loop)});
+ const coord=$('#coord');let cf=0;
+ function loop(now){if(!on)return;const t=(now-t0)/1000;
+  if(now-lastMove>4000||!HV){const k=t*.25;tmx=innerWidth*(.5+.32*Math.sin(k*1.3));tmy=innerHeight*(.42+.22*Math.sin(k*.9+1))}
+  mx+=(tmx-mx)*.06;my+=(tmy-my)*.06;smooth+=(scrollP-smooth)*.06;
+  gl.uniform2f(uR,cv.width,cv.height);gl.uniform1f(uT,RM?4:t);gl.uniform2f(uM,mx/innerWidth*cv.width,(1-my/innerHeight)*cv.height);gl.uniform1f(uS,smooth);gl.uniform1f(uD,D);
+  gl.drawArrays(gl.TRIANGLES,0,3);
+  if(!(cf++%8)&&coord)coord.textContent='Star '+(mx/innerWidth).toFixed(2)+' · '+(1-my/innerHeight).toFixed(2);
+  if(!RM)requestAnimationFrame(loop)}
+ requestAnimationFrame(loop);
+ if(RM){addEventListener('scroll',()=>requestAnimationFrame(loop),{passive:true});addEventListener('resize',()=>requestAnimationFrame(loop))}
+ }
+}
+/* star trail */
+const tc=$('#trail'),tg=tc.getContext('2d');let P=[];
+if(HV&&!RM){const rs=()=>{tc.width=innerWidth;tc.height=innerHeight};rs();addEventListener('resize',rs);
+ addEventListener('pointermove',e=>{for(let i=0;i<2;i++)P.push({x:e.clientX,y:e.clientY,vx:(Math.random()-.5)*1.2,vy:(Math.random()-.5)*1.2+.2,l:1,s:Math.random()*2+.8,h:Math.random()<.5?[255,79,163]:[201,196,255]});if(P.length>140)P.splice(0,P.length-140)},{passive:true});
+ (function a(){tg.clearRect(0,0,tc.width,tc.height);tg.globalCompositeOperation='lighter';for(let i=P.length-1;i>=0;i--){const p=P[i];p.x+=p.vx;p.y+=p.vy;p.l-=.022;if(p.l<=0){P.splice(i,1);continue}tg.fillStyle=`rgba(${p.h[0]},${p.h[1]},${p.h[2]},${p.l*.8})`;tg.beginPath();tg.arc(p.x,p.y,p.s*p.l*1.6,0,6.3);tg.fill();tg.fillStyle=`rgba(${p.h[0]},${p.h[1]},${p.h[2]},${p.l*.12})`;tg.beginPath();tg.arc(p.x,p.y,p.s*p.l*7,0,6.3);tg.fill()}requestAnimationFrame(a)})()}
+})();
+</script>
+</body>
+</html>

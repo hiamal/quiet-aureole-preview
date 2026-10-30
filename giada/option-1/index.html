@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Shine Your Light — Giada Lovelight · Mind-Body Coach & Awakening Mentor</title>
+<meta name="description" content="Befriend your shadow. Rebirth yourself. Shine your light. Mind-Body, womb and energy-healing coaching with Giada Lovelight — Koonawarra NSW, Dapto, Sydney and online.">
+<meta name="theme-color" content="#0B0D0E">
+<meta property="og:title" content="Shine Your Light — Giada Lovelight">
+<meta property="og:description" content="Befriend your shadow. Rebirth yourself. Shine your light.">
+<meta property="og:image" content="assets/rocks.jpg">
+<link rel="icon" href="assets/icon.png">
+<link rel="preload" as="image" href="assets/rocks.jpg">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --ink:#0B0D0E; --tide:#0E2A33; --teal:#4398B2; --foam:#8FD0E3; --cream:#F3EEE2;
+  --coral:#F2866B; --gold:#F2C14E; --violet:#5B3E96;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Alegreya Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.19,.82,.12,1);
+  --pad:clamp(1.25rem,4vw,4rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--ink);color:var(--cream);font-family:var(--sans);font-weight:400;font-size:clamp(1.05rem,.9rem + .35vw,1.28rem);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--foam);outline-offset:4px;border-radius:2px}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--cream);color:var(--ink);padding:.6rem 1rem;z-index:200}
+.skip:focus{top:1rem}
+.label{font-family:var(--sans);font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;font-weight:500;color:var(--foam)}
+.serif{font-family:var(--serif)}
+em{font-style:italic}
+
+/* ---------- preloader curtain ---------- */
+.curtain{position:fixed;inset:0;z-index:150;display:grid;place-items:center;pointer-events:none}
+.curtain::before,.curtain::after{content:"";position:absolute;left:0;right:0;height:50.5%;background:var(--ink);animation:cOpen 1.25s var(--ease) 1.55s forwards}
+.curtain::before{top:0}.curtain::after{bottom:0;animation-name:cOpenB}
+.curtain img{position:relative;z-index:2;width:min(240px,52vw);opacity:0;animation:cLogo 2.3s ease .1s forwards}
+.curtain i{position:absolute;z-index:2;left:50%;top:calc(50% + 100px);width:min(220px,50vw);height:1px;background:linear-gradient(90deg,transparent,var(--foam),transparent);transform:translateX(-50%) scaleX(0);animation:cLine 1.5s var(--ease) .3s forwards}
+@keyframes cOpen{to{transform:translateY(-101%)}}
+@keyframes cOpenB{to{transform:translateY(101%)}}
+@keyframes cLogo{0%{opacity:0;transform:scale(.96)}30%,70%{opacity:1;transform:none}100%{opacity:0;transform:scale(1.04)}}
+@keyframes cLine{to{transform:translateX(-50%) scaleX(1)}}
+.curtain{animation:cHide 0s 3s forwards}@keyframes cHide{to{visibility:hidden}}
+
+/* ---------- header ---------- */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:80;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:1.1rem var(--pad);transition:transform .6s var(--ease),background .5s}
+.hdr.hide{transform:translateY(-110%)}
+.hdr.solid{background:linear-gradient(#0B0D0Eee,#0B0D0E00)}
+.menu-btn{justify-self:start;display:flex;align-items:center;gap:.9rem}
+.menu-btn .bars{width:30px;height:10px;position:relative}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0;height:1px;background:var(--cream);transition:.5s var(--ease)}
+.menu-btn .bars::before{top:0;width:30px}.menu-btn .bars::after{bottom:0;width:18px}
+.menu-btn:hover .bars::after{width:30px}
+.logo-c{display:block;width:clamp(86px,9vw,128px)}
+.hdr-cta{justify-self:end;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;display:flex;align-items:center;gap:.7rem;padding:.7rem 1.2rem;border:1px solid #4398b2aa;border-radius:99px;transition:.5s var(--ease);backdrop-filter:blur(6px)}
+.hdr-cta:hover{background:var(--teal);border-color:var(--teal);color:var(--ink)}
+.hdr-cta span{display:none}
+@media(min-width:760px){.hdr-cta span{display:inline}}
+.hdr .menu-btn b{font-weight:500;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase}
+
+.overlay{position:fixed;inset:0;z-index:120;background:var(--tide);display:grid;grid-template-columns:1fr;padding:6rem var(--pad) 2.5rem;clip-path:circle(0 at 2.5rem 2.5rem);visibility:hidden;transition:clip-path 1s var(--ease),visibility 0s 1s;overflow:auto}
+.overlay.open{clip-path:circle(150% at 2.5rem 2.5rem);visibility:visible;transition:clip-path 1.1s var(--ease)}
+.overlay .x{position:absolute;top:1.2rem;left:var(--pad);display:flex;gap:.8rem;align-items:center;font-size:.8rem;letter-spacing:.24em;text-transform:uppercase}
+.overlay nav{align-self:center}
+.overlay nav a{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,7vw,6rem);line-height:1.04;letter-spacing:-.02em;padding:.04em 0;transform:translateY(40px);opacity:0;transition:transform .9s var(--ease),opacity .9s,color .4s,letter-spacing .6s var(--ease)}
+.overlay.open nav a{transform:none;opacity:1}
+.overlay nav a:hover{color:var(--foam);letter-spacing:.01em}
+.overlay nav a em{color:var(--teal)}
+.overlay .foot{display:flex;flex-wrap:wrap;gap:1rem 3rem;font-size:.95rem;color:#F3EEE2cc}
+.overlay .foot a:hover{color:var(--foam)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;isolation:isolate}
+.hero .bgw{position:absolute;inset:-4%;will-change:transform}
+.hero .bgw img{width:100%;height:100%;object-fit:cover;object-position:62% 40%;filter:grayscale(.35) contrast(1.12) brightness(.72) saturate(1.1);animation:kb 26s ease-out both;transform-origin:62% 40%}
+@keyframes kb{from{transform:scale(1.22)}to{transform:scale(1.04)}}
+.hero .tint{position:absolute;inset:0;background:linear-gradient(105deg,var(--tide) 8%,#0e2a33cc 38%,#0e2a3340 70%),radial-gradient(120% 90% at 70% 40%,transparent 30%,var(--ink) 100%);mix-blend-mode:multiply}
+.hero .tint2{position:absolute;inset:0;background:linear-gradient(180deg,#0b0d0e99 0,transparent 24%,transparent 55%,var(--ink) 100%)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;mix-blend-mode:screen;z-index:2;pointer-events:none}
+.hero .inner{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:0 var(--pad) clamp(4.5rem,9vh,7rem)}
+.hero .kick{display:flex;align-items:center;gap:1rem;margin-bottom:clamp(1rem,3vh,2.2rem);opacity:0;animation:fadeUp 1.4s var(--ease) 3.2s forwards}
+.hero .kick::before{content:"";width:3.2rem;height:1px;background:var(--teal)}
+h1.display{font-family:var(--serif);font-weight:300;font-size:clamp(3.1rem,10.4vw,11.6rem);line-height:.9;letter-spacing:-.035em;max-width:14ch}
+h1.display .ln{display:block;overflow:hidden;padding:.06em 0 .12em;margin:-.06em 0 -.12em}
+h1.display .ln>span{display:block;transform:translateY(112%) rotate(3deg);transform-origin:0 100%;animation:rise 1.6s var(--ease) forwards}
+h1.display .ln:nth-child(1)>span{animation-delay:2.7s}
+h1.display .ln:nth-child(2)>span{animation-delay:2.85s}
+h1.display .ln:nth-child(3)>span{animation-delay:3s}
+@keyframes rise{to{transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+h1.display em{font-weight:300;color:var(--cream)}
+.glow em{color:transparent!important}.glow{background:linear-gradient(95deg,var(--coral) 5%,var(--gold) 55%,var(--cream) 100%);-webkit-background-clip:text;background-clip:text;color:transparent!important;filter:drop-shadow(0 0 .28em #f2c14e55);animation:pulse 5s ease-in-out infinite;display:inline-block;padding-right:.08em}
+@keyframes pulse{50%{filter:drop-shadow(0 0 .5em #f2866b99)}}
+.hero .foot{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-top:clamp(1.6rem,4vh,3rem);opacity:0;animation:fadeUp 1.4s var(--ease) 3.5s forwards;flex-wrap:wrap}
+.hero .foot p{max-width:34ch;color:#F3EEE2cc;font-size:1.02rem}
+.hero .foot .btns{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap}
+.btn{position:relative;display:inline-flex;align-items:center;gap:.9rem;padding:1.05rem 1.7rem 1.05rem 1.9rem;border-radius:99px;background:var(--cream);color:var(--ink);font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;overflow:hidden;isolation:isolate;transition:color .5s var(--ease),transform .4s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--teal);transform:translateY(101%);border-radius:50% 50% 0 0/100% 100% 0 0;transition:transform .7s var(--ease),border-radius .7s var(--ease);z-index:-1}
+.btn:hover::before{transform:none;border-radius:0}
+.btn:hover{color:var(--ink)}
+.btn svg{width:1.1em;transition:transform .5s var(--ease)}
+.btn:hover svg{transform:translateX(5px)}
+.btn.ghost{background:transparent;color:var(--cream);border:1px solid #F3EEE24d}
+.btn.ghost:hover{color:var(--ink);border-color:var(--teal)}
+.scroll-cue{display:flex;align-items:center;gap:.8rem;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:#F3EEE2aa}
+.scroll-cue i{display:block;width:1px;height:3.2rem;background:#F3EEE233;position:relative;overflow:hidden}
+.scroll-cue i::after{content:"";position:absolute;left:0;top:-100%;width:100%;height:100%;background:var(--foam);animation:drip 2.4s var(--ease) infinite}
+@keyframes drip{to{top:100%}}
+.hero .side{position:absolute;right:var(--pad);top:34%;z-index:3;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);opacity:0;animation:fadeUp 1.4s 3.6s forwards}
+
+/* ---------- manifesto ---------- */
+.mani{position:relative;height:300vh;background:var(--ink)}
+.mani .stick{position:sticky;top:0;height:100svh;display:grid;align-content:center;padding:0 var(--pad);overflow:hidden}
+.mani .stick::before{content:"";position:absolute;width:60vmax;height:60vmax;left:50%;top:50%;translate:-50% -50%;background:radial-gradient(circle,#4398b230,transparent 60%);opacity:calc(var(--p,0)*1.2)}
+.mani p.t{position:relative;font-family:var(--serif);font-weight:400;font-size:clamp(1.9rem,4.7vw,5rem);line-height:1.1;letter-spacing:-.022em;max-width:20ch;max-width:min(24ch,100%);margin-inline:auto;text-wrap:balance}
+@media(min-width:900px){.mani p.t{max-width:26ch}}
+.mani .w{opacity:.14;transition:opacity .35s,color .35s}
+.mani .w.on{opacity:1}
+.mani .w.k.on{color:var(--foam);font-style:italic}
+.mani .meta{position:absolute;left:var(--pad);right:var(--pad);bottom:2rem;display:flex;justify-content:space-between;color:#F3EEE288}
+.mani .prog{position:absolute;left:var(--pad);right:var(--pad);bottom:4.2rem;height:1px;background:#F3EEE222}
+.mani .prog b{display:block;height:100%;background:var(--teal);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+
+/* ---------- offerings (pinned horizontal) ---------- */
+.off{position:relative;background:linear-gradient(var(--ink),var(--tide) 30%,var(--tide) 80%,var(--ink))}
+.off .stick{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(1rem,3vh,2.4rem)}
+.off .head{padding:0 var(--pad);display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.off h2,.sec-t{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6.6vw,6.6rem);line-height:.92;letter-spacing:-.03em}
+.off .head p{max-width:30ch;color:#F3EEE2bb}
+.track{display:flex;gap:clamp(1rem,2vw,2rem);padding:0 var(--pad);will-change:transform}
+.card{position:relative;flex:0 0 auto;width:min(80vw,24rem);height:min(60svh,32rem);border-radius:999px 999px 14px 14px/ 340px 340px 14px 14px;overflow:hidden;background:#06161b;transform-origin:50% 100%;transition:box-shadow .6s var(--ease),filter .6s}
+.card:hover{box-shadow:0 30px 80px -20px #4398b2aa}
+.card .ph{position:absolute;inset:0}
+.card .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(.3) brightness(.7) contrast(1.08);transition:transform 1.4s var(--ease),filter .8s}
+.card:hover .ph img{transform:scale(1.07);filter:grayscale(0) brightness(.85) contrast(1.05)}
+.card .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0e2a3380 0,transparent 30%,#0b0d0ee6 78%)}
+.card svg.art{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.card .tx{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1.5rem 1.6rem}
+.card .no{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--gold);letter-spacing:.06em}
+.card h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.55rem,2.2vw,2.05rem);line-height:1;letter-spacing:-.015em;margin:.25rem 0 .55rem}
+.card p{font-size:.95rem;line-height:1.38;color:#F3EEE2cc;max-height:0;opacity:0;overflow:hidden;transition:max-height .8s var(--ease),opacity .6s}
+.card:hover p,.card:focus-within p{max-height:9rem;opacity:1}
+.card a.more{display:inline-flex;gap:.6rem;align-items:center;margin-top:.7rem;font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--foam)}
+.card a.more::after{content:"→";transition:transform .4s var(--ease)}
+.card a.more:hover::after{transform:translateX(5px)}
+@media(hover:none){.card p{max-height:9rem;opacity:1}}
+@media(max-width:859px){
+  .off .stick{position:relative;height:auto;padding:5rem 0}
+  .track{overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:1rem;transform:none!important}
+  .card{scroll-snap-align:center;height:30rem;border-radius:999px 999px 14px 14px/ 240px 240px 14px 14px}
+}
+
+/* ---------- why me ---------- */
+.why{background:var(--cream);color:#16201f;position:relative;padding:clamp(5rem,12vw,11rem) var(--pad);overflow:hidden}
+.why .grid{display:grid;gap:clamp(2.5rem,6vw,7rem);grid-template-columns:1fr;max-width:1500px;margin:0 auto}
+@media(min-width:900px){.why .grid{grid-template-columns:minmax(0,5fr) minmax(0,6fr);align-items:start}}
+.arch{position:relative;border-radius:999px 999px 6px 6px/ 520px 520px 6px 6px;overflow:hidden;aspect-ratio:4/5.2;background:#cfe3e6;max-width:560px;width:100%;margin-inline:auto}
+.arch img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;object-position:50% 40%;will-change:transform}
+.arch::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px #4398b255;border-radius:inherit;pointer-events:none}
+.ring{position:absolute;inset:-6%;width:112%;height:112%;pointer-events:none;color:var(--teal);animation:spin 60s linear infinite}
+.archwrap{position:relative;max-width:560px;margin-inline:auto;width:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.why .label{color:var(--teal)}
+.why h2{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,7.4vw,7.6rem);line-height:.88;letter-spacing:-.035em;margin:1rem 0 2rem;color:#0e2a33}
+.why h2 em{color:var(--teal)}
+.why .txt{display:grid;gap:1.25rem;max-width:44ch;font-size:clamp(1.1rem,1rem + .4vw,1.32rem);color:#1d2c2c}
+.why .txt p:first-child{font-family:var(--serif);font-size:clamp(1.5rem,2.2vw,2.15rem);line-height:1.18;color:#0e2a33}
+.why .sig{display:flex;align-items:center;gap:1.4rem;margin-top:2.4rem;flex-wrap:wrap}
+.why .sig img{mix-blend-mode:multiply;width:150px}
+.why .sig span{font-family:var(--serif);font-style:italic;font-size:1.4rem;color:#0e2a33}
+.why blockquote{margin-top:3rem;padding-left:1.6rem;border-left:2px solid var(--teal);font-family:var(--serif);font-size:clamp(1.5rem,2.6vw,2.4rem);line-height:1.15;font-style:italic;color:#0e2a33;max-width:22ch}
+.why .btn{background:#0e2a33;color:var(--cream);margin-top:2.2rem}
+.why .btn:hover{color:var(--ink)}
+
+/* ---------- modalities ---------- */
+.mod{background:var(--ink);padding:clamp(5rem,10vw,9rem) 0 clamp(4rem,8vw,7rem);overflow:hidden}
+.mq{display:flex;width:max-content;gap:clamp(2rem,4vw,4rem);animation:mq 60s linear infinite;will-change:transform}
+.mq.rev{animation-direction:reverse;animation-duration:75s}
+.mq span{font-family:var(--serif);font-weight:300;font-size:clamp(3.4rem,9vw,9rem);line-height:1.05;letter-spacing:-.03em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px #8FD0E3aa;transition:color .5s}
+.mq span:nth-child(3n){color:var(--cream);-webkit-text-stroke:0;font-style:italic}
+.mq span:hover{color:var(--teal);-webkit-text-stroke:0}
+.mq i{align-self:center;width:.9rem;height:.9rem;background:var(--gold);border-radius:50%;flex:none;box-shadow:0 0 24px var(--gold)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.mod:hover .mq{animation-play-state:paused}
+.creds{padding:clamp(3rem,6vw,6rem) var(--pad) 0;display:grid;gap:3rem;grid-template-columns:1fr;max-width:1500px;margin:0 auto}
+@media(min-width:900px){.creds{grid-template-columns:4fr 7fr}}
+.creds ol{list-style:none;counter-reset:c;display:grid;grid-template-columns:1fr;border-top:1px solid #F3EEE233}
+@media(min-width:700px){.creds ol{grid-template-columns:1fr 1fr;column-gap:3rem}}
+.creds li{counter-increment:c;display:flex;gap:1.1rem;padding:1rem 0;border-bottom:1px solid #F3EEE233;font-size:1.02rem;line-height:1.3;transition:color .4s,padding .5s var(--ease)}
+.creds li::before{content:counter(c,decimal-leading-zero);font-family:var(--serif);font-style:italic;color:var(--teal);min-width:1.8rem}
+.creds li:hover{color:var(--foam);padding-left:.6rem}
+.creds li small{display:block;color:#F3EEE288;font-size:.82rem;letter-spacing:.04em}
+
+/* ---------- awaken ---------- */
+.awk{position:relative;min-height:120svh;overflow:hidden;display:grid;align-items:end;isolation:isolate}
+.awk .bg{position:absolute;inset:-10% 0;z-index:-2;will-change:transform}
+.awk .bg img{width:100%;height:100%;object-fit:cover;object-position:50% 55%;filter:brightness(.62) contrast(1.1) saturate(1.1)}
+.awk::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--ink) 0,transparent 25%,transparent 45%,#0b0d0ef2 100%),linear-gradient(90deg,#0e2a33dd,transparent 70%)}
+.awk .in{padding:clamp(6rem,14vw,12rem) var(--pad) clamp(3rem,6vw,6rem);display:grid;gap:3rem;grid-template-columns:1fr;max-width:1600px;margin:0 auto;width:100%}
+@media(min-width:900px){.awk .in{grid-template-columns:7fr 5fr;align-items:end}}
+.awk h2{font-family:var(--serif);font-weight:300;font-size:clamp(3rem,8.4vw,9rem);line-height:.88;letter-spacing:-.035em;margin:1rem 0 1.6rem}
+.awk h2 em{display:block;color:var(--gold)}
+.awk .lead{max-width:40ch;color:#F3EEE2dd}
+.awk .ft{display:grid;gap:0;border-top:1px solid #F3EEE244}
+.awk .ft div{padding:1.2rem 0;border-bottom:1px solid #F3EEE244;display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem}
+.awk .ft b{font-family:var(--serif);font-weight:400;font-size:1.5rem;grid-column:2}
+.awk .ft span.n{font-family:var(--serif);font-style:italic;color:var(--gold);grid-row:1 / span 2}
+.awk .ft p{grid-column:2;font-size:.98rem;color:#F3EEE2bb;line-height:1.4}
+.moon{width:clamp(80px,11vw,150px);aspect-ratio:1;position:absolute;right:var(--pad);top:clamp(5rem,10vw,9rem)}
+.moon svg{width:100%;height:100%}
+.moon small{display:block;text-align:center;margin-top:.7rem;font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#F3EEE2aa}
+
+/* ---------- testimonials ---------- */
+.tst{background:linear-gradient(var(--ink),var(--tide));padding:clamp(5rem,10vw,9rem) 0}
+.tst .head{padding:0 var(--pad);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem;margin-bottom:clamp(2rem,5vw,4rem)}
+.drag{display:flex;gap:clamp(1rem,2vw,2rem);padding:0 var(--pad) 2rem;overflow-x:auto;scroll-snap-type:x mandatory;cursor:grab;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.drag::-webkit-scrollbar{display:none}
+.drag.dn{cursor:grabbing;scroll-snap-type:none;scroll-behavior:auto}
+.q{flex:0 0 auto;scroll-snap-align:start;width:min(86vw,34rem);min-height:24rem;padding:2.2rem 2.2rem 2rem;border:1px solid #8FD0E333;border-radius:6px;background:linear-gradient(160deg,#0e2a33cc,#0b0d0e99);display:flex;flex-direction:column;justify-content:space-between;transition:border-color .5s,transform .7s var(--ease),background .5s;position:relative;user-select:none}
+.q:hover{border-color:var(--teal);transform:translateY(-8px)}
+.q::before{content:"“";position:absolute;top:.4rem;right:1.4rem;font-family:var(--serif);font-size:9rem;line-height:1;color:#4398b230}
+.q blockquote{font-family:var(--serif);font-size:clamp(1.35rem,2vw,1.78rem);line-height:1.22;font-weight:400;letter-spacing:-.005em;position:relative}
+.q figcaption{margin-top:1.6rem;display:flex;align-items:center;gap:.9rem;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--foam)}
+.q figcaption::before{content:"";width:2rem;height:1px;background:var(--gold)}
+.pbar{margin:1rem var(--pad) 0;height:1px;background:#F3EEE222;position:relative}
+.pbar b{position:absolute;left:0;top:-1px;height:3px;background:var(--teal);width:20%;transition:transform .2s linear;transform-origin:0 50%}
+
+/* ---------- CTA ---------- */
+.cta{position:relative;overflow:hidden;isolation:isolate;padding:clamp(6rem,14vw,12rem) var(--pad);text-align:center;display:grid;justify-items:center;gap:1.6rem}
+.cta .bg{position:absolute;inset:-8%;z-index:-2;will-change:transform}
+.cta .bg img{width:100%;height:100%;object-fit:cover;filter:hue-rotate(-4deg) brightness(.5) contrast(1.15) saturate(1.2)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(70% 70% at 50% 50%,#0b0d0e66,#0b0d0ef0),linear-gradient(var(--tide),transparent 20%,transparent 80%,var(--ink))}
+.cta h2{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,7.4vw,8rem);line-height:.92;letter-spacing:-.035em;max-width:14ch}
+.cta p{max-width:46ch;color:#F3EEE2dd}
+.orb{position:relative;display:grid;place-items:center;width:clamp(210px,24vw,300px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7e0,var(--gold) 28%,var(--coral) 70%,#b4503f);color:var(--ink);box-shadow:0 0 90px #f2c14e66,0 0 220px #f2866b44;margin-top:1rem;transition:box-shadow .6s;will-change:transform}
+.orb:hover{box-shadow:0 0 130px #f2c14e99,0 0 300px #f2866b66}
+.orb span{position:relative;z-index:2;font-family:var(--serif);font-size:clamp(1.5rem,2.3vw,2.1rem);line-height:1.02;font-weight:500;letter-spacing:-.01em;pointer-events:none;max-width:6.5em}
+.orb svg{position:absolute;inset:-14%;width:128%;height:128%;animation:spin 28s linear infinite;pointer-events:none}
+.orb svg text{font-family:var(--sans);font-size:9.2px;letter-spacing:.34em;text-transform:uppercase;fill:#F3EEE2}
+
+/* ---------- footer ---------- */
+.ftr{background:var(--ink);padding:clamp(3.5rem,7vw,6rem) var(--pad) 2rem;position:relative;overflow:hidden}
+.ftr .g{display:grid;gap:2.4rem;grid-template-columns:1fr;max-width:1500px;margin:0 auto}
+@media(min-width:900px){.ftr .g{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.ftr h4{font-family:var(--sans);font-weight:500;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--foam);margin-bottom:1rem}
+.ftr li{list-style:none;margin:.35rem 0}
+.ftr a{transition:color .3s}.ftr a:hover{color:var(--foam)}
+.ftr .big{font-family:var(--serif);font-weight:300;font-size:clamp(2rem,3.4vw,3.2rem);line-height:1;letter-spacing:-.02em}
+.ftr .big em{color:var(--teal)}
+.ftr .logo{mix-blend-mode:screen;width:130px;margin-bottom:1.4rem}
+.ftr .bot{max-width:1500px;margin:3.5rem auto 0;padding-top:1.4rem;border-top:1px solid #F3EEE222;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:#F3EEE277}
+
+/* ---------- reveals & cursor ---------- */
+.js .rv{opacity:0;transform:translateY(46px);transition:opacity 1.2s var(--ease),transform 1.3s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .clip{clip-path:inset(0 0 100% 0);transition:clip-path 1.6s var(--ease);transition-delay:var(--d,0s)}
+.js .clip.in{clip-path:inset(0)}
+.cur{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1px solid #8FD0E3aa;border-radius:50%;z-index:140;pointer-events:none;opacity:0;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .4s,border-color .4s,opacity .4s;mix-blend-mode:difference}
+.cur.on{opacity:1}
+.cur.big{width:78px;height:78px;margin:-39px 0 0 -39px;background:#8FD0E3;border-color:transparent}
+@media(hover:none){.cur{display:none}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .curtain{display:none}
+  .js .rv,.js .clip{opacity:1;transform:none;clip-path:none}
+  h1.display .ln>span{transform:none}
+  .mani{height:auto}.mani .stick{position:relative;height:auto;padding:6rem var(--pad)}.mani .w{opacity:1}
+  .mq{animation:none}
+  .hero .kick,.hero .foot,.hero .side{opacity:1}
+}
+</style>
+<style id="local-fonts">
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/e17de6d821.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/4d61af71ae.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/5a911cbfcc.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/3a70940ea6.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/9f817d6642.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/e909d6313f.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/b8800b6ea0.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(fonts/cf71dbe5c7.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/a89ed22ca4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/25e3098244.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/a89ed22ca4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/25e3098244.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/a89ed22ca4.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/25e3098244.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/9076820487.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(fonts/2fed1d1b2e.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/9076820487.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/2fed1d1b2e.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/9076820487.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/2fed1d1b2e.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="curtain" aria-hidden="true"><img src="assets/logo-white.png" alt="" width="240" height="135"><i></i></div>
+<div class="cur" aria-hidden="true"></div>
+
+<header class="hdr" id="hdr">
+  <button class="menu-btn" aria-expanded="false" aria-controls="ov" aria-label="Open menu"><span class="bars"></span><b>Menu</b></button>
+  <a href="#top" class="logo-c" aria-label="Shine Your Light — home"><img src="assets/logo-white.png" alt="Shine Your Light" width="128" height="72"></a>
+  <a class="hdr-cta" href="https://shineyourlight.com.au/contact-us/" data-mag><span>Free clarity call</span>→</a>
+</header>
+
+<div class="overlay" id="ov" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="x menu-btn" aria-label="Close menu"><span class="bars" style="transform:rotate(45deg)"></span><b>Close</b></button>
+  <nav aria-label="Main">
+    <a href="#top">Home</a>
+    <a href="#about">About <em>Giada</em></a>
+    <a href="#offerings">Offerings</a>
+    <a href="#modalities">Modalities</a>
+    <a href="#awaken">Circles &amp; <em>Workshops</em></a>
+    <a href="#stories">Kind words</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="foot"><a href="mailto:giada@shineyourlight.com.au">giada@shineyourlight.com.au</a><a href="tel:+610424974401">+61 0424 974401</a><span>By appointment · Koonawarra NSW</span></div>
+</div>
+
+<main id="main">
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="bgw" data-par><img src="assets/rocks.jpg" alt="Giada Lovelight kneeling on coastal rocks, one arm reaching to the sky" width="1600" height="800" fetchpriority="high"></div>
+  <div class="tint"></div><div class="tint2"></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="side label">Mind-Body connection · Koonawarra NSW</div>
+  <div class="inner">
+    <div class="kick label">Giada Lovelight · Mind-Body Coach &amp; Awakening Mentor</div>
+    <h1 class="display"><span class="ln"><span>Befriend</span></span><span class="ln"><span>your <em>shadow.</em></span></span><span class="ln"><span>Shine your <span class="glow"><em>light.</em></span></span></span></h1>
+    <div class="foot">
+      <p>Welcome, sister, to a nurturing space designed for your healing, empowerment, and awakening. <em>All is Love.</em></p>
+      <div class="btns">
+        <a class="btn" href="https://shineyourlight.com.au/contact-us/" data-mag>Book a free clarity call <svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h22M18 .5 22 4l-4 3.5"/></svg></a>
+        <a class="btn ghost" href="#offerings" data-mag>Explore offerings</a>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><i></i>Scroll</div>
+    </div>
+  </div>
+</section>
+
+<section class="mani" id="manifesto" aria-label="Welcome">
+  <div class="stick">
+    <p class="t" id="mt">Welcome, sister, to a nurturing space designed for your <span class="k">healing,</span> <span class="k">empowerment,</span> and <span class="k">awakening.</span> In the darkness you will come to know your <span class="k">light,</span> and re&#8209;emerge happy and vital.</p>
+    <div class="prog"><b></b></div>
+    <div class="meta label"><span>The invitation</span><span>— Giada Lovelight</span></div>
+  </div>
+</section>
+
+<section class="off" id="offerings" aria-label="Offerings">
+  <div class="stick">
+    <div class="head rv">
+      <h2>Ways to <em>work</em><br>together</h2>
+      <p>Sessions tailored to you — 1:1 in Dapto and Sydney, or online — plus circles, workshops and retreats.</p>
+    </div>
+    <div class="track" id="track">
+      <article class="card"><div class="ph"><img src="assets/surf.jpg" alt="" loading="lazy" width="700" height="828"></div><div class="tx"><span class="no">i.</span><h3>Sacred 1:1 Sessions for Women</h3><p>A nurturing space for your healing, empowerment and awakening — womb awakening, divine feminine empowerment, energy work and shamanic journeys.</p><a class="more" href="https://shineyourlight.com.au/session-for-women/">Explore</a></div></article>
+      <article class="card"><div class="ph"><img src="assets/water.jpg" alt="" loading="lazy" width="900" height="600" style="object-position:20% 50%"></div>
+        <svg class="art" viewBox="0 0 300 400" fill="none" stroke="#8FD0E3" stroke-width=".6" aria-hidden="true"><g opacity=".7"><circle cx="150" cy="150" r="60"/><circle cx="150" cy="150" r="90"/><circle cx="150" cy="150" r="120"/></g></svg>
+        <div class="tx"><span class="no">ii.</span><h3>Empowering 1:1 Sessions for Men</h3><p>Guiding men to reclaim their power, embrace their sensuality, and heal through the transformative practices of Tantra.</p><a class="more" href="https://shineyourlight.com.au/session-for-men/">Explore</a></div></article>
+      <article class="card"><div class="ph" style="background:radial-gradient(80% 50% at 50% 30%,#4398b255,transparent),#06161b"></div>
+        <svg class="art" viewBox="0 0 300 400" fill="none" stroke="#F2C14E" stroke-width=".8" aria-hidden="true"><circle cx="118" cy="150" r="72"/><circle cx="182" cy="150" r="72" stroke="#8FD0E3"/><path d="M150 83a72 72 0 0 1 0 134 72 72 0 0 1 0-134z" fill="#f2c14e22"/></svg>
+        <div class="tx"><span class="no">iii.</span><h3>Sessions for Partners</h3><p>Sensual awakening — explore the sacred portals of Mother Gaia through the Divine Feminine and Masculine gateways.</p><a class="more" href="https://shineyourlight.com.au/session-for-partners/">Explore</a></div></article>
+      <article class="card"><div class="ph"><img src="assets/candle.jpg" alt="" loading="lazy" width="900" height="600" style="object-position:45% 50%"></div><div class="tx"><span class="no">iv.</span><h3>Healing Modalities</h3><p>A diverse range of modalities to support your awakening and transformation — each practised with love and intention.</p><a class="more" href="https://shineyourlight.com.au/modalities/">Explore</a></div></article>
+      <article class="card"><div class="ph"><img src="assets/tree.jpg" alt="" loading="lazy" width="683" height="1024"></div><div class="tx"><span class="no">v.</span><h3>Mind Body Womb – Empowering Coaching</h3><p>Discover your True Self within your heart and womb. Gain self-worth and confidence and transform with your beautiful feminine power.</p><a class="more" href="https://shineyourlight.com.au/personal-coaching/">Explore</a></div></article>
+      <article class="card"><div class="ph" style="background:radial-gradient(70% 45% at 50% 28%,#f2866b40,transparent),#07161b"></div>
+        <svg class="art" viewBox="0 0 300 400" fill="none" stroke="#F2866B" stroke-width=".8" aria-hidden="true"><path d="M150 210c-60 0-80-60-40-90s90-10 70 30-60 30-50 0 30-14 30 0"/><circle cx="150" cy="150" r="6" fill="#F2C14E" stroke="none"/></svg>
+        <div class="tx"><span class="no">vi.</span><h3>Womb-Baby Doula</h3><p>Welcome your baby in your sacred and powerful womb. Heal and nourish your fertile garden of love.</p><a class="more" href="https://shineyourlight.com.au/offerings/">Explore</a></div></article>
+      <article class="card"><div class="ph"><img src="assets/rocks.jpg" alt="" loading="lazy" width="1600" height="800" style="object-position:64% 50%"></div><div class="tx"><span class="no">vii.</span><h3>Awaken Your Freedom</h3><p>New Moon… New Self… New Earth. A lovely, earthy tribe — dance, express yourself and heal together.</p><a class="more" href="#awaken">Explore</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="about" aria-label="About Giada">
+  <div class="grid">
+    <div class="archwrap rv">
+      <div class="arch"><img src="assets/surf.jpg" alt="Giada Lovelight walking barefoot in the shallows with open arms" loading="lazy" width="1400" height="1657" data-par2></div>
+      <svg class="ring" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="rp" d="M100 100m-92 0a92 92 0 1 1 184 0a92 92 0 1 1-184 0"/></defs><text font-size="8.2" letter-spacing="3.3" fill="currentColor" font-family="Alegreya Sans" style="text-transform:uppercase"><textPath href="#rp">All is love · Befriend your shadow · Rebirth yourself · Shine your light ·</textPath></text></svg>
+    </div>
+    <div>
+      <div class="label rv">About Giada</div>
+      <h2 class="rv" style="--d:.1s">Why <em>me?</em></h2>
+      <div class="txt">
+        <p class="rv">I have a strong connection to Mother Earth, the natural elements and the Womb of Creation.</p>
+        <p class="rv">I help women and men to find their own truth, their blockages and traumas, hidden in their minds, bodies and wombs, so they can rise up and ignite their own power, creativity, feel love from within and flourish.</p>
+        <p class="rv">I specialize in preparing women for a healthy and lovely pregnancy and to birth their baby naturally. I work intuitively and serve you through energy work and my tailored empowering programs. I honour every client as a unique and authentic being.</p>
+        <p class="rv">If you feel lost or confused I can guide you to clarity, and help you set success-driven goals so you can shine your light brighter.</p>
+      </div>
+      <blockquote class="rv">“Befriend your shadow. Rebirth yourself. Shine your Light.”</blockquote>
+      <div class="sig rv"><img src="assets/logo.png" alt="Shine Your Light logo" width="150" height="85" loading="lazy"><span>— Giada Lovelight</span></div>
+      <a class="btn rv" href="https://shineyourlight.com.au/about-us/" data-mag>Read my story <svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h22M18 .5 22 4l-4 3.5"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="mod" id="modalities" aria-label="Modalities and training">
+  <div class="mq" aria-hidden="true"><span>NLP</span><i></i><span>Hypnotherapy</span><i></i><span>Reiki</span><i></i><span>Kinesiology</span><i></i><span>EFT Tapping</span><i></i><span>Breathwork</span><i></i><span>Womb Healing</span><i></i><span>Positive Psychology</span><i></i><span>NLP</span><i></i><span>Hypnotherapy</span><i></i><span>Reiki</span><i></i><span>Kinesiology</span><i></i><span>EFT Tapping</span><i></i><span>Breathwork</span><i></i><span>Womb Healing</span><i></i><span>Positive Psychology</span><i></i></div>
+  <div class="mq rev" aria-hidden="true"><span>Shamanic Journeys</span><i></i><span>Energy Psychology</span><i></i><span>Elemental Flow Dance</span><i></i><span>Shakti Dance</span><i></i><span>Art-making</span><i></i><span>Meditation</span><i></i><span>Time Line Therapy</span><i></i><span>Shamanic Journeys</span><i></i><span>Energy Psychology</span><i></i><span>Elemental Flow Dance</span><i></i><span>Shakti Dance</span><i></i><span>Art-making</span><i></i><span>Meditation</span><i></i><span>Time Line Therapy</span><i></i></div>
+  <div class="creds">
+    <div class="rv"><div class="label">Training &amp; certification</div><h2 class="sec-t" style="margin-top:1rem">The <em>craft</em> beneath the calm</h2></div>
+    <ol class="rv" style="--d:.1s">
+      <li><span>Reiki Jin Kei Do, Level 2<small>Dr. Ranga J. Premaratna</small></span></li>
+      <li><span>Touch for Health<small>Katha Jones</small></span></li>
+      <li><span>Certified NLP Practitioner<small>MBX Institute</small></span></li>
+      <li><span>Certified Time Line Therapy™ Practitioner<small>MBX Institute</small></span></li>
+      <li><span>Certified Hypnotherapy Practitioner<small>MBX Institute</small></span></li>
+      <li><span>Certified Positive Psychology Coach<small>MBX Institute</small></span></li>
+      <li><span>Certified in NLP Energy Psychology<small>MBX Institute</small></span></li>
+      <li><span>Certified in Modern Hypnosis<small>MBX Institute</small></span></li>
+      <li><span>Certified Specialized Kinesiology Practitioner<small>MBX Institute</small></span></li>
+      <li><span>Certified Energy Psychology Practitioner<small>MBX Institute</small></span></li>
+      <li><span>Certified in Emotional Freedom Technique<small>MBX Institute</small></span></li>
+      <li><span>Womb Awakening Facilitator<small>Institute of Feminine Arts</small></span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="awk" id="awaken" aria-label="Awaken Your Freedom">
+  <div class="bg" data-par3><img src="assets/candle.jpg" alt="A single candle among crystals on a tree stump" loading="lazy" width="1800" height="1200"></div>
+  <div class="moon" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><mask id="mk"><rect width="100" height="100" fill="#fff"/><circle id="shade" cx="30" cy="50" r="40" fill="#000"/></mask></defs><circle cx="50" cy="50" r="40" fill="#F3EEE2" mask="url(#mk)"/><circle cx="50" cy="50" r="40" fill="none" stroke="#F3EEE2" stroke-opacity=".5" stroke-width=".6"/></svg><small>New moon</small></div>
+  <div class="in">
+    <div>
+      <div class="label rv">Soul Circle · Dapto &amp; Sydney</div>
+      <h2 class="rv" style="--d:.1s">Awaken<br>your <em>freedom</em></h2>
+      <p class="lead rv"><em>New Moon… New Self… New Earth.</em> Connect with a lovely and earthy tribe of people. Have fun dancing, expressing yourself, and healing together. Breathe and feel the love around you.</p>
+      <a class="btn ghost rv" style="margin-top:2rem" href="https://shineyourlight.com.au/awaken-your-freedom/" data-mag>Join the circle <svg viewBox="0 0 24 8" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M0 4h22M18 .5 22 4l-4 3.5"/></svg></a>
+    </div>
+    <div class="ft rv" style="--d:.15s">
+      <div><span class="n">01</span><b>Elemental flow dance</b><p>A free-moving, mindful practice of self-expression. No need to be a dancer or a yogi — simply take off your shoes.</p></div>
+      <div><span class="n">02</span><b>Tapping, breath &amp; energy healing</b><p>Emotional Freedom Technique (EFT), breath-work, energy healing and guided journeys.</p></div>
+      <div><span class="n">03</span><b>Sacred cacao ceremony</b><p>Organic ceremonial cacao from Peru, prepared with ritual and reverence, alongside Mystery School teachings.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tst" id="stories" aria-label="Testimonials">
+  <div class="head"><div class="rv"><div class="label">Kind words</div><h2 class="sec-t" style="margin-top:1rem">In their <em>own</em> words</h2></div><p class="rv" style="max-width:30ch;color:#F3EEE2aa;--d:.1s">Drag to explore — real notes from women Giada has worked with.</p></div>
+  <div class="drag" id="drag" tabindex="0" aria-label="Testimonials carousel">
+    <figure class="q"><blockquote>I felt very held by her presence. I felt she has a very natural and authentic approach which opened up my heart to receiving her offering.</blockquote><figcaption>Masami Shimizu</figcaption></figure>
+    <figure class="q"><blockquote>I am forever thankful to Giada for guiding me through one of the toughest time of my life. Now I am blessed to have a healthy baby.</blockquote><figcaption>Valesca Zarricueta</figcaption></figure>
+    <figure class="q"><blockquote>Since November 2019 till now March 2022 I did not smoke any cigarettes, and I feel very healthy and good.</blockquote><figcaption>Catherine Jude</figcaption></figure>
+    <figure class="q"><blockquote>Giada is an amazing, insightful, and empathic practitioner. I was at ease with her and able to talk.</blockquote><figcaption>Kamila Zacharek</figcaption></figure>
+    <figure class="q"><blockquote>She has helped me to tap into my intuition and gain more wisdom, more confidence and more freedom in my body.</blockquote><figcaption>Ania Dlaczego</figcaption></figure>
+    <figure class="q"><blockquote>THANK YOU for making my head lighter and clearer…</blockquote><figcaption>Ekaterina Petukhova</figcaption></figure>
+    <figure class="q"><blockquote>I feel like I am a new me, so thank you, my dear!</blockquote><figcaption>Charlotte Lantai</figcaption></figure>
+    <figure class="q"><blockquote>Giada made it easy because she is a wonderful guide and therapist. 100% recommended!!</blockquote><figcaption>Tabata Jardim Jessouroun</figcaption></figure>
+  </div>
+  <div class="pbar" aria-hidden="true"><b id="pb"></b></div>
+</section>
+
+<section class="cta" id="contact" aria-label="Book a free clarity call">
+  <div class="bg" data-par3><img src="assets/water.jpg" alt="" loading="lazy" width="1800" height="1200"></div>
+  <div class="label rv">Imagine achieving your goals now?</div>
+  <h2 class="rv" style="--d:.1s">Your life, your health and your well-being are <em>worth it.</em></h2>
+  <p class="rv" style="--d:.2s">Schedule a free Discovery &amp; Clarity consultation with me to explore your goals, get your questions answered and discuss the best way to achieve them together.</p>
+  <a class="orb rv" href="https://shineyourlight.com.au/contact-us/" data-mag aria-label="Book a free clarity call">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><defs><path id="op" d="M50 50m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#op">free discovery &amp; clarity consultation · free discovery &amp; clarity consultation ·</textPath></text></svg>
+    <span>Book a free clarity call</span>
+  </a>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="g">
+    <div><img class="logo" src="assets/logo-white.png" alt="Shine Your Light" width="130" height="73" loading="lazy"><p class="big">All is <em>Love.</em></p></div>
+    <div><h4>Explore</h4><ul><li><a href="#about">About</a></li><li><a href="#offerings">Offerings</a></li><li><a href="#modalities">Modalities</a></li><li><a href="#awaken">Circles &amp; Workshops</a></li></ul></div>
+    <div><h4>Connect</h4><ul><li><a href="mailto:giada@shineyourlight.com.au">giada@shineyourlight.com.au</a></li><li><a href="tel:+610424974401">+61 0424 974401</a></li><li><a href="https://www.instagram.com/giadalovelight/" rel="noopener">Instagram</a></li><li><a href="https://www.facebook.com/Shine-Your-Light-102352968823206/" rel="noopener">Facebook</a></li><li><a href="https://www.youtube.com/channel/UCJT5cFVruZlL0gaRUl_dSNQ" rel="noopener">YouTube</a></li></ul></div>
+    <div><h4>Where</h4><ul><li>Koonawarra NSW 2530</li><li>Sessions in Dapto &amp; Sydney</li><li>Online worldwide</li><li>By appointment only</li></ul></div>
+  </div>
+  <div class="bot"><span>© Shine Your Light · Giada Lovelight</span><span>Homepage concept 01 · Tidewater — design preview only</span></div>
+</footer>
+
+<script>
+(()=>{
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+/* reveals */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$('.rv,.clip').forEach(el=>io.observe(el));
+if(RM)$$('.rv,.clip').forEach(el=>el.classList.add('in'));
+/* menu */
+const ov=$('#ov'),mb=$('.hdr .menu-btn');
+const setMenu=o=>{ov.classList.toggle('open',o);mb.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';if(o)$$('nav a',ov).forEach((a,i)=>a.style.transitionDelay=(.25+i*.07)+'s');else $$('nav a',ov).forEach(a=>a.style.transitionDelay='0s');(o?$('.x',ov):mb).focus({preventScroll:true})};
+mb.onclick=()=>setMenu(true);$('.x',ov).onclick=()=>setMenu(false);
+$$('nav a,.foot a',ov).forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+/* header hide/show */
+const hdr=$('#hdr');let lastY=0;
+/* manifesto words */
+const mt=$('#mt');const words=[];
+(function split(n){[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}const s=document.createElement('span');s.className='w'+(n.classList&&n.classList.contains('k')?' k':'');s.textContent=t;f.append(s);words.push(s)});c.replaceWith(f)}else if(c.nodeType===1)split(c)})})(mt);
+/* horizontal */
+const off=$('.off'),stick=$('.off .stick'),track=$('#track');let dist=0,mq=matchMedia('(min-width:860px)');
+const layoutH=()=>{if(!mq.matches){off.style.height='';track.style.transform='';return}dist=Math.max(0,track.scrollWidth-innerWidth+0);off.style.height=(dist+innerHeight*1.05)+'px'};
+layoutH();addEventListener('resize',layoutH);addEventListener('load',layoutH);
+const cards=$$('.card');
+/* parallax targets */
+const heroBg=$('.hero .bgw'),hero=$('.hero'),archImg=$('[data-par2]'),awkBg=$('.awk .bg'),ctaBg=$('.cta .bg'),awk=$('.awk'),cta=$('.cta'),mani=$('.mani'),moonShade=$('#shade'),why=$('.why');
+let mx=0,my=0,tx=0,ty=0,vel=0,lastS=scrollY,sm=0;
+addEventListener('pointermove',e=>{mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5)},{passive:true});
+function frame(){
+  const y=scrollY,vh=innerHeight;
+  tx+=(mx-tx)*.06;ty+=(my-ty)*.06;
+  vel+=((y-lastS)-vel)*.12;lastS=y;
+  if(!RM){
+    if(y<vh*1.3)heroBg.style.transform=`translate3d(${-tx*26}px,${-ty*18+y*.18}px,0)`;
+  }
+  hdr.classList.toggle('solid',y>40);
+  if(y>lastY+4&&y>vh*.8)hdr.classList.add('hide');else if(y<lastY-4)hdr.classList.remove('hide');lastY=y;
+  // manifesto
+  let r=mani.getBoundingClientRect();let p=clamp(-r.top/(r.height-vh));mani.style.setProperty('--p',p.toFixed(3));
+  $('.mani .prog b').style.transform=`scaleX(${p})`;
+  const lit=Math.floor(p*1.08*words.length);words.forEach((w,i)=>w.classList.toggle('on',i<lit));
+  // horizontal
+  if(mq.matches&&!RM){r=off.getBoundingClientRect();p=clamp(-r.top/(r.height-vh));const x=-p*dist;track.style.transform=`translate3d(${x}px,0,0)`;
+    const skew=clamp(vel*.18,-5,5);cards.forEach((c,i)=>{c.style.transform=`rotate(${skew*(.6+(i%3)*.15)}deg)`});}
+  // arch parallax
+  if(!RM&&archImg){r=archImg.parentElement.getBoundingClientRect();archImg.style.transform=`translate3d(0,${(r.top+r.height/2-vh/2)*-.07}px,0) scale(1.02)`}
+  if(!RM){r=awk.getBoundingClientRect();awkBg.style.transform=`translate3d(0,${(r.top)*-.18}px,0)`;r=cta.getBoundingClientRect();ctaBg.style.transform=`translate3d(0,${(r.top)*-.12}px,0)`}
+  // moon
+  r=awk.getBoundingClientRect();p=clamp((vh-r.top)/(vh+r.height));moonShade.setAttribute('cx',(30+p*80).toFixed(1));
+  requestAnimationFrame(frame)}
+requestAnimationFrame(frame);
+/* testimonials drag */
+const dr=$('#drag'),pb=$('#pb');let down=false,sx=0,sl=0;
+dr.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse')return;down=true;sx=e.clientX;sl=dr.scrollLeft;dr.classList.add('dn')});
+addEventListener('pointerup',()=>{down=false;dr.classList.remove('dn')});
+addEventListener('pointermove',e=>{if(down)dr.scrollLeft=sl-(e.clientX-sx)},{passive:true});
+const upd=()=>{const m=dr.scrollWidth-dr.clientWidth;const p=m?dr.scrollLeft/m:0;const w=Math.max(.12,dr.clientWidth/dr.scrollWidth);pb.style.width=(w*100)+'%';pb.style.transform=`translateX(${p*((1/w)-1)*100}%)`};
+dr.addEventListener('scroll',upd,{passive:true});upd();addEventListener('resize',upd);
+/* magnetic + cursor */
+const cur=$('.cur');
+if(matchMedia('(hover:hover)').matches&&!RM){
+  let cx=0,cy=0,px=0,py=0;addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;cur.classList.add('on')});
+  (function c(){cx+=(px-cx)*.2;cy+=(py-cy)*.2;cur.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(c)})();
+  $$('a,button,.q,.card').forEach(el=>{el.addEventListener('mouseenter',()=>cur.classList.add('big'));el.addEventListener('mouseleave',()=>cur.classList.remove('big'))});
+  $$('[data-mag]').forEach(el=>{el.addEventListener('pointermove',e=>{const b=el.getBoundingClientRect();const dx=e.clientX-(b.left+b.width/2),dy=e.clientY-(b.top+b.height/2);el.style.transform=`translate(${dx*.28}px,${dy*.34}px)`});el.addEventListener('pointerleave',()=>{el.style.transition='transform .8s cubic-bezier(.19,.82,.12,1)';el.style.transform='';setTimeout(()=>el.style.transition='',800)})});
+}
+/* hero canvas: light motes, rays, cursor flare */
+const cv=$('#fx'),g=cv.getContext('2d');let W,H,D=Math.min(devicePixelRatio||1,1.75),run=true,t0=0;
+const sprite=(()=>{const s=document.createElement('canvas');s.width=s.height=64;const c=s.getContext('2d');const gr=c.createRadialGradient(32,32,0,32,32,32);gr.addColorStop(0,'rgba(255,248,225,1)');gr.addColorStop(.25,'rgba(143,208,227,.5)');gr.addColorStop(1,'rgba(67,152,178,0)');c.fillStyle=gr;c.fillRect(0,0,64,64);return s})();
+let motes=[];const rs=()=>{W=cv.clientWidth;H=cv.clientHeight;cv.width=W*D;cv.height=H*D;g.setTransform(D,0,0,D,0,0);const n=W<700?36:84;motes=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,z:Math.random(),s:Math.random()*6.5+1.2,a:Math.random()*6.28,sp:Math.random()*.25+.05}))};
+rs();addEventListener('resize',rs);
+let fx=W*.63,fy=H*.2,tfx=fx,tfy=fy;
+hero.addEventListener('pointermove',e=>{const b=hero.getBoundingClientRect();tfx=e.clientX-b.left;tfy=e.clientY-b.top});
+new IntersectionObserver(e=>{run=e[0].isIntersecting;if(run&&!RM)requestAnimationFrame(draw)}).observe(hero);
+function rays(t){g.globalCompositeOperation='lighter';for(let i=0;i<6;i++){const a=-.55+i*.17+Math.sin(t*.00025+i)*.06;const x=W*(.52+i*.05);g.save();g.translate(x,-H*.15);g.rotate(a);const w=60+i*26;const gr=g.createLinearGradient(0,0,0,H*1.5);const al=(.05+.035*Math.sin(t*.0006+i*1.7));gr.addColorStop(0,`rgba(143,208,227,${al})`);gr.addColorStop(.6,`rgba(67,152,178,${al*.4})`);gr.addColorStop(1,'rgba(67,152,178,0)');g.fillStyle=gr;g.fillRect(-w/2,0,w,H*1.6);g.restore()}}
+function draw(t=0){if(!run&&!RM)return;g.clearRect(0,0,W,H);rays(t);
+  fx+=(tfx-fx)*.08;fy+=(tfy-fy)*.08;
+  for(const m of motes){m.a+=m.sp*.01;m.x+=Math.cos(m.a)*.18*(.4+m.z)+(-0.05);m.y+=Math.sin(m.a*1.3)*.14-.06*(.3+m.z);
+    if(m.x<-20)m.x=W+20;if(m.y<-20)m.y=H+20;if(m.y>H+20)m.y=-20;
+    const dx=fx-m.x,dy=fy-m.y,d=Math.hypot(dx,dy);let k=0;if(d<240){k=(1-d/240);m.x+=dx*.012*k*m.z;m.y+=dy*.012*k*m.z}
+    const tw=.45+.55*Math.sin(t*.002*m.s*.3+m.a*4);const sz=m.s*(1+k*1.4)*(.5+m.z)*3.4;g.globalAlpha=clamp(tw*(.35+k*.8)*(.4+m.z*.6));g.drawImage(sprite,m.x-sz/2,m.y-sz/2,sz,sz)}
+  g.globalAlpha=1;
+  // flare
+  const gr=g.createRadialGradient(fx,fy,0,fx,fy,300);gr.addColorStop(0,'rgba(255,240,205,.28)');gr.addColorStop(.18,'rgba(143,208,227,.13)');gr.addColorStop(1,'rgba(67,152,178,0)');g.fillStyle=gr;g.fillRect(fx-300,fy-300,600,600);
+  g.save();g.translate(fx,fy);g.scale(1,.018);const sg=g.createRadialGradient(0,0,0,0,0,420);sg.addColorStop(0,'rgba(255,245,220,.3)');sg.addColorStop(1,'rgba(143,208,227,0)');g.fillStyle=sg;g.beginPath();g.arc(0,0,420,0,6.3);g.fill();g.restore();
+  g.globalCompositeOperation='source-over';
+  if(!RM&&run)requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
