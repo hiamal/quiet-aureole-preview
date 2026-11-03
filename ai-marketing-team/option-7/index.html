@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Marketing Team — AIBS/OS · Done for you · AI Business Suite</title>
+<meta name="description" content="Your whole marketing team, built around your business and handed over ready to use. Design preview, option 7.">
+<meta name="theme-color" content="#0A0702">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* ---- common (shared across options) ---- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-5rem;z-index:500;padding:.7rem 1rem;background:#fff;color:#000;font:600 .9rem/1 system-ui,sans-serif;border-radius:4px}
+.skip:focus{top:1rem}
+.js .split .w{display:inline-block;overflow:hidden;vertical-align:top;padding:.08em .04em .16em;margin:-.08em -.04em -.16em}
+.js .split .wi{display:inline-block;transform:translateY(112%);transition:transform 1.05s var(--ease,cubic-bezier(.19,.82,.12,1)) calc(var(--i)*38ms + var(--d,0ms))}
+.js .split.in .wi{transform:none}
+.js [data-r]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease,cubic-bezier(.19,.82,.12,1)) var(--d,0ms),transform 1.1s var(--ease,cubic-bezier(.19,.82,.12,1)) var(--d,0ms)}
+.js [data-r].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .js .split .wi,.js [data-r]{transform:none!important;opacity:1!important;transition:none!important}
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+
+:root{--bg:#0A0702;--bg2:#120D04;--am:#FFB000;--am2:#FFD98A;--tx:#F1D9A6;--mu:rgba(241,217,166,.66);--ln:rgba(255,176,0,.28);--ln2:rgba(255,176,0,.12);--ease:cubic-bezier(.16,1,.3,1);--f:"Martian Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:4.5rem}
+body{background:var(--bg);color:var(--tx);font:400 clamp(.84rem,.8rem + .18vw,.96rem)/1.7 var(--f);font-variation-settings:"wdth" 100;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--am);color:#000}
+:focus-visible{outline:2px dashed var(--am2);outline-offset:4px}
+body::before{content:"";position:fixed;inset:0;z-index:90;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.0) 0 2px,rgba(0,0,0,.22) 2px 3px);mix-blend-mode:multiply}
+body::after{content:"";position:fixed;inset:0;z-index:91;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(0,0,0,.55) 100%)}
+.wrap{width:min(100%,1280px);margin-inline:auto;padding-inline:clamp(1rem,3.2vw,2.5rem)}
+.glow{text-shadow:0 0 .6em rgba(255,176,0,.55),0 0 2em rgba(255,176,0,.25)}
+.dim{color:var(--mu)}.hi{color:var(--am2)}.am{color:var(--am)}
+/* top bar */
+.bar{position:fixed;inset:0 0 auto 0;z-index:80;background:linear-gradient(var(--bg) 70%,transparent);border-bottom:1px solid var(--ln2)}
+.bar .wrap{display:flex;align-items:center;gap:1.4rem;height:3.4rem}
+.brand{font-weight:700;letter-spacing:.06em;font-variation-settings:"wdth" 112;display:flex;gap:.6rem;align-items:center;white-space:nowrap;font-size:.85rem}
+.brand i{width:.7em;height:1.1em;background:var(--am);display:inline-block;animation:blink 1.1s steps(1) infinite;box-shadow:0 0 14px var(--am)}
+@keyframes blink{50%{opacity:0}}
+nav ul{display:flex;list-style:none;gap:.2rem;margin-left:auto}
+nav a{display:block;padding:.45rem .7rem;font-size:.74rem;letter-spacing:.06em;color:var(--mu);text-transform:uppercase;border:1px solid transparent;transition:color .2s,border-color .2s,background .2s}
+nav a::before{content:"["}nav a::after{content:"]"}
+nav a:hover,nav a[aria-current]{color:#000;background:var(--am)}
+.clk{font-size:.72rem;color:var(--mu);white-space:nowrap;font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;gap:.7rem;min-height:46px;padding:.75rem 1.2rem;border:1px solid var(--am);color:var(--am);font-weight:600;font-size:.8rem;letter-spacing:.07em;text-transform:uppercase;background:rgba(255,176,0,.05);position:relative;transition:background .2s,color .2s,box-shadow .3s;transform:translate(var(--mx,0),var(--my,0))}
+.btn::before{content:">";opacity:.8}
+.btn:hover{background:var(--am);color:#000;box-shadow:0 0 28px rgba(255,176,0,.5)}
+.btn.sm{min-height:36px;padding:.3rem .8rem;font-size:.7rem}
+.btn.ghost{border-color:var(--ln);color:var(--tx)}
+.menu-btn{display:none;margin-left:auto;min-height:40px;padding:0 .9rem;border:1px solid var(--ln);background:none;color:var(--am);font:600 .72rem var(--f);letter-spacing:.08em;text-transform:uppercase}
+@media(max-width:980px){.clk{display:none}.bar .btn{display:none}.menu-btn{display:block}
+ nav{position:fixed;inset:3.4rem 0 auto 0;background:var(--bg);border-bottom:1px solid var(--ln);padding:1rem;display:none}
+ .menu-open nav{display:block}nav ul{flex-direction:column;margin:0}nav a{padding:.9rem .5rem;font-size:.85rem}}
+/* hero */
+.hero{position:relative;min-height:100svh;padding-top:5.4rem;display:flex;align-items:center;overflow:hidden;isolation:isolate}
+.hero .grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:2rem;align-items:center;width:100%;padding-bottom:2rem}
+.log{font-size:clamp(.7rem,.66rem + .2vw,.82rem);line-height:1.8;color:var(--mu);min-height:15.2em;margin-bottom:1.2rem}
+.log div{white-space:pre-wrap;overflow-wrap:anywhere}.log .ok{color:var(--am)}
+.log .cur{display:inline-block;width:.6em;height:1.05em;background:var(--am);vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+h1{font-weight:800;font-variation-settings:"wdth" 112;line-height:.98;letter-spacing:-.045em;font-size:clamp(2.1rem,5.1vw,5rem);color:var(--am);text-transform:uppercase;white-space:nowrap}
+h1 .l2{display:block;color:var(--tx);font-variation-settings:"wdth" 75;font-weight:300;letter-spacing:-.03em;font-size:.6em;margin-top:.3em}
+h1 .l2 b{font-weight:800;color:var(--am2)}
+h1 .c{display:inline-block;width:.42em;height:.08em;background:var(--am);margin-left:.1em;animation:blink 1s steps(1) infinite;vertical-align:baseline}
+.lead{max-width:44ch;margin-top:1.6rem;font-size:clamp(.95rem,.85rem + .4vw,1.2rem);color:var(--tx);line-height:1.6}
+.acts{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2rem}
+.scene{position:relative;aspect-ratio:1/1.02;width:100%;max-width:760px;justify-self:end;aspect-ratio:1/.95}
+.scene canvas{position:absolute;inset:0;width:100%;height:100%}
+.scene figcaption{position:absolute;left:0;bottom:-.4rem;font-size:.66rem;color:var(--mu);letter-spacing:.08em;text-transform:uppercase}
+.tick{position:absolute;width:14px;height:14px;border:1px solid var(--am);opacity:.7}
+.tick.a{left:0;top:0;border-width:1px 0 0 1px}.tick.b{right:0;top:0;border-width:1px 1px 0 0}.tick.c{left:0;bottom:1.6rem;border-width:0 0 1px 1px}.tick.d{right:0;bottom:1.6rem;border-width:0 1px 1px 0}
+@media(max-width:860px){.hero .grid{grid-template-columns:1fr}.scene{justify-self:center;max-width:420px;order:-1;margin-top:-.5rem}.log{min-height:14.8em}}
+.ticker{border-block:1px solid var(--ln);overflow:hidden;white-space:nowrap;padding:.8rem 0;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--am)}
+.ticker .tr{display:inline-flex;gap:2.4rem;animation:tk 38s linear infinite;padding-left:2.4rem}
+.ticker .tr span::before{content:"◆ ";color:var(--mu)}
+@keyframes tk{to{transform:translateX(-50%)}}
+/* windows */
+section.s{padding-block:clamp(4.5rem,10vw,9rem)}
+.sh{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap;margin-bottom:clamp(1.8rem,4vw,3.4rem)}
+.sh .no{color:var(--am);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;width:100%}
+h2{font-weight:700;font-variation-settings:"wdth" 100;font-size:clamp(1.8rem,4.6vw,4rem);line-height:1.04;letter-spacing:-.04em;color:var(--tx);max-width:20ch;text-transform:uppercase}
+h2 em{font-style:normal;color:var(--am)}
+.win{border:1px solid var(--ln);background:linear-gradient(180deg,rgba(255,176,0,.045),rgba(255,176,0,.015));position:relative;box-shadow:0 0 0 1px rgba(0,0,0,.6),0 30px 80px -40px rgba(255,176,0,.25)}
+.js .win[data-w]{clip-path:inset(0 0 100% 0);transition:clip-path .9s var(--ease) var(--d,0ms)}
+.js .win[data-w].in{clip-path:inset(0)}
+.tb{display:flex;align-items:center;gap:.8rem;padding:.45rem .8rem;background:var(--am);color:#000;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tb .ctl{margin-left:auto;letter-spacing:.3em;font-weight:400}
+.wb{padding:clamp(1.1rem,2.4vw,2rem)}
+.two{display:grid;gap:1.4rem}@media(min-width:860px){.two{grid-template-columns:1fr 1fr}}
+.ln{display:grid;grid-template-columns:auto 1fr;gap:.9rem;font-size:clamp(.9rem,.82rem + .3vw,1.12rem);line-height:1.6}
+.tag{font-size:.7rem;font-weight:700;padding:.15rem .5rem;height:fit-content;margin-top:.35em;letter-spacing:.08em}
+.tag.w{border:1px solid var(--mu);color:var(--mu)}.tag.k{background:var(--am);color:#000}
+/* team */
+.team{display:grid;gap:1.4rem}@media(min-width:960px){.team{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}}
+.ps{list-style:none}
+.ps li+li{border-top:1px solid var(--ln2)}
+.ps button{all:unset;box-sizing:border-box;width:100%;display:grid;grid-template-columns:3.2ch 1fr auto;gap:1rem;align-items:center;padding:.95rem .3rem;cursor:pointer;font-size:clamp(.82rem,.78rem + .25vw,1rem);text-transform:uppercase;letter-spacing:.04em;transition:padding .35s var(--ease),background .2s,color .2s}
+.ps button:hover{background:rgba(255,176,0,.08)}
+.ps button[aria-pressed=true]{background:var(--am);color:#000;padding-left:1rem;font-weight:700}
+.ps button:focus-visible{outline:2px dashed var(--am2);outline-offset:-3px}
+.ps .st{font-size:.66rem;letter-spacing:.1em;color:var(--am)}.ps button[aria-pressed=true] .st{color:#000}
+.ps .dd{display:none}.no-js .ps .dd{display:block}
+.out{min-height:19rem;display:flex;flex-direction:column}
+.out .pid{color:var(--mu);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.out h3{font-size:clamp(1.5rem,3.4vw,2.6rem);line-height:1.06;letter-spacing:-.04em;margin:.5rem 0 1.2rem;text-transform:uppercase;color:var(--am);font-variation-settings:"wdth" 108;font-weight:800}
+.out p{font-size:clamp(.95rem,.85rem + .4vw,1.2rem);line-height:1.6;max-width:42ch;min-height:5.4em}
+.out .cur{display:inline-block;width:.55em;height:1em;background:var(--am);vertical-align:-.12em;animation:blink 1s steps(1) infinite}
+.flow{margin-top:auto;padding-top:1.4rem;border-top:1px dashed var(--ln);display:grid;gap:.4rem;grid-template-columns:repeat(7,1fr)}
+.flow span{aspect-ratio:1;border:1px solid var(--ln);display:grid;place-items:center;font-size:.68rem;color:var(--mu);transition:all .3s}
+.flow span.on{background:var(--am);color:#000;border-color:var(--am);box-shadow:0 0 22px rgba(255,176,0,.55);font-weight:700}
+.flowcap{font-size:.66rem;letter-spacing:.08em;color:var(--mu);text-transform:uppercase;margin-top:.6rem}
+.note{margin-top:1.4rem;color:var(--mu);font-size:.8rem}
+/* how */
+.pipe{display:grid;gap:1.2rem}@media(min-width:900px){.pipe{grid-template-columns:repeat(3,1fr)}}
+.stg h3{font-size:clamp(1.3rem,2.4vw,2rem);letter-spacing:-.035em;text-transform:uppercase;line-height:1.05;margin:.8rem 0 .8rem;color:var(--am2)}
+.stg .cmd{color:var(--mu);font-size:.78rem}.stg .cmd b{color:var(--am);font-weight:600}
+.stg p{color:var(--tx);max-width:34ch}
+.bar2{margin-top:1.4rem;font-size:.78rem;letter-spacing:.02em;display:flex;gap:.8rem;align-items:center;color:var(--am)}
+.bar2 .tr{flex:1;height:.9rem;border:1px solid var(--am);padding:2px}
+.bar2 .tr i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,var(--am) 0 6px,transparent 6px 8px);transition:width 1.8s var(--ease) calc(var(--d,0ms) + .4s)}
+.in .bar2 .tr i,.win.in .bar2 .tr i{width:100%}
+html:not(.js) .bar2 .tr i{width:100%}
+/* who */
+.chk{list-style:none;display:grid;gap:.9rem}
+.chk li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;font-size:clamp(.9rem,.82rem + .3vw,1.1rem)}
+.chk li::before{content:"[x]";color:var(--am);font-weight:700}
+.no .chk li::before,.chk.n li::before{content:"[ ]";color:var(--mu)}
+/* ways */
+.ways{display:grid;gap:1.2rem}@media(min-width:960px){.ways{grid-template-columns:repeat(3,1fr)}}
+.ways .win{display:flex;flex-direction:column}.ways .wb{display:flex;flex-direction:column;gap:1rem;flex:1}
+.ways h3{font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.06;letter-spacing:-.035em;text-transform:uppercase;color:var(--am2)}
+.ways p.d{flex:1;max-width:38ch}
+.ways .k .tb{background:var(--am2)}
+.fine{margin-top:1.2rem;color:var(--mu);font-size:.78rem}
+/* faq */
+.faq details{border-top:1px solid var(--ln)}.faq details:last-child{border-bottom:1px solid var(--ln)}
+.faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:3ch 1fr auto;gap:1rem;align-items:baseline;padding:1.2rem .2rem;font-size:clamp(.95rem,.85rem + .5vw,1.3rem);letter-spacing:-.02em;transition:background .2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{background:rgba(255,176,0,.07)}
+.faq .q{color:var(--am);font-size:.75rem}.faq summary::after{content:"+";color:var(--am);font-size:1.4em;line-height:1;transition:transform .4s var(--ease)}
+.faq details[open] summary::after{transform:rotate(135deg)}
+.faq details[open] summary{color:var(--am2)}
+.faq .a{padding:0 .2rem 1.6rem 3ch;margin-left:1rem;max-width:68ch;color:var(--tx);border-left:1px solid var(--ln);padding-left:1.2rem;animation:dn .5s var(--ease)}
+@keyframes dn{from{opacity:0;transform:translateY(-8px)}}
+.faqw{max-width:960px}
+/* footer */
+footer{border-top:1px solid var(--ln);padding-top:3rem;overflow:hidden}
+.fg{display:grid;gap:2rem}@media(min-width:800px){.fg{grid-template-columns:1.4fr 1fr 1fr}}
+footer h4{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--am);margin-bottom:.9rem}
+footer ul{list-style:none;display:grid;gap:.5rem}footer li a:hover{color:var(--am)}
+.mega{font-weight:800;font-variation-settings:"wdth" 112;letter-spacing:-.06em;line-height:.9;font-size:clamp(2.6rem,12.6vw,13rem);color:transparent;-webkit-text-stroke:1px var(--ln);text-transform:uppercase;white-space:nowrap;margin-top:2.5rem;user-select:none}
+.legal{border-top:1px solid var(--ln2);padding-block:1.1rem;font-size:.72rem;color:var(--mu);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .win[data-w]{clip-path:none!important}.ticker .tr{animation:none}.brand i,.log .cur,h1 .c,.out .cur{animation:none}}
+</style>
+<style id="local-fonts">
+/* latin-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-stretch: 75% 112%;
+  font-display: swap;
+  src: url(fonts/2698c4247f.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  font-stretch: 75% 112%;
+  font-display: swap;
+  src: url(fonts/4f8dd0d2be.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body class="">
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar"><div class="wrap">
+ <a class="brand" href="#top" aria-label="AI Business Suite — top"><i aria-hidden="true"></i>AIBS/OS</a>
+ <nav id="nav" aria-label="Primary"><ul><li><a href="#promise">Promise</a></li><li><a href="#team">Team</a></li><li><a href="#how">How</a></li><li><a href="#who">For</a></li><li><a href="#ways">Ways in</a></li><li><a href="#faq">FAQ</a></li></ul></nav>
+ <span class="clk" id="clk" aria-hidden="true">--:--:--</span>
+ <a class="btn sm" href="../apply/" data-mag>Apply / Book a call</a>
+ <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
+<main id="main">
+<section class="hero" id="top"><div class="wrap"><div class="grid">
+ <div>
+  <div class="log" id="log" aria-hidden="true"></div>
+  <p class="sr">AI Business Suite. Done-for-you AI marketing team.</p>
+  <h1>AI Marketing<br>Team<span class="c" aria-hidden="true"></span><span class="l2"><b>Done</b> for you.</span></h1>
+  <p class="lead" data-r style="--d:200ms">Your whole marketing team, built around your business and handed over ready to use.</p>
+  <div class="acts" data-r style="--d:350ms"><a class="btn" href="../apply/" data-mag>Apply / Book a call</a><a class="btn ghost" href="#team" data-mag>Meet the seven</a></div>
+ </div>
+ <figure class="scene" aria-label="Animated ASCII globe with seven numbered nodes in orbit, one for each AI team member"><canvas id="asc" aria-hidden="true"></canvas><i class="tick a"></i><i class="tick b"></i><i class="tick c"></i><i class="tick d"></i><figcaption>fig.01 — seven members, one team</figcaption></figure>
+</div></div></section>
+<div class="ticker" aria-hidden="true"><div class="tr"><span>Strategist</span><span>Copywriter</span><span>Video copywriter</span><span>Publisher</span><span>SEO &amp; AEO</span><span>Conversations &amp; DMs</span><span>Analyst</span><span>You</span><span>Strategist</span><span>Copywriter</span><span>Video copywriter</span><span>Publisher</span><span>SEO &amp; AEO</span><span>Conversations &amp; DMs</span><span>Analyst</span><span>You</span></div></div>
+
+<section class="s" id="promise"><div class="wrap">
+ <div class="sh"><p class="no">[01] problem / promise</p><h2 data-split>Marketing is a job on top of <em>your job.</em></h2></div>
+ <div class="two">
+  <div class="win" data-w><div class="tb">problem.log<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><p class="ln"><span class="tag w">WARN</span><span>A real team is slow and costly to hire. Learning every AI tool yourself is another full-time job. The work stays half-done.</span></p></div></div>
+  <div class="win" data-w style="--d:140ms"><div class="tb">promise.log<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><p class="ln"><span class="tag k">OK</span><span>One AI marketing team, set up for your business and handed over. You don’t build it. You use it.</span></p></div></div>
+ </div>
+</div></section>
+
+<section class="s" id="team"><div class="wrap">
+ <div class="sh"><p class="no">[02] what’s included</p><h2 data-split>Seven AI team members. <em>One team.</em></h2></div>
+ <div class="team">
+  <div class="win" data-w><div class="tb">team.exe — 7 members<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb" style="padding-block:.6rem">
+   <ul class="ps" id="ps">
+<li><button type="button" data-i="0" data-name="Strategist" data-desc="Turns your offer and audience into a plan: what to say, to whom, and where. Briefs the rest of the team." aria-pressed="false"><span>01</span><span>Strategist</span><span class="st">● ready</span></button><p class="dd dim">Turns your offer and audience into a plan: what to say, to whom, and where. Briefs the rest of the team.</p></li>
+<li><button type="button" data-i="1" data-name="Copywriter" data-desc="Writes posts, emails, ads and page copy in your voice, from the strategist’s brief." aria-pressed="false"><span>02</span><span>Copywriter</span><span class="st">● ready</span></button><p class="dd dim">Writes posts, emails, ads and page copy in your voice, from the strategist’s brief.</p></li>
+<li><button type="button" data-i="2" data-name="Video copywriter" data-desc="Scripts short-form video: the hook, the beats, the captions and the call to action." aria-pressed="false"><span>03</span><span>Video copywriter</span><span class="st">● ready</span></button><p class="dd dim">Scripts short-form video: the hook, the beats, the captions and the call to action.</p></li>
+<li><button type="button" data-i="3" data-name="Publisher" data-desc="Formats finished content for each channel you use and gets it out on schedule." aria-pressed="false"><span>04</span><span>Publisher</span><span class="st">● ready</span></button><p class="dd dim">Formats finished content for each channel you use and gets it out on schedule.</p></li>
+<li><button type="button" data-i="4" data-name="SEO &amp; AEO" data-desc="Shapes your content so search engines and AI answer engines can find it and understand it." aria-pressed="false"><span>05</span><span>SEO &amp; AEO</span><span class="st">● ready</span></button><p class="dd dim">Shapes your content so search engines and AI answer engines can find it and understand it.</p></li>
+<li><button type="button" data-i="5" data-name="Conversations &amp; DMs" data-desc="Picks up comments and direct messages, answers the common questions, and points warm leads to your next step." aria-pressed="false"><span>06</span><span>Conversations &amp; DMs</span><span class="st">● ready</span></button><p class="dd dim">Picks up comments and direct messages, answers the common questions, and points warm leads to your next step.</p></li>
+<li><button type="button" data-i="6" data-name="Analyst" data-desc="Watches what’s landing, reports in plain English, and tells the strategist what to do next." aria-pressed="false"><span>07</span><span>Analyst</span><span class="st">● ready</span></button><p class="dd dim">Watches what’s landing, reports in plain English, and tells the strategist what to do next.</p></li>
+
+   </ul></div></div>
+  <div class="win" data-w style="--d:140ms"><div class="tb">stdout<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb out">
+   <p class="pid" id="pid">member 01 / 07</p>
+   <h3 id="oname" aria-live="polite">Strategist</h3>
+   <p id="odesc" aria-hidden="true"></p><p class="sr" id="osr"></p>
+   <div class="flow" id="flow" aria-hidden="true"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span></div>
+   <p class="flowcap">The strategist briefs the rest. The analyst reports back.</p>
+  </div></div>
+ </div>
+ <p class="note" data-r>Each one is an AI team member. Set up around your business, working as one team.</p>
+</div></section>
+
+<section class="s" id="how"><div class="wrap">
+ <div class="sh"><p class="no">[03] how it works</p><h2 data-split>We build it. We hand it over. <em>You use it.</em></h2></div>
+ <div class="pipe">
+<div class="win stg" data-w style="--d:060ms"><div class="tb">step_01<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><p class="cmd">$ <b>step</b> --1</p><h3>We build it</h3><p>We set up the whole team around your offer, audience and voice: the roles, the tools and the links between them.</p><div class="bar2" aria-hidden="true"><span>01/03</span><span class="tr"><i></i></span></div></div></div>
+<div class="win stg" data-w style="--d:160ms"><div class="tb">step_02<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><p class="cmd">$ <b>step</b> --2</p><h3>We hand it over</h3><p>You receive a team that’s fully set up and walked through with you. Nothing half-built to finish.</p><div class="bar2" aria-hidden="true"><span>02/03</span><span class="tr"><i></i></span></div></div></div>
+<div class="win stg" data-w style="--d:260ms"><div class="tb">step_03<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><p class="cmd">$ <b>step</b> --3</p><h3>You use it</h3><p>Brief the team, look over what it makes, and get back to serving your clients.</p><div class="bar2" aria-hidden="true"><span>03/03</span><span class="tr"><i></i></span></div></div></div>
+
+ </div>
+</div></section>
+
+<section class="s" id="who"><div class="wrap">
+ <div class="sh"><p class="no">[04] who it’s for</p><h2 data-split>People who sell <em>expertise.</em></h2></div>
+ <div class="two">
+  <div class="win" data-w><div class="tb">cat for.txt</div><div class="wb"><ul class="chk"><li>Coaches with an offer and no time to market it</li><li>Consultants who win clients by showing up consistently</li><li>Course creators who want content and conversations handled</li><li>Small business owners who’d rather not become marketers</li></ul></div></div>
+  <div class="win no" data-w style="--d:140ms"><div class="tb" style="background:var(--mu)">cat not-for.txt</div><div class="wb"><ul class="chk n"><li>Anyone wanting a push-button business with zero involvement</li><li>Anyone looking for a guaranteed result</li></ul></div></div>
+ </div>
+</div></section>
+
+<section class="s" id="ways"><div class="wrap">
+ <div class="sh"><p class="no">[05] three ways in</p><h2 data-split>Choose <em>how close.</em></h2></div>
+ <div class="ways">
+<article class="win" data-w style="--d:000ms"><div class="tb">A — Workshop<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><h3>Build Your AI Team</h3><p class="d">Watch the workshop and see how an AI marketing team is put together. A good start if you want to understand it first.</p><a class="btn" href="https://coachstech.com/watch-build-your-ai-team" target="_blank" rel="noopener" data-mag>Build Your AI Team</a></div></article>
+<article class="win" data-w style="--d:100ms"><div class="tb">B — Challenge<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><h3>AI Business Challenge</h3><p class="d">Take part in the AI Business Challenge and get hands-on with AI in your own business, alongside others doing the same.</p><a class="btn" href="https://coachstech.com/challenge-registration-3346" target="_blank" rel="noopener" data-mag>AI Business Challenge</a></div></article>
+<article class="win" data-w style="--d:200ms"><div class="tb">C — Done-for-you program<span class="ctl" aria-hidden="true">_□×</span></div><div class="wb"><h3>We build it for you</h3><p class="d">We build the whole team and hand it over, set up. Apply, or book a call, and we’ll see whether it’s a fit. Details are shared on the call.</p><a class="btn" href="../apply/" data-mag>Apply / Book a call</a></div></article>
+
+ </div>
+ <p class="fine">A and B open on our partner site, coachstech.com.</p>
+</div></section>
+
+<section class="s" id="faq"><div class="wrap">
+ <div class="sh"><p class="no">[06] faq</p><h2 data-split>Questions, <em>answered.</em></h2></div>
+ <div class="faq faqw" data-r><details><summary><span class="q">Q1</span><span>What exactly is an AI marketing team?</span></summary><div class="a"><p>A set of AI team members, each with one marketing job — strategy, copy, video scripts, publishing, search, conversations and analysis — set up to work together around your business.</p></div></details><details><summary><span class="q">Q2</span><span>Do I need to be technical?</span></summary><div class="a"><p>No. We do the building and the wiring. You’re handed a team that’s set up, with a walkthrough on how to use it.</p></div></details><details><summary><span class="q">Q3</span><span>What do I actually do after handover?</span></summary><div class="a"><p>You use it: brief the team, look over what it produces, and decide what goes out under your name.</p></div></details><details><summary><span class="q">Q4</span><span>Will it sound like me?</span></summary><div class="a"><p>That’s the goal of the setup. The team is built around your offer, audience and voice. You stay in the loop to keep it on-brand.</p></div></details><details><summary><span class="q">Q5</span><span>What does it cost?</span></summary><div class="a"><p>We don’t publish a price here. Apply or book a call and we’ll talk through what’s involved and whether it’s a fit.</p></div></details><details><summary><span class="q">Q6</span><span>I’d rather learn to build it myself. Can I?</span></summary><div class="a"><p>Yes — that’s what the Build Your AI Team workshop and the AI Business Challenge are for.</p></div></details></div>
+</div></section>
+</main>
+<footer><div class="wrap">
+ <div class="fg">
+  <div><h4>AI Business Suite</h4><p>The done-for-you AI marketing team. We build it, hand it over, and you use it.</p></div>
+  <div><h4>Ways in</h4><ul><li><a href="https://coachstech.com/watch-build-your-ai-team" target="_blank" rel="noopener">Build Your AI Team</a></li><li><a href="https://coachstech.com/challenge-registration-3346" target="_blank" rel="noopener">AI Business Challenge</a></li><li><a href="../apply/">Apply / Book a call</a></li></ul></div>
+  <div><h4>On this page</h4><ul><li><a href="#team">Team</a></li><li><a href="#how">How it works</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+ </div>
+ <div class="mega" aria-hidden="true">AI Business Suite</div>
+</div>
+<div class="legal"><div class="wrap" style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;width:100%"><span>© 2026 AI Business Suite</span><span>Design preview — option 7 of 12 · AIBS/OS</span></div></div>
+</footer>
+<script>
+(()=>{
+const d=document,root=d.documentElement,RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+/* split headings into masked words */
+d.querySelectorAll('[data-split]').forEach(el=>{let i=0;
+  const walk=n=>[...n.childNodes].forEach(c=>{
+    if(c.nodeType===3){const f=d.createDocumentFragment();
+      c.textContent.split(/(\s+)/).forEach(t=>{if(!t)return;
+        if(/^\s+$/.test(t)){f.appendChild(d.createTextNode(' '));return}
+        const w=d.createElement('span');w.className='w';const wi=d.createElement('span');wi.className='wi';
+        wi.style.setProperty('--i',i++);wi.textContent=t;w.appendChild(wi);f.appendChild(w)});
+      c.replaceWith(f)}
+    else if(c.nodeType===1&&!c.classList.contains('w'))walk(c)});
+  walk(el);el.classList.add('split')});
+/* reveal on view */
+const targets=d.querySelectorAll('[data-r],.split,[data-io]');
+if('IntersectionObserver' in window&&!RM){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  targets.forEach(t=>io.observe(t));
+}else targets.forEach(t=>t.classList.add('in'));
+/* menu */
+const mb=d.querySelector('.menu-btn');
+if(mb){const set=o=>{root.classList.toggle('menu-open',o);mb.setAttribute('aria-expanded',o)};
+  mb.addEventListener('click',()=>set(!root.classList.contains('menu-open')));
+  d.addEventListener('keydown',e=>{if(e.key==='Escape'&&root.classList.contains('menu-open')){set(false);mb.focus()}});
+  d.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>set(false)))}
+/* scroll progress + active section */
+let tick=false;const prog=()=>{const h=root.scrollHeight-innerHeight;root.style.setProperty('--sp',h>0?(scrollY/h).toFixed(4):0);root.style.setProperty('--sy',scrollY);tick=false};
+addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(prog)}},{passive:true});prog();
+const links=[...d.querySelectorAll('#nav a[href^="#"]')];
+if(links.length&&'IntersectionObserver' in window){
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.removeAttribute('aria-current'));const a=map.get(e.target.id);a&&a.setAttribute('aria-current','true')}}),{rootMargin:'-45% 0px -50% 0px'});
+  map.forEach((a,id)=>{const s=d.getElementById(id);s&&so.observe(s)})}
+/* magnetic buttons */
+if(fine&&!RM)d.querySelectorAll('[data-mag]').forEach(b=>{
+  b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.setProperty('--mx',((e.clientX-r.left-r.width/2)*.22).toFixed(1)+'px');b.style.setProperty('--my',((e.clientY-r.top-r.height/2)*.3).toFixed(1)+'px')});
+  b.addEventListener('pointerleave',()=>{b.style.setProperty('--mx','0px');b.style.setProperty('--my','0px')})});
+window.AIBS={RM,fine,root,d};
+})();
+
+(()=>{const {RM}=window.AIBS,d=document;
+const ww=d.querySelectorAll('[data-w]');if(RM||!('IntersectionObserver' in window))ww.forEach(w=>w.classList.add('in'));else{const wio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');wio.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});ww.forEach(w=>wio.observe(w))}
+/* clock */
+const clk=d.getElementById('clk');const tk=()=>{clk.textContent=new Date().toLocaleTimeString('en-AU',{hour12:false})};tk();setInterval(tk,1000);
+/* boot log */
+const log=d.getElementById('log');
+const L=[["aibs/os 26.11 — starting team.exe",0],["loading strategist ............ ok",1],["loading copywriter ............ ok",1],["loading video copywriter ....... ok",1],["loading publisher ............. ok",1],["loading seo & aeo ............. ok",1],["loading conversations & dms ... ok",1],["loading analyst ............... ok",1],["waiting for you",0]];
+const addLine=(t,ok)=>{const r=d.createElement('div');if(ok){const i=t.lastIndexOf('ok');r.innerHTML='&gt; '+t.slice(0,i).replace(/&/g,'&amp;')+'<span class="ok">ok</span>'}else r.textContent='> '+t;log.appendChild(r);return r};
+if(RM){L.forEach(l=>addLine(l[0],l[1]));const c=d.createElement('span');c.className='cur';log.lastChild.appendChild(c)}
+else{let i=0;const next=()=>{if(i>=L.length){const c=d.createElement('span');c.className='cur';log.lastChild.appendChild(c);return}
+ const [t,ok]=L[i++];const r=addLine('',0);let k=0;const ty=()=>{k+=3;const s=t.slice(0,k);if(ok&&k>=t.length){const j=t.lastIndexOf('ok');r.innerHTML='&gt; '+t.slice(0,j).replace(/&/g,'&amp;')+'<span class="ok">ok</span>'}else r.textContent='> '+s;if(k<t.length)setTimeout(ty,14);else setTimeout(next,i===1?220:90)};ty()};setTimeout(next,350)}
+/* ASCII globe */
+const cv=d.getElementById('asc'),cx=cv.getContext('2d');let W,H,fs,cw,chh,cols,rows,dpr,mx=0,my=0,tmx=0,tmy=0,vis=true,raf;
+const ramp=' .,:;ox%#@';
+function size(){const r=cv.getBoundingClientRect();dpr=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);fs=W<460?9.5:W<700?11:12.5;cw=fs*.64;chh=fs*1.08;cols=Math.floor(W/cw);rows=Math.floor(H/chh)}
+function frame(t){
+ cx.clearRect(0,0,W,H);cx.font=`500 ${fs}px "Martian Mono",monospace`;cx.textAlign='center';cx.textBaseline='middle';
+ mx+=(tmx-mx)*.06;my+=(tmy-my)*.06;
+ const R=Math.min(W,H)*.31,ox=W/2,oy=H/2,a=t*.00028+mx*.7,b=-.42+my*.35,ca=Math.cos(a),sa=Math.sin(a),cb=Math.cos(b),sb=Math.sin(b);
+ const L=[-.5,.55,.67];const sat=[];
+ for(let k=0;k<7;k++){const ph=k/7*6.2832+t*.00032;let x=Math.cos(ph)*1.4,y=0,z=Math.sin(ph)*1.4;
+  const x1=x*Math.cos(a*.6+.5)+z*Math.sin(a*.6+.5),z1=-x*Math.sin(a*.6+.5)+z*Math.cos(a*.6+.5);
+  const y2=y*cb-z1*sb,z2=y*sb+z1*cb;sat.push([x1,y2,z2,k])}
+ for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){
+  const px=i*cw+cw/2,py=j*chh+chh/2,x=(px-ox)/R,y=(py-oy)/R,r2=x*x+y*y;
+  if(r2<1){const z=Math.sqrt(1-r2);
+   // object space
+   let y1=y*cb+z*sb,z1=-y*sb+z*cb;const X=x*ca-z1*sa,Z=x*sa+z1*ca,Y=y1;
+   const lon=Math.atan2(X,Z),lat=Math.asin(Math.max(-1,Math.min(1,Y)));
+   const lum=Math.max(0,x*L[0]+y*L[1]+z*L[2]);
+   const g=Math.abs(Math.sin(lon*5))<.1||Math.abs(Math.sin(lat*7))<.09;
+   let ch,al;if(g){ch='+';al=.35+lum*.65}else{const idx=Math.min(9,Math.floor((lum*.9+.05)*10));ch=ramp[idx];al=.18+lum*.8}
+   if(ch===' ')continue;
+   cx.fillStyle=`rgba(255,${150+lum*80|0},${lum*60|0},${al})`;cx.fillText(ch,px,py)
+  }else if(r2<1.06){cx.fillStyle='rgba(255,176,0,.25)';cx.fillText('·',px,py)}
+ }
+ // orbit ring dots
+ for(let q=0;q<150;q++){const ph=q/150*6.2832;let x=Math.cos(ph)*1.4,z=Math.sin(ph)*1.4;const x1=x*Math.cos(a*.6+.5)+z*Math.sin(a*.6+.5),z1=-x*Math.sin(a*.6+.5)+z*Math.cos(a*.6+.5);const y2=-z1*sb,z2=z1*cb;
+  if(z2<0&&x1*x1+y2*y2<1)continue;const s=1/(1-z2*.1);cx.fillStyle=`rgba(255,176,0,${.18+.3*(z2+1.6)/3.2})`;cx.fillText('·',ox+x1*R*s,oy+y2*R*s)}
+ // satellites
+ sat.sort((p,q)=>p[2]-q[2]).forEach(([x,y,z,k])=>{if(z<0&&x*x+y*y<1)return;const s=1/(1-z*.1),sx=ox+x*R*s,sy=oy+y*R*s;
+  const gl=cx.createRadialGradient(sx,sy,0,sx,sy,R*.16);gl.addColorStop(0,'rgba(255,176,0,.38)');gl.addColorStop(1,'rgba(255,176,0,0)');cx.fillStyle=gl;cx.fillRect(sx-R*.2,sy-R*.2,R*.4,R*.4);
+  cx.fillStyle=z>0?'#FFE3A0':'rgba(255,200,110,.7)';cx.font=`700 ${fs*1.15}px "Martian Mono",monospace`;cx.fillText('['+(k+1)+']',sx,sy);cx.font=`500 ${fs}px "Martian Mono",monospace`});
+}
+function loop(t){if(vis)frame(t);raf=requestAnimationFrame(loop)}
+size();addEventListener('resize',()=>{size();if(RM)frame(4000)});
+d.fonts&&d.fonts.ready.then(()=>{size();if(RM)frame(4000)});
+if(RM)frame(4000);else{raf=requestAnimationFrame(loop);new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(cv);
+ if(matchMedia('(hover:hover)').matches)addEventListener('pointermove',e=>{tmx=e.clientX/innerWidth-.5;tmy=e.clientY/innerHeight-.5},{passive:true})}
+/* team */
+const btns=[...d.querySelectorAll('#ps button')],oname=d.getElementById('oname'),odesc=d.getElementById('odesc'),osr=d.getElementById('osr'),pid=d.getElementById('pid'),fl=[...d.querySelectorAll('#flow span')];
+let ty,cur=-1,touched=false;
+function sel(i){if(i===cur)return;cur=i;btns.forEach((b,j)=>{b.setAttribute('aria-pressed',j===i);b.querySelector('.st').textContent=j===i?'▶ active':'● ready'});
+ const b=btns[i];fl.forEach((f,j)=>f.classList.toggle('on',j===i));oname.innerHTML=b.dataset.name;pid.textContent=`member ${String(i+1).padStart(2,'0')} / 07`;const txt=b.dataset.desc.replace(/&amp;/g,'&');osr.textContent=txt;clearInterval(ty);
+ if(RM){odesc.textContent=txt;return}let k=0;odesc.innerHTML='<span class="cur"></span>';ty=setInterval(()=>{k+=2;odesc.textContent=txt.slice(0,k);if(k>=txt.length){clearInterval(ty);const c=d.createElement('span');c.className='cur';odesc.appendChild(c)}},14)}
+btns.forEach((b,i)=>b.addEventListener('click',()=>{touched=true;sel(i)}));
+sel(0);
+if(!RM){let auto;new IntersectionObserver(e=>{clearInterval(auto);if(e[0].isIntersecting&&!touched)auto=setInterval(()=>{if(touched)return clearInterval(auto);sel((cur+1)%7)},4200)}).observe(d.getElementById('ps'))}
+})();
+</script>
+</body>
+</html>
