@@ -84,6 +84,23 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc);box
 .err.on{display:block}
 [hidden]{display:none!important}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.phone{position:relative;display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:stretch}
+.cc{display:inline-flex;align-items:center;gap:.5rem;min-height:52px;padding:0 .9rem;border-radius:14px;border:1px solid rgba(20,20,26,.28);background:#FBFAF7;font:500 1.02rem/1 var(--sans);transition:border-color .25s,box-shadow .25s}
+.cc:hover{border-color:rgba(20,20,26,.55)}.cc[aria-expanded=true],.cc:focus-visible{border-color:var(--acc);box-shadow:0 0 0 4px var(--accsoft);outline:none}
+.cc .fl{font-size:1.35rem;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.cc .ch{width:10px;height:10px;border-right:1.8px solid var(--ink);border-bottom:1.8px solid var(--ink);transform:rotate(45deg) translate(-2px,-2px);margin-left:.1rem}
+.pop{position:absolute;z-index:40;left:0;top:calc(100% + .4rem);width:min(100%,380px);background:#fff;border:1px solid var(--hair);border-radius:16px;box-shadow:0 24px 60px -20px rgba(20,20,26,.45);padding:.6rem;display:grid;gap:.5rem}
+.pop input[type=search]{width:100%;font:400 1rem/1.3 var(--sans);padding:.7rem .9rem;min-height:46px;border:1px solid rgba(20,20,26,.28);border-radius:12px;background:#FBFAF7;color:var(--ink);appearance:none;-webkit-appearance:none}
+.pop input[type=search]:focus{outline:none;border-color:var(--acc);box-shadow:0 0 0 4px var(--accsoft)}
+.pop ul{list-style:none;max-height:min(280px,46vh);overflow:auto;overscroll-behavior:contain;display:grid;gap:1px}
+.pop li{display:grid;grid-template-columns:1.6rem 1fr auto;gap:.65rem;align-items:center;min-height:44px;padding:0 .7rem;border-radius:10px;cursor:pointer;font-size:.98rem}
+.pop li .fl{font-size:1.25rem;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
+.pop li .dc{color:var(--mut);font-variant-numeric:tabular-nums}
+.pop li[aria-selected=true]{background:var(--accsoft);font-weight:600}
+.pop li.act{background:#EFEDE6}
+.pop li.act[aria-selected=true]{background:var(--accsoft)}
+.pop .none{padding:.8rem;color:var(--mut);font-size:.95rem}
+.req{color:var(--acc);font-weight:700;margin-left:.15rem}
 .hp{position:absolute!important;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 .consent{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;padding:1rem 1.1rem;border-radius:16px;background:#F7F5F0;border:1px solid var(--hair)}
 .consent input{width:22px;height:22px;margin-top:.15rem;accent-color:var(--ink)}
@@ -262,7 +279,7 @@ footer a{text-underline-offset:3px}
  <main id="main">
   <div class="card" data-r style="--d:300ms">
    <h2>Your application</h2>
-   <p class="sub">Takes a few minutes. Fields marked * are required.</p>
+   <p class="sub">Takes a couple of minutes. Fields marked <span class="req" aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required; the rest are optional.</p>
    <p class="badge" id="badge" role="note">Preview only — applications open soon</p>
 
    <!-- TODO (BB-180): SUBMISSION TARGET. Applications go to GHL "Amal J Coaching" (notifications to amal@email.com are handled inside GHL — NO email code belongs on this page).
@@ -272,20 +289,27 @@ footer a{text-underline-offset:3px}
         Note for whoever wires it: the endpoint must accept a cross-origin JSON POST (CORS) from this page's origin, or the browser will block it and the loud error state will show. -->
    <form id="apply-form" novalidate onsubmit="return false" aria-describedby="formnote">
     <div class="row2">
-     <div class="f"><label for="first_name">First name *</label><input type="text" id="first_name" name="first_name" autocomplete="given-name" required><span class="err" id="e-first_name"></span></div>
-     <div class="f"><label for="email">Email *</label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required><span class="err" id="e-email"></span></div>
+     <div class="f"><label for="first_name">First name<span class="req" aria-hidden="true">*</span></label><input type="text" id="first_name" name="first_name" autocomplete="given-name" required aria-required="true"><span class="err" id="e-first_name"></span></div>
+     <div class="f"><label for="email">Email<span class="req" aria-hidden="true">*</span></label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-required="true"><span class="err" id="e-email"></span></div>
     </div>
-    <div class="row2">
-     <div class="f"><label for="phone">Phone<span class="opt">(optional)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel"><span class="err" id="e-phone"></span></div>
-     <div class="f"><label for="website">Business or website URL *</label><input type="text" id="website" name="website" autocomplete="url" inputmode="url" placeholder="yourbusiness.com" required><span class="err" id="e-website"></span></div>
-    </div>
-    <div class="f"><label for="offer">What do you sell, and who do you serve? *</label><textarea id="offer" name="offer_and_audience" required maxlength="1000" placeholder="e.g. a coaching program for…"></textarea><span class="err" id="e-offer"></span></div>
-    <div class="f"><label for="bottleneck">Biggest marketing bottleneck right now *</label><textarea id="bottleneck" name="bottleneck" required maxlength="1000" placeholder="The thing that keeps slipping or taking too long."></textarea><span class="err" id="e-bottleneck"></span></div>
+    <div class="f"><label for="phone">Phone<span class="req" aria-hidden="true">*</span></label>
+     <div class="phone" id="phone-wrap">
+      <button type="button" class="cc" id="cc-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="cc-pop" aria-label="Country code: Australia +61"><span class="fl" aria-hidden="true">🇦🇺</span><span class="dc" id="cc-dial">+61</span><i class="ch" aria-hidden="true"></i></button>
+      <input type="tel" id="phone" name="phone" autocomplete="tel-national" inputmode="tel" required aria-required="true" placeholder="412 345 678">
+      <div class="pop" id="cc-pop" hidden>
+       <input type="search" id="cc-q" placeholder="Search country or code" aria-label="Search countries" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="cc-list" aria-autocomplete="list">
+       <ul id="cc-list" role="listbox" aria-label="Countries"></ul>
+      </div>
+     </div>
+     <span class="hint" id="h-phone">We’ll only use it to arrange your call. Pick your country code, then enter your number.</span><span class="err" id="e-phone"></span></div>
+    <div class="f"><label for="website">Business or website URL<span class="opt">(optional)</span></label><input type="text" id="website" name="website" autocomplete="url" inputmode="url" placeholder="yourbusiness.com"></div>
+    <div class="f"><label for="offer">What do you sell, and who do you serve?<span class="opt">(optional)</span></label><textarea id="offer" name="offer_and_audience" maxlength="1000" placeholder="e.g. a coaching program for…"></textarea></div>
+    <div class="f"><label for="bottleneck">Biggest marketing bottleneck right now<span class="opt">(optional)</span></label><textarea id="bottleneck" name="bottleneck" maxlength="1000" placeholder="The thing that keeps slipping or taking too long."></textarea></div>
     <!-- Honeypot: hidden from people and assistive tech. Bots that fill it get a silent fake success and nothing is sent. -->
     <div class="hp" aria-hidden="true"><label for="company_site">Leave this field empty</label><input type="text" id="company_site" name="company_site" tabindex="-1" autocomplete="off"></div>
     <div class="consent">
-     <input type="checkbox" id="consent" name="consent" required aria-describedby="e-consent">
-     <label for="consent">I agree that AI Business Suite can use these details to review my application and contact me about it. *</label>
+     <input type="checkbox" id="consent" name="consent" required aria-required="true" aria-describedby="e-consent">
+     <label for="consent">I agree that AI Business Suite can use these details to review my application and contact me about it.<span class="req" aria-hidden="true">*</span></label>
      <!-- TODO (BB-180): add the privacy-policy link to this consent text once Amal supplies the real URL. Do NOT invent one. -->
      <span class="err" id="e-consent"></span>
     </div>
@@ -377,27 +401,83 @@ const DRYRUN=new URLSearchParams(location.search).get('dryrun')==='1';
 
 const f=document.getElementById('apply-form'),btn=document.getElementById('submit-btn');
 const panels=['st-preview','st-dry','st-ok','st-err'].reduce((o,k)=>(o[k]=document.getElementById(k),o),{});
-const msgs={first_name:'Please tell us your first name.',email:'Please enter a valid email address.',phone:'That phone number doesn’t look right.',website:'Please add your business name or website.',offer:'Tell us briefly what you sell and who you serve.',bottleneck:'Tell us what’s getting in the way.',consent:'Please tick this to continue.'};
+const msgs={first_name:'Please tell us your first name.',email:'Please enter a valid email address.',phone:'Please enter your phone number.',consent:'Please tick this to continue.'};
 const errEl=el=>document.getElementById('e-'+el.id);
+
+/* ---- country picker (self-contained: inline data, emoji flags, no external requests) ----
+   [ISO2, name, dial code, min national digits, max national digits, trunk prefix] */
+const CC=[["AD","Andorra","376",6,9,""],["AE","United Arab Emirates","971",8,9,"0"],["AF","Afghanistan","93",9,9,"0"],["AG","Antigua and Barbuda","1",10,10,"1"],["AI","Anguilla","1",10,10,"1"],["AL","Albania","355",8,9,"0"],["AM","Armenia","374",8,8,"0"],["AO","Angola","244",9,9,""],["AR","Argentina","54",10,11,"0"],["AS","American Samoa","1",10,10,"1"],["AT","Austria","43",4,13,"0"],["AU","Australia","61",9,9,"0"],["AW","Aruba","297",7,7,""],["AX","Åland Islands","358",6,10,"0"],["AZ","Azerbaijan","994",9,9,"0"],["BA","Bosnia and Herzegovina","387",8,9,"0"],["BB","Barbados","1",10,10,"1"],["BD","Bangladesh","880",6,10,"0"],["BE","Belgium","32",8,9,"0"],["BF","Burkina Faso","226",8,8,""],["BG","Bulgaria","359",6,9,"0"],["BH","Bahrain","973",8,8,""],["BI","Burundi","257",8,8,""],["BJ","Benin","229",10,10,""],["BL","Saint Barthélemy","590",9,9,"0"],["BM","Bermuda","1",10,10,"1"],["BN","Brunei","673",7,7,""],["BO","Bolivia","591",8,8,"0"],["BQ","Bonaire, Sint Eustatius and Saba","599",7,7,""],["BR","Brazil","55",10,11,"0"],["BS","Bahamas","1",10,10,"1"],["BT","Bhutan","975",7,8,""],["BW","Botswana","267",7,8,""],["BY","Belarus","375",9,9,"8"],["BZ","Belize","501",7,7,""],["CA","Canada","1",10,10,"1"],["CC","Cocos (Keeling) Islands","61",9,9,"0"],["CD","DR Congo","243",7,10,"0"],["CF","Central African Republic","236",8,8,""],["CG","Congo","242",9,9,""],["CH","Switzerland","41",9,9,"0"],["CI","Côte d’Ivoire","225",10,10,""],["CK","Cook Islands","682",5,5,""],["CL","Chile","56",9,9,""],["CM","Cameroon","237",9,9,""],["CN","China","86",7,11,"0"],["CO","Colombia","57",8,10,"0"],["CR","Costa Rica","506",8,8,""],["CU","Cuba","53",6,10,"0"],["CV","Cape Verde","238",7,7,""],["CW","Curaçao","599",7,8,""],["CX","Christmas Island","61",9,9,"0"],["CY","Cyprus","357",8,8,""],["CZ","Czechia","420",9,9,""],["DE","Germany","49",5,15,"0"],["DJ","Djibouti","253",8,8,""],["DK","Denmark","45",8,8,""],["DM","Dominica","1",10,10,"1"],["DO","Dominican Republic","1",10,10,"1"],["DZ","Algeria","213",8,9,"0"],["EC","Ecuador","593",8,9,"0"],["EE","Estonia","372",7,8,""],["EG","Egypt","20",8,10,"0"],["EH","Western Sahara","212",9,9,"0"],["ER","Eritrea","291",7,7,"0"],["ES","Spain","34",9,9,""],["ET","Ethiopia","251",9,9,"0"],["FI","Finland","358",5,10,"0"],["FJ","Fiji","679",7,7,""],["FK","Falkland Islands (Malvinas)","500",5,5,""],["FM","Micronesia","691",7,7,""],["FO","Faroe Islands","298",6,6,""],["FR","France","33",9,9,"0"],["GA","Gabon","241",7,8,""],["GB","United Kingdom","44",9,10,"0"],["GD","Grenada","1",10,10,"1"],["GE","Georgia","995",9,9,"0"],["GF","French Guiana","594",9,9,"0"],["GG","Guernsey","44",10,10,"0"],["GH","Ghana","233",9,9,"0"],["GI","Gibraltar","350",8,8,""],["GL","Greenland","299",6,6,""],["GM","Gambia","220",7,9,""],["GN","Guinea","224",8,9,""],["GP","Guadeloupe","590",9,9,"0"],["GQ","Equatorial Guinea","240",9,9,""],["GR","Greece","30",10,10,""],["GT","Guatemala","502",8,8,""],["GU","Guam","1",10,10,"1"],["GW","Guinea-Bissau","245",9,9,""],["GY","Guyana","592",7,7,""],["HK","Hong Kong","852",8,8,""],["HN","Honduras","504",8,8,""],["HR","Croatia","385",8,9,"0"],["HT","Haiti","509",8,8,""],["HU","Hungary","36",8,9,"06"],["ID","Indonesia","62",7,12,"0"],["IE","Ireland","353",7,10,"0"],["IL","Israel","972",8,12,"0"],["IM","Isle of Man","44",10,10,"0"],["IN","India","91",10,10,"0"],["IO","British Indian Ocean Territory","246",7,7,""],["IQ","Iraq","964",8,10,"0"],["IR","Iran","98",6,10,"0"],["IS","Iceland","354",7,9,""],["IT","Italy","39",6,12,""],["JE","Jersey","44",10,10,"0"],["JM","Jamaica","1",10,10,"1"],["JO","Jordan","962",8,9,"0"],["JP","Japan","81",9,10,"0"],["KE","Kenya","254",7,9,"0"],["KG","Kyrgyzstan","996",9,9,"0"],["KH","Cambodia","855",8,9,"0"],["KI","Kiribati","686",5,8,"0"],["KM","Comoros","269",7,7,""],["KN","Saint Kitts and Nevis","1",10,10,"1"],["KP","North Korea","850",8,10,"0"],["KR","South Korea","82",5,10,"0"],["KW","Kuwait","965",8,8,""],["KY","Cayman Islands","1",10,10,"1"],["KZ","Kazakhstan","7",10,10,"8"],["LA","Laos","856",8,10,"0"],["LB","Lebanon","961",7,8,"0"],["LC","Saint Lucia","1",10,10,"1"],["LI","Liechtenstein","423",7,9,"0"],["LK","Sri Lanka","94",9,9,"0"],["LR","Liberia","231",7,9,"0"],["LS","Lesotho","266",8,8,""],["LT","Lithuania","370",8,8,"0"],["LU","Luxembourg","352",4,11,""],["LV","Latvia","371",8,8,""],["LY","Libya","218",9,9,"0"],["MA","Morocco","212",9,9,"0"],["MC","Monaco","377",8,9,"0"],["MD","Moldova","373",8,8,"0"],["ME","Montenegro","382",8,8,"0"],["MF","Saint Martin (French part)","590",9,9,"0"],["MG","Madagascar","261",9,9,"0"],["MH","Marshall Islands","692",7,7,"1"],["MK","North Macedonia","389",8,8,"0"],["ML","Mali","223",8,8,""],["MM","Myanmar","95",6,10,"0"],["MN","Mongolia","976",8,10,"0"],["MO","Macao","853",8,8,""],["MP","Northern Mariana Islands","1",10,10,"1"],["MQ","Martinique","596",9,9,"0"],["MR","Mauritania","222",8,8,""],["MS","Montserrat","1",10,10,"1"],["MT","Malta","356",8,8,""],["MU","Mauritius","230",7,8,""],["MV","Maldives","960",7,7,""],["MW","Malawi","265",7,9,"0"],["MX","Mexico","52",10,10,""],["MY","Malaysia","60",8,10,"0"],["MZ","Mozambique","258",8,9,""],["NA","Namibia","264",8,9,"0"],["NC","New Caledonia","687",6,6,""],["NE","Niger","227",8,8,""],["NF","Norfolk Island","672",6,6,""],["NG","Nigeria","234",10,10,"0"],["NI","Nicaragua","505",8,8,""],["NL","Netherlands","31",9,11,"0"],["NO","Norway","47",8,8,""],["NP","Nepal","977",8,10,"0"],["NR","Nauru","674",7,7,""],["NU","Niue","683",4,7,""],["NZ","New Zealand","64",8,10,"0"],["OM","Oman","968",8,8,""],["PA","Panama","507",7,8,""],["PE","Peru","51",8,9,"0"],["PF","French Polynesia","689",8,8,""],["PG","Papua New Guinea","675",7,8,""],["PH","Philippines","63",6,10,"0"],["PK","Pakistan","92",9,10,"0"],["PL","Poland","48",7,9,""],["PM","Saint Pierre and Miquelon","508",6,9,"0"],["PR","Puerto Rico","1",10,10,"1"],["PS","Palestine","970",8,9,"0"],["PT","Portugal","351",9,9,""],["PW","Palau","680",7,7,""],["PY","Paraguay","595",7,9,"0"],["QA","Qatar","974",8,8,""],["RE","Réunion","262",9,9,"0"],["RO","Romania","40",6,9,"0"],["RS","Serbia","381",7,12,"0"],["RU","Russia","7",10,10,"8"],["RW","Rwanda","250",8,9,"0"],["SA","Saudi Arabia","966",9,9,"0"],["SB","Solomon Islands","677",5,7,""],["SC","Seychelles","248",7,7,""],["SD","Sudan","249",9,9,"0"],["SE","Sweden","46",7,9,"0"],["SG","Singapore","65",8,8,""],["SH","Saint Helena, Ascension and Tristan da Cunha","290",4,5,""],["SI","Slovenia","386",8,8,"0"],["SJ","Svalbard and Jan Mayen","47",8,8,""],["SK","Slovakia","421",6,9,"0"],["SL","Sierra Leone","232",8,8,"0"],["SM","San Marino","378",8,10,""],["SN","Senegal","221",9,9,""],["SO","Somalia","252",6,9,"0"],["SR","Suriname","597",6,7,""],["SS","South Sudan","211",9,9,"0"],["ST","Sao Tome and Principe","239",7,7,""],["SV","El Salvador","503",8,8,""],["SX","Sint Maarten (Dutch part)","1",10,10,"1"],["SY","Syria","963",8,9,"0"],["SZ","Eswatini","268",8,8,""],["TC","Turks and Caicos Islands","1",10,10,"1"],["TD","Chad","235",8,8,""],["TG","Togo","228",8,8,""],["TH","Thailand","66",8,9,"0"],["TJ","Tajikistan","992",9,9,""],["TK","Tokelau","690",4,7,""],["TL","Timor-Leste","670",7,8,""],["TM","Turkmenistan","993",8,8,"8"],["TN","Tunisia","216",8,8,""],["TO","Tonga","676",5,7,""],["TR","Türkiye","90",10,10,"0"],["TT","Trinidad and Tobago","1",10,10,"1"],["TV","Tuvalu","688",5,7,""],["TW","Taiwan","886",8,9,"0"],["TZ","Tanzania","255",9,9,"0"],["UA","Ukraine","380",9,9,"0"],["UG","Uganda","256",9,9,"0"],["US","United States","1",10,10,"1"],["UY","Uruguay","598",8,8,"0"],["UZ","Uzbekistan","998",9,9,""],["VA","Vatican City","39",6,11,""],["VC","Saint Vincent and the Grenadines","1",10,10,"1"],["VE","Venezuela","58",10,10,"0"],["VG","Virgin Islands, British","1",10,10,"1"],["VI","Virgin Islands, U.S.","1",10,10,"1"],["VN","Vietnam","84",9,10,"0"],["VU","Vanuatu","678",5,7,""],["WF","Wallis and Futuna","681",6,6,""],["WS","Samoa","685",5,10,""],["XK","Kosovo","383",8,12,"0"],["YE","Yemen","967",7,9,"0"],["YT","Mayotte","262",9,9,"0"],["ZA","South Africa","27",5,9,"0"],["ZM","Zambia","260",9,9,"0"],["ZW","Zimbabwe","263",7,9,"0"]];
+const flag=i=>String.fromCodePoint(...[...i].map(c=>127397+c.charCodeAt(0)));
+const byIso=Object.fromEntries(CC.map(c=>[c[0],c]));
+let cur=byIso.AU;
+const PIN=['AU','NZ','US','GB'];
+const ccBtn=document.getElementById('cc-btn'),pop=document.getElementById('cc-pop'),q=document.getElementById('cc-q'),list=document.getElementById('cc-list'),ph=document.getElementById('phone'),dial=document.getElementById('cc-dial');
+let shown=[],act=0;
+function setCur(c){cur=c;ph.placeholder=c[0]==='AU'?'412 345 678':'Phone number';ccBtn.querySelector('.fl').textContent=flag(c[0]);dial.textContent='+'+c[2];ccBtn.setAttribute('aria-label','Country code: '+c[1]+' +'+c[2])}
+function render(){
+ const t=q.value.trim().toLowerCase().replace(/^\+/,'');
+ let r=CC.filter(c=>!t||c[1].toLowerCase().includes(t)||c[0].toLowerCase()===t||c[2].startsWith(t));
+ if(!t){r=PIN.map(i=>byIso[i]).concat(CC.filter(c=>!PIN.includes(c[0])))}
+ else r.sort((a,b)=>(b[1].toLowerCase().startsWith(t)-a[1].toLowerCase().startsWith(t))||(b[2]===t)-(a[2]===t));
+ shown=r;act=Math.max(0,r.findIndex(c=>c===cur));if(t)act=0;
+ list.innerHTML=r.length?r.map((c,i)=>`<li role="option" id="cc-${c[0]}" data-i="${i}" aria-selected="${c===cur}"><span class="fl" aria-hidden="true">${flag(c[0])}</span><span>${c[1]}</span><span class="dc">+${c[2]}</span></li>`).join(''):'<li class="none" role="presentation">No country found</li>';
+ mark(true)}
+function mark(scroll){
+ [...list.children].forEach((li,i)=>li.classList.toggle('act',i===act));
+ const li=list.children[act];if(li&&li.id){q.setAttribute('aria-activedescendant',li.id);if(scroll)li.scrollIntoView({block:'nearest'})}else q.removeAttribute('aria-activedescendant')}
+function openPop(){pop.hidden=false;ccBtn.setAttribute('aria-expanded','true');q.value='';render();q.focus({preventScroll:true});setTimeout(()=>pop.scrollIntoView({block:'nearest',behavior:'smooth'}),0)}
+function closePop(back){pop.hidden=true;ccBtn.setAttribute('aria-expanded','false');if(back)ccBtn.focus()}
+function pick(c){setCur(c);closePop(false);ph.focus();if(ph.getAttribute('aria-invalid')==='true'||ph.value)check(ph)}
+ccBtn.addEventListener('click',()=>pop.hidden?openPop():closePop(true));
+q.addEventListener('input',render);
+q.addEventListener('keydown',e=>{
+ if(e.key==='ArrowDown'){e.preventDefault();act=Math.min(shown.length-1,act+1);mark(true)}
+ else if(e.key==='ArrowUp'){e.preventDefault();act=Math.max(0,act-1);mark(true)}
+ else if(e.key==='Enter'){e.preventDefault();if(shown[act])pick(shown[act])}
+ else if(e.key==='Escape'){e.preventDefault();e.stopPropagation();closePop(true)}
+ else if(e.key==='Tab'){closePop(false)}});
+list.addEventListener('click',e=>{const li=e.target.closest('li[data-i]');if(li)pick(shown[+li.dataset.i])});
+list.addEventListener('mousedown',e=>e.preventDefault());
+document.addEventListener('mousedown',e=>{if(!pop.hidden&&!document.getElementById('phone-wrap').contains(e.target))closePop(false)});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!pop.hidden)closePop(true)});
+
+/* Phone → E.164. Returns {ok,e164}. Strips spaces/punctuation and the national trunk prefix (e.g. AU 0412… → +61412…).
+   If the user types a leading + or 00, the country is detected from the dial code. */
+function parsePhone(raw){
+ let v=raw.trim();if(!v)return{ok:false};
+ if(!/^[+()\-.\s\d]+$/.test(v))return{ok:false};
+ let digits=v.replace(/\D/g,''),c=cur;
+ if(v.startsWith('+')||digits.startsWith('00')){
+  const d=v.startsWith('+')?digits:digits.slice(2);
+  let m=null;for(let n=3;n>=1;n--){const k=d.slice(0,n);const hit=(k===cur[2]?cur:CC.find(x=>x[2]===k));if(hit){m=hit;break}}
+  if(!m)return{ok:false};c=m;digits=d.slice(m[2].length)}
+ const p=c[5];
+ if(p&&digits.startsWith(p)&&(p[0]==='0'||digits.length>c[4]))digits=digits.slice(p.length);
+ if(digits.length<c[3]||digits.length>c[4]||digits[0]==='0'&&c[2]!=='39')return{ok:false};
+ return{ok:true,e164:'+'+c[2]+digits,c}}
+
 function check(el){
  const e=errEl(el);if(!e)return true;
  const v=el.type==='checkbox'?el.checked:el.value.trim();
  let ok=el.type==='checkbox'?el.checked:(!el.required||v!=='');
+ let msg=msgs[el.id];
  if(ok&&el.type==='email')ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
- if(ok&&el.type==='tel'&&v!=='')ok=/^[+()\-.\s\d]{6,24}$/.test(v)&&(v.match(/\d/g)||[]).length>=6;
- el.setAttribute('aria-invalid',ok?'false':'true');e.classList.toggle('on',!ok);e.textContent=ok?'':msgs[el.id];
- if(!ok)el.setAttribute('aria-describedby',e.id);return ok}
-const fields=[...f.querySelectorAll('input:not(.hp input):not([type=hidden]),textarea')].filter(el=>errEl(el));
+ if(el.id==='phone'&&ok){const r=parsePhone(el.value);ok=r.ok;if(ok&&r.c!==cur)setCur(r.c);if(!ok)msg='That doesn’t look like a valid '+cur[1]+' number. Check the digits, or pick a different country code.'}
+ el.setAttribute('aria-invalid',ok?'false':'true');e.classList.toggle('on',!ok);e.textContent=ok?'':msg;
+ const hint=el.id==='phone'?' h-phone':'';
+ el.setAttribute('aria-describedby',(ok?'':e.id)+hint||'');if(!el.getAttribute('aria-describedby'))el.removeAttribute('aria-describedby');return ok}
+const fields=[...f.querySelectorAll('input:not(.hp input):not(.pop input):not(.cc),textarea')].filter(el=>errEl(el));
 fields.forEach(el=>{
  el.addEventListener('blur',()=>{if(el.value||el.type==='checkbox')check(el)});
  ['input','change'].forEach(ev=>el.addEventListener(ev,()=>{if(el.getAttribute('aria-invalid')==='true')check(el)}))});
+setCur(cur);
 
 function show(id,focus){
  Object.entries(panels).forEach(([k,el])=>{el.hidden=k!==id;el.classList.toggle('on',k===id)});
  const el=panels[id];el.scrollIntoView({behavior:window.AIBS&&AIBS.RM?'auto':'smooth',block:'center'});if(focus!==false)el.focus({preventScroll:true})}
 
 function payload(){
- return {first_name:f.first_name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),website:f.website.value.trim(),
+ return {first_name:f.first_name.value.trim(),email:f.email.value.trim(),phone:parsePhone(f.phone.value).e164,website:f.website.value.trim(),
   offer_and_audience:f.offer_and_audience.value.trim(),bottleneck:f.bottleneck.value.trim(),consent:true,
   source:SOURCE,tags:TAGS.slice(),submitted_at:new Date().toISOString()}}
 
