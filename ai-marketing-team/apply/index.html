@@ -82,14 +82,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc);box
 [aria-invalid=true]{border-color:var(--err)!important;background:#FFF8F7}
 .err{display:none;color:var(--err);font-size:.9rem;font-weight:500}
 .err.on{display:block}
-fieldset{border:0;display:grid;gap:.7rem;min-width:0}
-.chips{display:flex;flex-wrap:wrap;gap:.55rem}
-.chips label{position:relative;font-weight:500;font-size:.95rem}
-.chips input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
-.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 1.05rem;border-radius:999px;border:1px solid rgba(20,20,26,.28);background:#FBFAF7;transition:all .25s var(--ease)}
-.chips label:hover span{border-color:var(--ink)}
-.chips input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink)}
-.chips input:focus-visible+span{outline:3px solid var(--acc);outline-offset:3px}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.hp{position:absolute!important;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
 .consent{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;padding:1rem 1.1rem;border-radius:16px;background:#F7F5F0;border:1px solid var(--hair)}
 .consent input{width:22px;height:22px;margin-top:.15rem;accent-color:var(--ink)}
 .consent label{font-weight:400;font-size:.95rem;color:var(--mut)}
@@ -107,13 +102,18 @@ fieldset{border:0;display:grid;gap:.7rem;min-width:0}
 .status h3{font-size:1.7rem;margin-bottom:.4rem}
 .status p{color:var(--mut)}
 .status a{color:var(--ink);font-weight:600}
+.status.ok{border-color:rgba(22,121,76,.4);background:rgba(22,121,76,.08)}
+.status.bad{border:2px solid var(--err);background:#FFF1EF;color:var(--ink)}
+.status.bad h3{color:var(--err)}
+.status pre{margin-top:.8rem;padding:1rem;border-radius:12px;background:#14141A;color:#EDEBE4;font:.85rem/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;max-height:360px;overflow:auto}
+.btn[disabled]{opacity:.65;cursor:progress;transform:none;box-shadow:none}
+.consent .todo{display:none}
 /* book */
 .book{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--hair);display:flex;gap:.6rem 1.2rem;flex-wrap:wrap;align-items:center;justify-content:space-between;border-radius:0;transition:background .4s}
 .book p{color:var(--mut);font-size:1rem}
 .book a{font-weight:600;text-underline-offset:4px;text-decoration-thickness:1.5px;min-height:44px;display:inline-flex;align-items:center}
 .book a:hover{color:var(--acc)}
-.book .soon{flex-basis:100%;display:none;font-size:.95rem;color:var(--mut);background:#F7F5F0;border:1px solid var(--hair);border-radius:14px;padding:.8rem 1rem}
-.book:target .soon{display:block}
+.book a span[aria-hidden]{margin-left:.35em}
 footer{border-top:1px solid var(--hair);padding-block:1.6rem 2.4rem;color:var(--mut);font-size:.92rem}
 footer .wrap{display:flex;gap:.6rem 1.6rem;flex-wrap:wrap;justify-content:space-between}
 footer a{text-underline-offset:3px}
@@ -263,72 +263,67 @@ footer a{text-underline-offset:3px}
   <div class="card" data-r style="--d:300ms">
    <h2>Your application</h2>
    <p class="sub">Takes a few minutes. Fields marked * are required.</p>
-   <p class="badge" role="note">Preview only — applications open soon</p>
+   <p class="badge" id="badge" role="note">Preview only — applications open soon</p>
 
-   <!-- TODO (BB-180): SUBMISSION TARGET NOT CONNECTED. This form deliberately has NO action, NO fetch and NO third-party embed, so it cannot send anything.
-        When Amal confirms where applications should go (e.g. a GoHighLevel "Amal J Coaching" form or an inbound webhook), wire it HERE:
-        replace the preventDefault-only handler in the script at the bottom with a POST to that endpoint, or swap this form for the GHL form embed.
-        Open questions: which GHL location / form / pipeline, notification email, thank-you page, privacy-policy link for the consent text. -->
+   <!-- TODO (BB-180): SUBMISSION TARGET. Applications go to GHL "Amal J Coaching" (notifications to amal@email.com are handled inside GHL — NO email code belongs on this page).
+        CRM Kanna is preparing the GHL form/webhook, the tag and the pipeline stage. Nothing exists yet.
+        TO GO LIVE: paste the inbound webhook / endpoint URL into the SUBMIT_URL const at the top of the script at the bottom of this file, then rebuild + redeploy.
+        While SUBMIT_URL is '' the form makes NO network request and shows "Preview only". Add ?dryrun=1 to the page URL to see the exact JSON payload on screen without sending it.
+        Note for whoever wires it: the endpoint must accept a cross-origin JSON POST (CORS) from this page's origin, or the browser will block it and the loud error state will show. -->
    <form id="apply-form" novalidate onsubmit="return false" aria-describedby="formnote">
     <div class="row2">
-     <div class="f"><label for="name">Full name *</label><input type="text" id="name" name="name" autocomplete="name" required><span class="err" id="e-name"></span></div>
+     <div class="f"><label for="first_name">First name *</label><input type="text" id="first_name" name="first_name" autocomplete="given-name" required><span class="err" id="e-first_name"></span></div>
      <div class="f"><label for="email">Email *</label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required><span class="err" id="e-email"></span></div>
     </div>
     <div class="row2">
-     <div class="f"><label for="phone">Phone<span class="opt">(optional)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel"></div>
-     <div class="f"><label for="biz">Business name *</label><input type="text" id="biz" name="business" autocomplete="organization" required><span class="err" id="e-biz"></span></div>
+     <div class="f"><label for="phone">Phone<span class="opt">(optional)</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel"><span class="err" id="e-phone"></span></div>
+     <div class="f"><label for="website">Business or website URL *</label><input type="text" id="website" name="website" autocomplete="url" inputmode="url" placeholder="yourbusiness.com" required><span class="err" id="e-website"></span></div>
     </div>
-    <div class="f"><label for="site">Website or main social profile</label><input type="text" id="site" name="website" autocomplete="url" inputmode="url" placeholder="yourbusiness.com or @yourhandle"><span class="hint">Whichever people find you through.</span></div>
-    <div class="f"><label for="sell">What do you sell, and who do you serve? *</label><textarea id="sell" name="offer" required placeholder="e.g. a coaching program for…"></textarea><span class="err" id="e-sell"></span></div>
-    <div class="f"><label for="setup">What does your marketing look like today?</label><textarea id="setup" name="current_setup" placeholder="Tools you use, people who help, what you do each week. “Not much yet” is a fine answer."></textarea></div>
-    <div class="f"><label for="blocker">What’s your biggest marketing bottleneck? *</label><textarea id="blocker" name="bottleneck" required placeholder="The thing that keeps slipping or taking too long."></textarea><span class="err" id="e-blocker"></span></div>
-    <fieldset><legend>Which channels matter most to you?<span class="opt">(pick any)</span></legend>
-     <div class="chips" role="group" aria-label="Channels">
-      <label><input type="checkbox" name="channels" value="Instagram"><span>Instagram</span></label>
-      <label><input type="checkbox" name="channels" value="Facebook"><span>Facebook</span></label>
-      <label><input type="checkbox" name="channels" value="LinkedIn"><span>LinkedIn</span></label>
-      <label><input type="checkbox" name="channels" value="YouTube"><span>YouTube</span></label>
-      <label><input type="checkbox" name="channels" value="TikTok"><span>TikTok</span></label>
-      <label><input type="checkbox" name="channels" value="Email"><span>Email</span></label>
-      <label><input type="checkbox" name="channels" value="Website / SEO"><span>Website &amp; search</span></label>
-      <label><input type="checkbox" name="channels" value="DMs"><span>DMs &amp; comments</span></label>
-      <label><input type="checkbox" name="channels" value="Other"><span>Other</span></label>
-     </div>
-    </fieldset>
-    <div class="row2">
-     <div class="f"><label for="when">When would you like to get started?</label>
-      <select id="when" name="timeline"><option value="">Choose one</option><option>As soon as possible</option><option>In the next few months</option><option>Later this year</option><option>Just exploring for now</option></select></div>
-     <div class="f"><label for="heard">How did you hear about us?</label>
-      <select id="heard" name="heard_from"><option value="">Choose one</option><option>Build Your AI Team workshop</option><option>AI Business Challenge</option><option>A referral</option><option>Social media</option><option>Something else</option></select></div>
-    </div>
+    <div class="f"><label for="offer">What do you sell, and who do you serve? *</label><textarea id="offer" name="offer_and_audience" required maxlength="1000" placeholder="e.g. a coaching program for…"></textarea><span class="err" id="e-offer"></span></div>
+    <div class="f"><label for="bottleneck">Biggest marketing bottleneck right now *</label><textarea id="bottleneck" name="bottleneck" required maxlength="1000" placeholder="The thing that keeps slipping or taking too long."></textarea><span class="err" id="e-bottleneck"></span></div>
+    <!-- Honeypot: hidden from people and assistive tech. Bots that fill it get a silent fake success and nothing is sent. -->
+    <div class="hp" aria-hidden="true"><label for="company_site">Leave this field empty</label><input type="text" id="company_site" name="company_site" tabindex="-1" autocomplete="off"></div>
     <div class="consent">
      <input type="checkbox" id="consent" name="consent" required aria-describedby="e-consent">
      <label for="consent">I agree that AI Business Suite can use these details to review my application and contact me about it. *</label>
+     <!-- TODO (BB-180): add the privacy-policy link to this consent text once Amal supplies the real URL. Do NOT invent one. -->
      <span class="err" id="e-consent"></span>
     </div>
     <div class="actions">
-     <button class="btn" type="submit">Submit application <span class="ar" aria-hidden="true">→</span></button>
+     <button class="btn" type="submit" id="submit-btn">Submit application <span class="ar" aria-hidden="true">→</span></button>
      <p class="small" id="formnote">This page is a design preview. Nothing you type here is sent anywhere yet.</p>
     </div>
    </form>
 
-   <div class="status" id="status" role="status" aria-live="polite" tabindex="-1">
+   <!-- Status panels: only one is shown at a time. -->
+   <div class="status" id="st-preview" role="status" tabindex="-1" hidden>
     <h3>Preview only — applications open soon</h3>
-    <p>Nothing was sent. This form is a design preview and isn’t connected yet. Once it opens, this is where your application will go for review.</p>
+    <p>Nothing was sent. This form isn’t connected yet. Once applications open, this is where yours will go for review.</p>
+   </div>
+   <div class="status" id="st-dry" role="status" tabindex="-1" hidden>
+    <h3>Dry run — nothing was sent</h3>
+    <p>This is the exact JSON this form would POST:</p>
+    <pre id="dry-json"></pre>
+   </div>
+   <div class="status ok" id="st-ok" role="status" tabindex="-1" hidden>
+    <h3>Thanks — application received</h3>
+    <p>We’ll review your application and reach out by email to set up a call.</p>
     <p style="margin-top:.7rem"><a href="../">Back to the team page</a></p>
    </div>
+   <div class="status bad" id="st-err" role="alert" tabindex="-1" hidden>
+    <h3>Your application didn’t go through</h3>
+    <p><strong>It has not been sent.</strong> Your answers are still in the form above, so please try again. If it keeps failing, use “Book a call” below instead.</p>
+   </div>
 
-   <!-- TODO (BB-180): "Book a call" is a PLACEHOLDER (#book). Replace href="#book" with the real booking calendar URL once Amal confirms which calendar to use. Do NOT use the tech-guy-review link. -->
    <div class="book" id="book">
     <p>Prefer to talk first?</p>
-    <a href="#book">Book a call</a>
-    <p class="soon" role="note">Direct call booking isn’t open yet. For now, send an application and we’ll be in touch.</p>
+    <a href="https://link.coachstech.com/widget/bookings/tech-guy-review" target="_blank" rel="noopener">Book a call <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
    </div>
   </div>
  </main>
 </div>
 
-<footer><div class="wrap"><span>© 2026 AI Business Suite</span><span>Design preview — Apply page · not live</span></div></footer>
+<footer><div class="wrap"><span>© 2026 AI Business Suite</span><span>Apply</span></div></footer>
 
 <script>
 (()=>{
@@ -373,19 +368,61 @@ window.AIBS={RM,fine,root,d};
 })();
 
 (()=>{
-const f=document.getElementById('apply-form'),st=document.getElementById('status');
-const msgs={name:'Please tell us your name.',email:'Please enter a valid email address.',biz:'Please add your business name.',sell:'Tell us briefly what you sell and who you serve.',blocker:'Tell us what’s getting in the way.',consent:'Please tick this to continue.'};
-const idMap={name:'name',email:'email',business:'biz',offer:'sell',bottleneck:'blocker',consent:'consent'};
-const errEl=el=>document.getElementById('e-'+({name:'name',email:'email',biz:'biz',sell:'sell',blocker:'blocker',consent:'consent'}[el.id]));
-function check(el){const e=errEl(el);if(!e)return true;const ok=el.checkValidity()&&(el.type==='checkbox'||el.value.trim()!=='');
+/* ===== SUBMIT CONFIG (BB-180) =====
+   SUBMIT_URL: the GHL "Amal J Coaching" inbound webhook / endpoint. KEEP EMPTY until CRM Kanna supplies it.
+   While it is '' this page makes NO network request and shows the "Preview only" state. */
+const SUBMIT_URL='';
+const SOURCE='aimarketing.team/apply', TAGS=['aimt-application'];
+const DRYRUN=new URLSearchParams(location.search).get('dryrun')==='1';
+
+const f=document.getElementById('apply-form'),btn=document.getElementById('submit-btn');
+const panels=['st-preview','st-dry','st-ok','st-err'].reduce((o,k)=>(o[k]=document.getElementById(k),o),{});
+const msgs={first_name:'Please tell us your first name.',email:'Please enter a valid email address.',phone:'That phone number doesn’t look right.',website:'Please add your business name or website.',offer:'Tell us briefly what you sell and who you serve.',bottleneck:'Tell us what’s getting in the way.',consent:'Please tick this to continue.'};
+const errEl=el=>document.getElementById('e-'+el.id);
+function check(el){
+ const e=errEl(el);if(!e)return true;
+ const v=el.type==='checkbox'?el.checked:el.value.trim();
+ let ok=el.type==='checkbox'?el.checked:(!el.required||v!=='');
+ if(ok&&el.type==='email')ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+ if(ok&&el.type==='tel'&&v!=='')ok=/^[+()\-.\s\d]{6,24}$/.test(v)&&(v.match(/\d/g)||[]).length>=6;
  el.setAttribute('aria-invalid',ok?'false':'true');e.classList.toggle('on',!ok);e.textContent=ok?'':msgs[el.id];
  if(!ok)el.setAttribute('aria-describedby',e.id);return ok}
-f.querySelectorAll('[required]').forEach(el=>{el.addEventListener('blur',()=>{if(el.value||el.type==='checkbox')check(el)});el.addEventListener('input',()=>{if(el.getAttribute('aria-invalid')==='true')check(el)});el.addEventListener('change',()=>{if(el.getAttribute('aria-invalid')==='true')check(el)})});
-/* PREVIEW ONLY: this handler never sends anything (no fetch, no XHR, no beacon, no action URL). TODO: connect the real submission target here — see the comment above the form. */
-f.addEventListener('submit',e=>{e.preventDefault();
- const bad=[...f.querySelectorAll('[required]')].filter(el=>!check(el));
- if(bad.length){bad[0].focus();st.classList.remove('on');return}
- st.classList.add('on');st.scrollIntoView({behavior:window.AIBS&&AIBS.RM?'auto':'smooth',block:'center'});st.focus({preventScroll:true})});
+const fields=[...f.querySelectorAll('input:not(.hp input):not([type=hidden]),textarea')].filter(el=>errEl(el));
+fields.forEach(el=>{
+ el.addEventListener('blur',()=>{if(el.value||el.type==='checkbox')check(el)});
+ ['input','change'].forEach(ev=>el.addEventListener(ev,()=>{if(el.getAttribute('aria-invalid')==='true')check(el)}))});
+
+function show(id,focus){
+ Object.entries(panels).forEach(([k,el])=>{el.hidden=k!==id;el.classList.toggle('on',k===id)});
+ const el=panels[id];el.scrollIntoView({behavior:window.AIBS&&AIBS.RM?'auto':'smooth',block:'center'});if(focus!==false)el.focus({preventScroll:true})}
+
+function payload(){
+ return {first_name:f.first_name.value.trim(),email:f.email.value.trim(),phone:f.phone.value.trim(),website:f.website.value.trim(),
+  offer_and_audience:f.offer_and_audience.value.trim(),bottleneck:f.bottleneck.value.trim(),consent:true,
+  source:SOURCE,tags:TAGS.slice(),submitted_at:new Date().toISOString()}}
+
+/* Live mode: tidy the copy once an endpoint is configured. */
+if(SUBMIT_URL&&!DRYRUN){const b=document.getElementById('badge');if(b)b.remove();document.getElementById('formnote').textContent='We use your details only to review your application and get in touch about it.'}
+if(DRYRUN){const b=document.getElementById('badge');if(b)b.textContent='Dry-run mode — nothing will be sent';document.getElementById('formnote').textContent='Dry-run mode: submitting shows the JSON payload on screen and sends nothing.'}
+
+f.addEventListener('submit',async e=>{
+ e.preventDefault();
+ Object.values(panels).forEach(el=>{el.hidden=true;el.classList.remove('on')});
+ const bad=fields.filter(el=>!check(el));
+ if(bad.length){bad[0].focus();return}
+ /* honeypot: bots get a silent fake success, nothing is sent */
+ if(f.company_site.value!==''){show('st-ok');return}
+ const body=payload();
+ if(DRYRUN){document.getElementById('dry-json').textContent=JSON.stringify(body,null,2);show('st-dry');return}
+ if(!SUBMIT_URL){show('st-preview');return}   /* PREVIEW: no request is made */
+ btn.disabled=true;btn.firstChild.textContent='Sending… ';
+ try{
+  const r=await fetch(SUBMIT_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  f.hidden=true;show('st-ok');
+ }catch(err){show('st-err')}
+ finally{btn.disabled=false;btn.firstChild.textContent='Submit application '}
+});
 })();
 </script>
 </body>
