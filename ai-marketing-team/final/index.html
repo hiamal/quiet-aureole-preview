@@ -72,22 +72,20 @@ em{font-style:italic}
 .btn span{transition:transform .6s var(--ease)}.btn:hover span{transform:translateX(5px)}
 .lk{position:relative;display:inline-block;padding-block:.5rem;font:500 .72rem/1 var(--r);letter-spacing:.3em;text-transform:uppercase;color:var(--au2)}
 .lk::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--au);transform-origin:right;transition:transform .7s var(--ease)}.lk:hover::after{transform:scaleX(.25);transform-origin:left}
-/* hero: two-column grid so the watch dial stays fully visible and centred */
-.hero{position:relative;min-height:max(100svh,700px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(1.2rem,3vw,3.5rem);isolation:isolate;padding-top:6rem;padding-bottom:clamp(2rem,5vw,4rem);overflow:visible}
+/* hero */
+.hero{position:relative;min-height:max(100svh,700px);display:flex;align-items:center;overflow:hidden;overflow:clip;isolation:isolate;padding-top:6rem}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 70% at 78% 50%,rgba(217,181,107,.14),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(143,107,46,.12),transparent 70%)}
-.hero .wrap{grid-column:1;grid-row:1;min-width:0;position:relative;z-index:3}
-.hero{--gut:clamp(1.25rem,4vw,4rem);padding-inline:max(var(--gut),calc((100% - 1380px)/2 + var(--gut)))}
-.hero .wrap{width:auto;margin-inline:0;padding-inline:0}
-.hero .tx{position:relative;z-index:3;max-width:none}
+.hero .tx{position:relative;z-index:3;max-width:min(52rem,60vw)}
 .hero .kick{display:flex;align-items:center;gap:1.2rem;color:var(--au);margin-bottom:2.2rem}
 .hero .kick::before{content:"";width:3.4rem;height:1px;background:var(--au)}
-.hero h1{font-size:clamp(2.6rem,4.6vw,6rem);line-height:.96;font-weight:300;letter-spacing:-.025em;margin-bottom:2.2rem}
+.hero h1{font-size:clamp(3.1rem,7.2vw,8.4rem);line-height:.96;font-weight:300;letter-spacing:-.025em;margin-bottom:2.2rem}
 .hero h1 .l{display:block;padding-bottom:.08em;white-space:nowrap}@media(max-width:560px){.hero h1 .l{white-space:normal}}
 .hero h1 .l:nth-child(2){font-style:italic;padding-left:.4em}
 .hero p.lead{max-width:34rem;color:var(--tx);margin-bottom:2.8rem;font-size:clamp(1.25rem,1.6vw,1.5rem);line-height:1.5}
 .hero .acts{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center}
-.dial{grid-column:2;grid-row:1;position:relative;right:auto;top:auto;width:min(100%,520px);max-width:100%;aspect-ratio:1;transform:none;z-index:1;justify-self:center;align-self:center;overflow:hidden;contain:paint}
-.dial .disc{position:absolute;inset:11%;border-radius:50%;overflow:hidden;contain:paint;clip-path:circle(50% at 50% 50%);-webkit-clip-path:circle(50% at 50% 50%);-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 70.5%,transparent 71%);mask-image:radial-gradient(circle at 50% 50%,#000 70.5%,transparent 71%);isolation:isolate;transform:translateZ(0);box-shadow:0 0 0 1px var(--au3),0 0 0 14px #070605,0 0 0 15px var(--hair),0 40px 120px rgba(217,181,107,.2)}
+.dial{position:absolute;right:max(-12vw,-190px);top:56%;width:min(58vw,860px);aspect-ratio:1;transform:translateY(-50%);z-index:1}
+.dial::before{content:"";position:absolute;inset:11%;border-radius:50%;box-shadow:0 0 0 1px var(--au3),0 0 0 14px #070605,0 0 0 15px var(--hair),0 40px 120px rgba(217,181,107,.2)}
+.dial .disc{position:absolute;inset:11%;border-radius:50%;overflow:hidden;contain:paint;clip-path:circle(50% at 50% 50%);-webkit-clip-path:circle(50% at 50% 50%);-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 70.5%,transparent 71%);mask-image:radial-gradient(circle at 50% 50%,#000 70.5%,transparent 71%);isolation:isolate;transform:translateZ(0)}
 .dial .disc img{position:absolute;width:230%;left:-1.75%;top:-43.2%;max-width:none;transform-origin:22.5% 40.5%;animation:spin 160s linear infinite;filter:saturate(.9) contrast(1.05)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .dial .disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at var(--dx,35%) var(--dy,28%),rgba(255,244,214,.38),transparent 46%),radial-gradient(circle at 50% 120%,rgba(0,0,0,.6),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
@@ -95,12 +93,8 @@ em{font-style:italic}
 .dial svg.ring .spin{transform-box:fill-box;transform-origin:center;animation:spin 200s linear infinite reverse}
 .dial svg.ring text{font:500 21px var(--r);fill:var(--au);letter-spacing:.2em}
 .dial svg.ring circle{fill:none;stroke:var(--hair);stroke-width:1}
-@media(max-width:900px){
-  .hero{grid-template-columns:minmax(0,1fr);padding-top:5.5rem;justify-items:center}
-  .dial{grid-column:1;grid-row:1;width:min(92%,420px);margin:0 auto}
-  .hero .wrap{grid-column:1;grid-row:2;width:100%}
-  .hero .tx{max-width:none}
-}
+.hero::after{content:"";position:absolute;left:0;top:0;bottom:0;width:62%;z-index:2;background:linear-gradient(90deg,var(--bk) 0%,rgba(7,6,5,.85) 40%,transparent);pointer-events:none}
+@media(max-width:900px){.hero{flex-direction:column;align-items:flex-start;padding-top:5.5rem;padding-bottom:3rem}.hero .tx{max-width:none;order:2}.dial{position:relative;right:auto;top:auto;transform:none;width:118%;margin:0 -9% -6%;order:1}.hero::after{display:none}.hero .wrapx{display:flex;flex-direction:column}}
 /* sections */
 .sec{padding-block:clamp(5.5rem,12vw,12rem);position:relative}
 .lab{display:flex;gap:1.2rem;align-items:center;color:var(--au)}.lab::before{content:"";width:3rem;height:1px;background:var(--au)}
