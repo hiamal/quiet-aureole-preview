@@ -82,20 +82,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .hero .tx{position:relative;z-index:2}
 .hero h1{font:400 clamp(1.95rem,4.5vw,5.3rem)/1.04 var(--ser);letter-spacing:-.015em;margin:1.2rem 0 1.6rem}
 .hero h1 .ln{display:block;white-space:nowrap;overflow:hidden;padding:.06em 0 .12em}.hero h1 .ln>span{display:block}
-.js .hero h1 .ln>span{transform:translateY(110%) rotate(2deg);opacity:0}
-.go .hero h1 .ln>span{transform:none;opacity:1;transition:transform 1.3s var(--ease) calc(.25s + var(--i)*.13s),opacity .7s calc(.25s + var(--i)*.13s)}
+html.js:not(.go) .hero h1 .ln>span{transform:translateY(110%) rotate(2deg);opacity:0}
+html.go .hero h1 .ln>span{transform:none;opacity:1;transition:transform 1.3s var(--ease) calc(.25s + var(--i)*.13s),opacity .7s calc(.25s + var(--i)*.13s)}
 .hero .sub{max-width:46ch;color:var(--mut);font-size:1.05rem}
 .hero .row{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem}
-.js .rvh{opacity:0;transform:translateY(22px)}.go .rvh{opacity:1;transform:none;transition:opacity 1s var(--d,.8s),transform 1.1s var(--ease) var(--d,.8s)}
-.hero .rule{display:block;height:1px;width:0;background:linear-gradient(90deg,var(--gold),transparent);margin-top:1.4rem;transition:width 1.6s var(--ease) 1.2s}.go .hero .rule{width:min(22rem,60%)}
+html.js:not(.go) .rvh{opacity:0;transform:translateY(22px)}html.go .rvh{opacity:1;transform:none;transition:opacity 1s var(--d,.8s),transform 1.1s var(--ease) var(--d,.8s)}
+.hero .rule{display:block;height:1px;width:0;background:linear-gradient(90deg,var(--gold),transparent);margin-top:1.4rem;transition:width 1.6s var(--ease) 1.2s}html.go .hero .rule{width:min(22rem,60%)}
 .hero .vis{position:relative;aspect-ratio:1;width:min(100%,46rem);justify-self:center}
 .hero canvas#sp{position:absolute;inset:-6%;width:112%;height:112%}
 .portal{position:absolute;left:50%;top:50%;width:50%;aspect-ratio:4/5;transform:translate(-50%,-50%) perspective(900px) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));border-radius:50%;overflow:hidden;box-shadow:0 0 0 6px var(--pearl),0 0 0 7px var(--gold),0 0 0 18px rgba(246,242,234,.6),0 0 0 19px rgba(178,127,58,.45),var(--shadow-deep);transition:transform .3s ease-out}
 .portal img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.js .portal{clip-path:circle(0% at 50% 50%)}.go .portal{clip-path:circle(75% at 50% 50%);transition:clip-path 1.8s var(--ease) .5s,transform .3s ease-out}
+html.js:not(.go) .portal{clip-path:circle(0% at 50% 50%)}html.go .portal{clip-path:circle(75% at 50% 50%);transition:clip-path 1.8s var(--ease) .5s,transform .3s ease-out}
 .hero .cap{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);text-align:center;white-space:nowrap;font:500 .78rem var(--san);color:var(--mut)}
-.js .hero .cap.rvh{transform:translate(-50%,22px)}
-.go .hero .cap.rvh{transform:translateX(-50%)}
+html.js:not(.go) .hero .cap.rvh{transform:translate(-50%,22px)}
+html.go .hero .cap.rvh{transform:translateX(-50%)}
 .cue{position:absolute;left:var(--pad);bottom:1.4rem;display:flex;align-items:center;gap:.7rem;font:600 .68rem var(--san);letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
 .cue i{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);animation:cue 2.2s infinite}
 @keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -242,8 +242,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ftr .bot{margin-top:3rem;padding-top:1.1rem;border-top:1px solid rgba(233,196,106,.2);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem;opacity:.7}
 
 /* ---------- Reveal ---------- */
-.js .rv{opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease) var(--d,0s),transform 1s var(--ease) var(--d,0s)}
-.js .rv.in{opacity:1;transform:none}
+html.js .rv:not(.in){opacity:0;transform:translateY(30px);transition:opacity 1s var(--ease) var(--d,0s),transform 1s var(--ease) var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
 
 /* ==========================================================================
    INNER-PAGE PRIMITIVES
@@ -271,8 +271,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .page-hero .media .arch img:not([data-parallax]){height:100%}
 .page-hero .media .cap{margin-top:1.4rem;text-align:center;font:italic 400 1.25rem var(--ser)}
 .page-hero .media .cap small{display:block;font:600 .66rem var(--san);letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-style:normal;margin-top:.3rem}
-.js .page-hero .media .arch img{clip-path:inset(100% 0 0 0)}
-.go .page-hero .media .arch img{clip-path:inset(0);transition:clip-path 1.6s var(--ease) .35s}
+html.js:not(.go) .page-hero .media .arch img{clip-path:inset(100% 0 0 0)}
+html.go .page-hero .media .arch img{clip-path:inset(0);transition:clip-path 1.6s var(--ease) .35s}
 .page-hero::after{content:"";position:absolute;left:var(--pad);right:var(--pad);bottom:0;height:1px;background:linear-gradient(90deg,var(--gold),rgba(178,127,58,0))}
 .page-hero .num{position:absolute;right:var(--pad);bottom:-.18em;font:italic 400 clamp(8rem,22vw,20rem)/1 var(--ser);color:var(--gold);opacity:.09;z-index:-1;pointer-events:none}
 .page-hero.dark{background:radial-gradient(60% 80% at 80% 30%,rgba(121,54,166,.45),transparent 70%),var(--night);color:var(--pearl)}

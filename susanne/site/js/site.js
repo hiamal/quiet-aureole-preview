@@ -3,7 +3,6 @@
 (function () {
   'use strict';
   var D = document, H = D.documentElement;
-  H.classList.add('js');
   var RM = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var HOVER = window.matchMedia && matchMedia('(hover: hover)').matches;
   var $ = function (s, r) { return (r || D).querySelector(s); };
@@ -13,10 +12,25 @@
   var hasIO = 'IntersectionObserver' in window;
   var onScroll = [];   // per-frame scroll handlers registered by features
 
-  /* ---------- entrance trigger ---------- */
+  /* ---------- entrance trigger ----------
+     Content is visible by default (no .js class). The head snippet adds .js only
+     when motion is allowed, plus an 1.8s .go failsafe even if this file never runs.
+     We start the reveal on the next frames (do not block on fonts.ready, which can hang)
+     and keep a 1.2s failsafe here as well. */
   var go = function () { H.classList.add('go'); };
-  (D.fonts && D.fonts.ready ? D.fonts.ready : Promise.resolve()).then(function () { setTimeout(go, 100); });
-  setTimeout(go, 1500);
+  if (RM) {
+    go();
+  } else {
+    H.classList.add('js');
+    var startGo = function () {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(go);
+      });
+    };
+    startGo();
+    if (D.fonts && D.fonts.ready) D.fonts.ready.then(startGo);
+    setTimeout(go, 1200);
+  }
 
   /* ---------- roman numerals: <ul data-roman=".rn"> ---------- */
   $$('[data-roman]').forEach(function (list) {
@@ -28,10 +42,17 @@
     var els = $$('.rv');
     if (!els.length) return;
     if (RM || !hasIO) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+    var reveal = function (el) { el.classList.add('in'); io.unobserve(el); };
     var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+      es.forEach(function (e) { if (e.isIntersecting) reveal(e.target); });
+    }, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
     els.forEach(function (e) { io.observe(e); });
+    setTimeout(function () {
+      els.forEach(function (e) {
+        var r = e.getBoundingClientRect();
+        if (r.bottom > 40 && r.top < innerHeight - 40) e.classList.add('in');
+      });
+    }, 1200);
   })();
 
   /* ---------- scroll header ---------- */
