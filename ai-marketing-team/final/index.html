@@ -39,8 +39,8 @@
 
 :root{--bk:#070605;--bk2:#0F0D0A;--au:#D9B56B;--au2:#F3E2B0;--au3:#8F6B2E;--tx:#D8CCB2;--mu:#C6B892;--hair:rgba(217,181,107,.28);--ease:cubic-bezier(.16,1,.3,1);--c:"Cormorant Garamond","Cormorant",Georgia,serif;--r:"Cinzel","Trajan Pro",Georgia,serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bk)}
-body{background:var(--bk);color:var(--tx);font:400 clamp(1.18rem,1.1rem + .3vw,1.4rem)/1.55 var(--c);overflow-x:clip;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;background:var(--bk);overflow-x:hidden;overflow-x:clip}
+body{background:var(--bk);color:var(--tx);font:400 clamp(1.18rem,1.1rem + .3vw,1.4rem)/1.55 var(--c);overflow-x:hidden;overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 ::selection{background:var(--au);color:var(--bk)}
 :focus-visible{outline:1px solid var(--au);outline-offset:6px}
@@ -72,27 +72,33 @@ em{font-style:italic}
 .btn span{transition:transform .6s var(--ease)}.btn:hover span{transform:translateX(5px)}
 .lk{position:relative;display:inline-block;padding-block:.5rem;font:500 .72rem/1 var(--r);letter-spacing:.3em;text-transform:uppercase;color:var(--au2)}
 .lk::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--au);transform-origin:right;transition:transform .7s var(--ease)}.lk:hover::after{transform:scaleX(.25);transform-origin:left}
-/* hero */
-.hero{position:relative;min-height:max(100svh,700px);display:flex;align-items:center;overflow:hidden;isolation:isolate;padding-top:6rem}
+/* hero: two-column grid so the watch dial stays fully visible and centred */
+.hero{position:relative;min-height:max(100svh,700px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(1.2rem,3vw,3.5rem);isolation:isolate;padding-top:6rem;padding-bottom:clamp(2rem,5vw,4rem);overflow:visible}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 70% at 78% 50%,rgba(217,181,107,.14),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(143,107,46,.12),transparent 70%)}
-.hero .tx{position:relative;z-index:3;max-width:min(52rem,60vw)}
+.hero .wrap{grid-column:1;grid-row:1;min-width:0;position:relative;z-index:3}
+.hero .tx{position:relative;z-index:3;max-width:36rem}
 .hero .kick{display:flex;align-items:center;gap:1.2rem;color:var(--au);margin-bottom:2.2rem}
 .hero .kick::before{content:"";width:3.4rem;height:1px;background:var(--au)}
-.hero h1{font-size:clamp(3.1rem,7.2vw,8.4rem);line-height:.96;font-weight:300;letter-spacing:-.025em;margin-bottom:2.2rem}
+.hero h1{font-size:clamp(3.1rem,6.4vw,7.2rem);line-height:.96;font-weight:300;letter-spacing:-.025em;margin-bottom:2.2rem}
 .hero h1 .l{display:block;padding-bottom:.08em}
 .hero h1 .l:nth-child(2){font-style:italic;padding-left:.4em}
 .hero p.lead{max-width:34rem;color:var(--tx);margin-bottom:2.8rem;font-size:clamp(1.25rem,1.6vw,1.5rem);line-height:1.5}
 .hero .acts{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center}
-.dial{position:absolute;right:max(-12vw,-190px);top:56%;width:min(58vw,860px);aspect-ratio:1;transform:translateY(-50%);z-index:1}
-.dial .disc{position:absolute;inset:11%;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px var(--au3),0 0 0 14px #070605,0 0 0 15px var(--hair),0 40px 120px rgba(217,181,107,.2)}
+.dial{grid-column:2;grid-row:1;position:relative;right:auto;top:auto;width:min(100%,520px);max-width:100%;aspect-ratio:1;transform:none;z-index:1;justify-self:center;align-self:center;overflow:hidden;contain:paint}
+.dial .disc{position:absolute;inset:11%;border-radius:50%;overflow:hidden;contain:paint;box-shadow:0 0 0 1px var(--au3),0 0 0 14px #070605,0 0 0 15px var(--hair),0 40px 120px rgba(217,181,107,.2)}
 .dial .disc img{position:absolute;width:230%;left:-1.75%;top:-43.2%;max-width:none;transform-origin:22.5% 40.5%;animation:spin 160s linear infinite;filter:saturate(.9) contrast(1.05)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .dial .disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at var(--dx,35%) var(--dy,28%),rgba(255,244,214,.38),transparent 46%),radial-gradient(circle at 50% 120%,rgba(0,0,0,.6),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
-.dial svg.ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 200s linear infinite reverse}
+.dial svg.ring{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.dial svg.ring .spin{transform-box:fill-box;transform-origin:center;animation:spin 200s linear infinite reverse}
 .dial svg.ring text{font:500 21px var(--r);fill:var(--au);letter-spacing:.2em}
 .dial svg.ring circle{fill:none;stroke:var(--hair);stroke-width:1}
-.hero::after{content:"";position:absolute;left:0;top:0;bottom:0;width:62%;z-index:2;background:linear-gradient(90deg,var(--bk) 0%,rgba(7,6,5,.85) 40%,transparent);pointer-events:none}
-@media(max-width:900px){.hero{flex-direction:column;align-items:flex-start;padding-top:5.5rem;padding-bottom:3rem}.hero .tx{max-width:none;order:2}.dial{position:relative;right:auto;top:auto;transform:none;width:118%;margin:0 -9% -6%;order:1}.hero::after{display:none}.hero .wrapx{display:flex;flex-direction:column}}
+@media(max-width:900px){
+  .hero{grid-template-columns:minmax(0,1fr);padding-top:5.5rem;justify-items:center}
+  .dial{grid-column:1;grid-row:1;width:min(92%,420px);margin:0 auto}
+  .hero .wrap{grid-column:1;grid-row:2;width:100%}
+  .hero .tx{max-width:none}
+}
 /* sections */
 .sec{padding-block:clamp(5.5rem,12vw,12rem);position:relative}
 .lab{display:flex;gap:1.2rem;align-items:center;color:var(--au)}.lab::before{content:"";width:3rem;height:1px;background:var(--au)}
@@ -307,7 +313,7 @@ footer .acts{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margi
 <section class="hero" id="top" aria-label="AI Marketing Team — done for you">
  <div class="dial" aria-hidden="true" id="dial">
   <div class="disc"><img src="img/dial.jpg" alt="" fetchpriority="high"></div>
-  <svg class="ring" viewBox="0 0 1000 1000"><circle cx="500" cy="500" r="498"/><circle cx="500" cy="500" r="428"/><defs><path id="rp" d="M500 500m-463 0a463 463 0 1 1 926 0a463 463 0 1 1-926 0"/></defs><text><textPath href="#rp" textLength="2890" lengthAdjust="spacing">STRATEGIST · COPY · VIDEO · PUBLISHER · SEO·AEO · DMS · ANALYST ·</textPath></text></svg>
+  <svg class="ring" viewBox="0 0 1000 1000" overflow="hidden"><defs><path id="rp" d="M500 500m-463 0a463 463 0 1 1 926 0a463 463 0 1 1-926 0"/></defs><g class="spin"><circle cx="500" cy="500" r="498"/><circle cx="500" cy="500" r="428"/><text><textPath href="#rp" textLength="2890" lengthAdjust="spacing">STRATEGIST · COPY · VIDEO · PUBLISHER · SEO·AEO · DMS · ANALYST ·</textPath></text></g></svg>
  </div>
  <div class="wrap"><div class="tx">
   <div class="kick cap">The AI Marketing Team · Done for you</div>
