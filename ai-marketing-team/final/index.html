@@ -76,16 +76,16 @@ em{font-style:italic}
 .hero{position:relative;min-height:max(100svh,700px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:clamp(1.2rem,3vw,3.5rem);isolation:isolate;padding-top:6rem;padding-bottom:clamp(2rem,5vw,4rem);overflow:visible}
 .hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(60% 70% at 78% 50%,rgba(217,181,107,.14),transparent 70%),radial-gradient(40% 50% at 10% 90%,rgba(143,107,46,.12),transparent 70%)}
 .hero .wrap{grid-column:1;grid-row:1;min-width:0;position:relative;z-index:3}
-.hero .tx{position:relative;z-index:3;max-width:36rem}
+.hero .tx{position:relative;z-index:3;max-width:none}
 .hero .kick{display:flex;align-items:center;gap:1.2rem;color:var(--au);margin-bottom:2.2rem}
 .hero .kick::before{content:"";width:3.4rem;height:1px;background:var(--au)}
-.hero h1{font-size:clamp(3.1rem,6.4vw,7.2rem);line-height:.96;font-weight:300;letter-spacing:-.025em;margin-bottom:2.2rem}
-.hero h1 .l{display:block;padding-bottom:.08em}
+.hero h1{font-size:clamp(2.6rem,4.6vw,6rem);line-height:.96;font-weight:300;letter-spacing:-.025em;margin-bottom:2.2rem}
+.hero h1 .l{display:block;padding-bottom:.08em;white-space:nowrap}@media(max-width:560px){.hero h1 .l{white-space:normal}}
 .hero h1 .l:nth-child(2){font-style:italic;padding-left:.4em}
 .hero p.lead{max-width:34rem;color:var(--tx);margin-bottom:2.8rem;font-size:clamp(1.25rem,1.6vw,1.5rem);line-height:1.5}
 .hero .acts{display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center}
 .dial{grid-column:2;grid-row:1;position:relative;right:auto;top:auto;width:min(100%,520px);max-width:100%;aspect-ratio:1;transform:none;z-index:1;justify-self:center;align-self:center;overflow:hidden;contain:paint}
-.dial .disc{position:absolute;inset:11%;border-radius:50%;overflow:hidden;contain:paint;box-shadow:0 0 0 1px var(--au3),0 0 0 14px #070605,0 0 0 15px var(--hair),0 40px 120px rgba(217,181,107,.2)}
+.dial .disc{position:absolute;inset:11%;border-radius:50%;overflow:hidden;contain:paint;clip-path:circle(50% at 50% 50%);-webkit-clip-path:circle(50% at 50% 50%);-webkit-mask-image:radial-gradient(circle at 50% 50%,#000 70.5%,transparent 71%);mask-image:radial-gradient(circle at 50% 50%,#000 70.5%,transparent 71%);isolation:isolate;transform:translateZ(0);box-shadow:0 0 0 1px var(--au3),0 0 0 14px #070605,0 0 0 15px var(--hair),0 40px 120px rgba(217,181,107,.2)}
 .dial .disc img{position:absolute;width:230%;left:-1.75%;top:-43.2%;max-width:none;transform-origin:22.5% 40.5%;animation:spin 160s linear infinite;filter:saturate(.9) contrast(1.05)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .dial .disc::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at var(--dx,35%) var(--dy,28%),rgba(255,244,214,.38),transparent 46%),radial-gradient(circle at 50% 120%,rgba(0,0,0,.6),transparent 55%);mix-blend-mode:soft-light;pointer-events:none}
