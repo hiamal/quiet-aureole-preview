@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#070605">
+<title>Session timer — AI Marketing Team</title>
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'Cinzel';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/53a6c32636.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Cinzel';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/63551c15ca.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 500;font-display:swap;src:url(fonts/a89ed22ca4.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300 500;font-display:swap;src:url(fonts/25e3098244.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/9076820487.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300 600;font-display:swap;src:url(fonts/2fed1d1b2e.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --bk:#070605;--bk2:#0F0D0A;--au:#D9B56B;--au2:#F3E2B0;--au3:#8F6B2E;
+  --tx:#D8CCB2;--mu:#C6B892;--hair:rgba(217,181,107,.28);
+  --c:"Cormorant Garamond","Cormorant",Georgia,serif;
+  --r:"Cinzel","Trajan Pro",Georgia,serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --metal:linear-gradient(100deg,#8F6B2E 0%,#F3E2B0 22%,#B8893C 44%,#F6E7B4 66%,#9A7430 88%,#E9CF8E);
+  --fill:linear-gradient(100deg,#D9B56B,#F3E2B0 50%,#D9B56B);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;overflow-x:clip}
+body{
+  min-height:100vh;min-height:100dvh;background:var(--bk);color:var(--tx);
+  font:400 clamp(1.18rem,1.1rem + .3vw,1.4rem)/1.55 var(--c);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+:focus{outline:none}
+:focus-visible{outline:1px solid #D9B56B;outline-offset:6px}
+button{font:inherit;color:inherit;background:none;border:0;margin:0;padding:0;border-radius:0;-webkit-tap-highlight-color:transparent}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+.wrap{max-width:72rem;margin:0 auto;padding:clamp(1rem,3vh,2rem) clamp(1rem,4vw,3rem) clamp(1rem,2.4vh,1.6rem)}
+
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-bottom:clamp(1rem,3vw,1.75rem);border-bottom:1px solid var(--hair)}
+.brand{display:inline-flex;align-items:center;gap:.9rem;color:var(--au2);text-decoration:none}
+.brand svg{height:1.9rem;width:1.9rem;flex:none}
+.wordmark{font:500 .74rem/1 var(--r);letter-spacing:.34em;text-transform:uppercase;color:var(--au2)}
+.caption{font:500 .7rem/1.5 var(--r);letter-spacing:.34em;text-transform:uppercase;color:var(--au)}
+.label{font:500 .7rem/1.4 var(--r);letter-spacing:.3em;text-transform:uppercase;color:var(--mu)}
+
+.intro{padding:clamp(1.1rem,4.5vh,2.4rem) 0 clamp(.85rem,3vh,1.4rem);text-align:center}
+.kicker{display:inline-flex;align-items:center;gap:1rem;margin:0}
+.kicker::before,.kicker::after{content:"";width:2.5rem;height:1px;background:var(--au)}
+.intro h1{margin:.6rem 0 .3rem;font:300 clamp(2.2rem,1.4rem + 2.4vw,3.4rem)/1.05 var(--c);color:var(--au2);letter-spacing:.005em}
+.intro p.lede{margin:0 auto;max-width:34rem;color:var(--tx)}
+.intro p.lede em{font-style:italic;color:var(--mu)}
+
+.stage{
+  position:relative;text-align:center;background-color:var(--bk2);border:1px solid var(--hair);
+  padding:clamp(1.25rem,4vh,2.6rem) clamp(1rem,4vw,3rem) clamp(1.1rem,3vh,2rem);
+  background-image:
+    linear-gradient(var(--au),var(--au)),linear-gradient(var(--au),var(--au)),
+    linear-gradient(var(--au),var(--au)),linear-gradient(var(--au),var(--au)),
+    linear-gradient(var(--au),var(--au)),linear-gradient(var(--au),var(--au)),
+    linear-gradient(var(--au),var(--au)),linear-gradient(var(--au),var(--au));
+  background-repeat:no-repeat;
+  background-size:16px 1px,1px 16px,16px 1px,1px 16px,16px 1px,1px 16px,16px 1px,1px 16px;
+  background-position:top 10px left 10px,top 10px left 10px,top 10px right 10px,top 10px right 10px,bottom 10px left 10px,bottom 10px left 10px,bottom 10px right 10px,bottom 10px right 10px;
+  transition:border-color .8s var(--ease),box-shadow .8s var(--ease);
+}
+.stage::backdrop{background:#070605}
+.stage:fullscreen{width:100%;height:100%;max-width:none}
+.stage:-webkit-full-screen{width:100%;height:100%}
+
+.focus-bar{display:none}
+
+.digits{
+  display:inline-flex;justify-content:center;align-items:baseline;margin:0;
+  font:500 clamp(5.2rem,12.5vw,9.25rem)/1 var(--r);letter-spacing:0;
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;
+  color:var(--au);transition:opacity .6s var(--ease);
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .digits{background:var(--metal);background-size:260% 100%;background-position:30% 0;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+}
+@media (forced-colors:active){.digits{color:CanvasText;-webkit-text-fill-color:CanvasText;background:none}}
+.digits .d{display:inline-block;width:.74em;text-align:center}
+.digits .colon{display:inline-block;width:.36em;text-align:center;transform:translateY(-.07em)}
+
+.track{position:relative;height:1px;width:min(100%,40rem);margin:clamp(.75rem,2vh,1.2rem) auto 0;background:var(--hair)}
+.bar{position:absolute;left:0;top:-1px;height:3px;width:100%;background:linear-gradient(90deg,#8F6B2E,#F3E2B0);transform-origin:left center;transform:scaleX(0)}
+
+.state{margin:.8rem 0 0;display:flex;justify-content:center;align-items:center;gap:.8rem;min-height:1.6rem}
+.state .mark{width:7px;height:7px;border:1px solid var(--au);flex:none;transition:background-color .4s}
+.stage[data-state=running] .state .mark{background:var(--au)}
+.stage[data-state=done] .state .mark{background:var(--au2);border-color:var(--au2);transform:rotate(45deg)}
+.state #status{color:var(--au)}
+.stage[data-state=done] #status{color:var(--au2)}
+.stage[data-state=paused] .digits{opacity:.68}
+.stage[data-state=done]{border-color:var(--au);box-shadow:inset 0 0 0 1px rgba(217,181,107,.55),0 0 0 1px rgba(217,181,107,.18)}
+.stage[data-state=done] .digits{animation:glow 1.4s var(--ease) 3;filter:drop-shadow(0 0 .12em rgba(243,226,176,.28))}
+.stage[data-state=done] .bar{animation:barglow 1.4s var(--ease) 3}
+@keyframes glow{0%,100%{filter:drop-shadow(0 0 .12em rgba(243,226,176,.28))}45%{filter:drop-shadow(0 0 .3em rgba(243,226,176,.6)) brightness(1.18)}}
+@keyframes barglow{0%,100%{opacity:1}45%{opacity:.55}}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.8rem;min-height:3.25rem;padding:1.1rem 1.4rem;font:500 .72rem/1 var(--r);letter-spacing:.3em;text-transform:uppercase;border:1px solid var(--au);color:var(--au2);position:relative;overflow:hidden;isolation:isolate;background:transparent;cursor:pointer;transition:color .6s var(--ease),opacity .4s var(--ease);text-decoration:none;white-space:nowrap}
+.btn::before{content:"";position:absolute;inset:0;background:var(--fill);background-size:200% 100%;transform:translateY(100%);transition:transform .7s var(--ease);z-index:-1}
+.btn.fill{background-color:#D9B56B;background-image:var(--fill);background-size:200% 100%;color:var(--bk);border-color:transparent}
+@media (hover:hover){
+  .btn:not([aria-disabled=true]):hover{color:var(--bk)}
+  .btn:not([aria-disabled=true]):hover::before{transform:none}
+  .btn.fill:not([aria-disabled=true]):hover{color:var(--au2);box-shadow:inset 0 0 0 1px var(--au)}
+  .btn.fill:not([aria-disabled=true]):hover::before{background:var(--bk);transform:none}
+}
+.btn[aria-disabled=true]{opacity:.38;cursor:default}
+.btn .ico{width:1.05rem;height:1.05rem;flex:none;margin-left:-.15em}
+.btn.sm{min-height:44px;padding:.85rem 1.1rem;gap:.7rem}
+
+.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;max-width:34rem;margin:clamp(1.1rem,3vh,1.6rem) auto 0}
+.controls .btn{padding-left:.6rem;padding-right:.6rem;letter-spacing:.26em}
+
+.audio{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.6rem 1.5rem;max-width:44rem;margin:clamp(1rem,2.5vh,1.4rem) auto 0;padding-top:clamp(.8rem,2vh,1.15rem);border-top:1px solid var(--hair)}
+.vol{display:inline-flex;align-items:center;gap:.9rem}
+.song-meta{display:inline-flex;align-items:center;gap:1rem;min-height:44px}
+#songTime{font-variant-numeric:tabular-nums;color:var(--mu)}
+#songStatus{color:var(--mu)}
+#songStatus:empty,#songTime:empty{display:none}
+
+input[type=range]{-webkit-appearance:none;appearance:none;background:transparent;width:9.5rem;height:44px;margin:0;cursor:pointer;--p:80%}
+input[type=range]::-webkit-slider-runnable-track{height:1px;background:linear-gradient(90deg,var(--au) var(--p),var(--hair) var(--p))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;margin-top:-6px;background:var(--au2);border:0;border-radius:0}
+input[type=range]::-moz-range-track{height:1px;background:var(--hair)}
+input[type=range]::-moz-range-progress{height:1px;background:var(--au)}
+input[type=range]::-moz-range-thumb{width:13px;height:13px;background:var(--au2);border:0;border-radius:0}
+input[type=range]:focus-visible{outline:1px solid #D9B56B;outline-offset:6px}
+
+.after{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.25rem 2rem;margin-top:clamp(1rem,2.5vh,1.5rem)}
+.view{display:flex;flex-wrap:wrap;gap:.75rem}
+.notes{margin:0;display:grid;gap:.4rem;text-align:right}
+.notes .label{color:var(--mu)}
+kbd{font:500 .66rem/1 var(--r);letter-spacing:.12em;color:var(--au2);border:1px solid var(--hair);padding:.28rem .42rem;margin:0 .15rem}
+
+.site-footer{margin-top:clamp(1rem,2.8vh,1.6rem);padding-top:.9rem;border-top:1px solid var(--hair);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.site-footer p{margin:0}
+
+/* Timer-only and full screen */
+body.timer-mode .site-header,body.timer-mode .intro,body.timer-mode .after,body.timer-mode .site-footer{display:none}
+body.timer-mode .wrap{padding:0;max-width:none}
+.stage.focus{
+  position:fixed;inset:0;z-index:10;border:0;box-shadow:none;background-color:var(--bk);
+  display:flex;flex-direction:column;justify-content:center;justify-content:safe center;align-items:center;overflow:auto;
+  padding:clamp(4.5rem,11vh,7rem) clamp(.75rem,3vw,2rem) clamp(1rem,4vh,2.5rem);
+}
+.stage.focus[data-state=done]{box-shadow:inset 0 0 0 1px rgba(217,181,107,.55)}
+.stage.focus .focus-bar{display:flex;position:absolute;top:0;left:0;right:0;justify-content:space-between;align-items:center;gap:1rem;padding:clamp(.9rem,3vw,1.75rem) clamp(1rem,4vw,2.5rem)}
+.stage.focus .digits{font-size:min(31vw,50vh)}
+.stage.focus .track{width:min(100%,64rem)}
+.stage.focus .controls{width:min(100%,34rem)}
+.stage.focus .controls,.stage.focus .audio,.stage.focus .focus-actions{opacity:.38;transition:opacity .6s var(--ease)}
+.stage.focus:hover .controls,.stage.focus:hover .audio,.stage.focus:hover .focus-actions,
+.stage.focus .controls:focus-within,.stage.focus .audio:focus-within,.stage.focus .focus-actions:focus-within{opacity:1}
+.focus-actions{display:flex;gap:.6rem}
+.stage.focus .audio{border-top-color:transparent;padding-top:0}
+@media (hover:none){.stage.focus .controls,.stage.focus .audio,.stage.focus .focus-actions{opacity:1}}
+@media (max-height:540px){
+  .stage.focus .digits{font-size:min(31vw,44vh)}
+  .stage.focus .audio{display:none}
+  .stage.focus .controls{margin-top:1rem}
+}
+
+@media (max-width:640px){
+  .wordmark{font-size:.66rem;letter-spacing:.28em}
+  .site-header .caption{display:none}
+  .after{flex-direction:column;align-items:stretch}
+  .view{display:grid;grid-template-columns:1fr 1fr}
+  .notes{text-align:left}
+  .controls .btn{letter-spacing:.2em;font-size:.68rem}
+  .audio{gap:.4rem 1rem}
+  .focus-bar .wordmark{display:none}
+}
+@media (max-width:360px){
+  .controls{gap:.5rem}
+  .controls .btn{letter-spacing:.14em}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .stage[data-state=done] .digits{animation:none;filter:drop-shadow(0 0 .14em rgba(243,226,176,.38))}
+  .stage[data-state=done] .bar{animation:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="mark" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="18" fill="none" stroke="#D9B56B" stroke-width="1.4"/>
+    <circle cx="20" cy="20" r="13" fill="none" stroke="#8F6B2E" stroke-width="1"/>
+    <path d="M20 20 L20 8 M20 20 L28 24" stroke="#F3E2B0" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+    <circle cx="20" cy="20" r="1.7" fill="#F3E2B0"/>
+  </symbol>
+</svg>
+
+<div class="wrap">
+  <header class="site-header">
+    <span class="brand"><svg aria-hidden="true" focusable="false"><use href="#mark"/></svg><span class="wordmark">AI Marketing Team</span></span>
+    <span class="caption">Live call</span>
+  </header>
+
+  <section class="intro" aria-labelledby="title">
+    <p class="kicker caption">Challenge session</p>
+    <h1 id="title">Three minutes.</h1>
+    <p class="lede">One song, one countdown. Press Start when the room is ready <em>— the music begins with the clock.</em></p>
+  </section>
+
+  <main>
+    <section class="stage" id="stage" data-state="idle" aria-label="Session timer">
+      <div class="focus-bar">
+        <span class="brand"><svg aria-hidden="true" focusable="false"><use href="#mark"/></svg><span class="wordmark">AI Marketing Team</span></span>
+        <div class="focus-actions">
+          <button type="button" class="btn sm" id="fsInner" aria-label="Toggle full screen">Full screen</button>
+          <button type="button" class="btn sm" id="exit" aria-label="Exit timer only view">Exit</button>
+        </div>
+      </div>
+
+      <p class="digits" id="digits" role="timer" aria-label="3:00 remaining"><span class="d" id="dm" aria-hidden="true">3</span><span class="colon" aria-hidden="true">:</span><span class="d" id="ds1" aria-hidden="true">0</span><span class="d" id="ds2" aria-hidden="true">0</span></p>
+
+      <div class="track" role="progressbar" id="progress" aria-label="Time elapsed" aria-valuemin="0" aria-valuemax="180" aria-valuenow="0" aria-valuetext="0 of 180 seconds elapsed"><div class="bar" id="bar"></div></div>
+
+      <p class="state"><span class="mark" aria-hidden="true"></span><span class="caption" id="status" role="status" aria-live="polite">Ready</span></p>
+
+      <div class="controls" role="group" aria-label="Timer controls">
+        <button type="button" class="btn fill" id="start" aria-keyshortcuts="Space">Start</button>
+        <button type="button" class="btn" id="pause" aria-keyshortcuts="Space" aria-disabled="true">Pause</button>
+        <button type="button" class="btn" id="reset" aria-keyshortcuts="R">Reset</button>
+      </div>
+
+      <div class="audio" role="group" aria-label="Song">
+        <button type="button" class="btn sm" id="mute" aria-pressed="false" aria-keyshortcuts="M" aria-label="Mute song and chime">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path id="waves" d="M15.5 9a4 4 0 0 1 0 6M18 6.8a7.2 7.2 0 0 1 0 10.4" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path id="cross" d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" style="display:none"/></svg>
+          <span id="muteText">Mute</span>
+        </button>
+        <label class="vol"><span class="label">Volume</span><input type="range" id="vol" min="0" max="100" step="1" value="80" aria-valuetext="80 per cent"></label>
+        <span class="song-meta"><span class="label" id="songTime"></span><span class="label" id="songStatus" aria-live="polite"></span></span>
+      </div>
+    </section>
+
+    <div class="after">
+      <div class="view" role="group" aria-label="View">
+        <button type="button" class="btn sm" id="timerOnly">Timer only</button>
+        <button type="button" class="btn sm" id="fsOuter" aria-keyshortcuts="F">Full screen</button>
+      </div>
+      <div class="notes">
+        <p class="label" style="margin:0"><kbd>Space</kbd> Start / pause &nbsp; <kbd>R</kbd> Reset &nbsp; <kbd>M</kbd> Mute &nbsp; <kbd>F</kbd> Full screen</p>
+        <p class="label" style="margin:0">Alerts follow mute — muted means no end chime.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p class="caption">AI Marketing Team</p>
+    <p class="label">Share this view: add ?mode=timer to the address</p>
+  </footer>
+</div>
+
+<audio id="song" src="./session-pulse.mp3" preload="metadata"></audio>
+<audio id="chime" src="./chime.mp3" preload="auto"></audio>
+
+<script>
+(function(){
+  "use strict";
+  var DURATION = 180000;
+  var $ = function(id){ return document.getElementById(id); };
+  var stage=$("stage"), digits=$("digits"), dm=$("dm"), ds1=$("ds1"), ds2=$("ds2"), bar=$("bar"), progress=$("progress"),
+      statusEl=$("status"), startB=$("start"), pauseB=$("pause"), resetB=$("reset"), muteB=$("mute"), muteText=$("muteText"),
+      waves=$("waves"), cross=$("cross"), vol=$("vol"), songStatus=$("songStatus"), songTime=$("songTime"),
+      song=$("song"), chime=$("chime"), timerOnlyB=$("timerOnly"), fsOuter=$("fsOuter"), fsInner=$("fsInner"), exitB=$("exit");
+
+  var state="idle", remaining=DURATION, endAt=0, raf=0, backup=0, lastShown=-1;
+  var muted=false, baseVol=0.8, gain=1, fadeTimer=0, songFailed=false, needsTap=false, chimeUnlocked=false;
+
+  function now(){ return performance.now(); }
+  function clamp01(v){ return v<0?0:v>1?1:v; }
+  function mmss(totalSec){
+    var m=Math.floor(totalSec/60), s=totalSec%60;
+    return m+":"+(s<10?"0":"")+s;
+  }
+
+  function render(){
+    // Ceil so the clock reads 3:00 at the start and lands on 0:00 exactly when time is up.
+    var sec=Math.ceil(remaining/1000);
+    if(sec!==lastShown){
+      lastShown=sec;
+      var m=Math.floor(sec/60), s=sec%60;
+      dm.textContent=String(m);
+      ds1.textContent=String(Math.floor(s/10));
+      ds2.textContent=String(s%10);
+      digits.setAttribute("aria-label", mmss(sec)+" remaining");
+      var el=180-sec;
+      progress.setAttribute("aria-valuenow", String(el));
+      progress.setAttribute("aria-valuetext", el+" of 180 seconds elapsed");
+    }
+    bar.style.transform="scaleX("+clamp01(1-remaining/DURATION).toFixed(4)+")";
+  }
+
+  function stopLoops(){
+    if(raf){ cancelAnimationFrame(raf); raf=0; }
+    if(backup){ clearInterval(backup); backup=0; }
+  }
+
+  function step(){
+    if(state!=="running") return false;
+    remaining=Math.max(0, endAt-now());
+    if(remaining<=0){ finish(); return false; }
+    render();
+    return true;
+  }
+  function frame(){ raf=0; if(step()) raf=requestAnimationFrame(frame); }
+
+  var labels={idle:"Ready", running:"Running", paused:"Paused", done:"Time — that’s three minutes"};
+  function ui(){
+    stage.setAttribute("data-state", state);
+    statusEl.textContent=labels[state];
+    startB.textContent = state==="paused" ? "Resume" : "Start";
+    var startOff = state==="done" || (state==="running" && !needsTap);
+    startB.setAttribute("aria-disabled", startOff?"true":"false");
+    pauseB.setAttribute("aria-disabled", state==="running"?"false":"true");
+    resetB.setAttribute("aria-disabled", state==="idle"?"true":"false");
+  }
+
+  function setSongStatus(t){ songStatus.textContent=t; }
+  function applyVolume(){
+    try{ song.volume=clamp01(baseVol*gain); }catch(e){}
+    song.muted=muted;
+  }
+  function stopFade(){ if(fadeTimer){ clearInterval(fadeTimer); fadeTimer=0; } }
+
+  function playSong(){
+    stopFade(); gain=1; applyVolume();
+    if(songFailed || song.error){ songFailed=false; setSongStatus(""); try{ song.load(); }catch(e){} }
+    var p;
+    try{ p=song.play(); }catch(e){ markSongMissing(); return; }
+    if(p && typeof p.then==="function"){
+      p.then(function(){
+        needsTap=false;
+        if(state!=="running") song.pause();
+        if(songStatus.textContent!=="Song not loaded") setSongStatus("");
+        ui();
+      }).catch(function(err){
+        var name=err && err.name;
+        if(name==="NotAllowedError"){ needsTap=true; setSongStatus("Tap Start again for the song"); ui(); }
+        else if(name!=="AbortError"){ markSongMissing(); }
+      });
+    }
+  }
+  function markSongMissing(){ songFailed=true; needsTap=false; setSongStatus("Song not loaded"); songTime.textContent=""; ui(); }
+
+  function fadeOutSong(){
+    stopFade();
+    if(song.paused){ return; }
+    var from=gain, t0=now(), len=1600;
+    fadeTimer=setInterval(function(){
+      var k=clamp01((now()-t0)/len);
+      gain=from*(1-k)*(1-k);
+      applyVolume();
+      if(k>=1){ stopFade(); song.pause(); gain=1; applyVolume(); }
+    },40);
+  }
+
+  function unlockChime(){
+    if(chimeUnlocked) return;
+    chimeUnlocked=true;
+    // Prime the chime inside the Start gesture so mobile browsers allow it to play at 0:00.
+    chime.muted=true;
+    try{
+      var p=chime.play();
+      if(p && typeof p.then==="function"){
+        p.then(function(){ chime.pause(); try{ chime.currentTime=0; }catch(e){} chime.muted=false; })
+         .catch(function(){ chime.muted=false; });
+      } else { chime.pause(); chime.muted=false; }
+    }catch(e){ chime.muted=false; }
+  }
+  function playChime(){
+    if(muted) return;
+    try{ chime.pause(); chime.currentTime=0; }catch(e){}
+    chime.muted=false;
+    try{ chime.volume=clamp01(baseVol); }catch(e){}
+    try{ var p=chime.play(); if(p && p.catch) p.catch(function(){}); }catch(e){}
+  }
+
+  function start(){
+    if(state==="done") return;
+    if(state==="running"){ if(needsTap || song.paused) playSong(); return; }
+    unlockChime();
+    endAt=now()+remaining;
+    state="running";
+    stopLoops();
+    raf=requestAnimationFrame(frame);
+    backup=setInterval(step,250);
+    playSong();
+    ui();
+  }
+  function pause(){
+    if(state!=="running") return;
+    remaining=Math.max(0, endAt-now());
+    stopLoops();
+    state="paused";
+    song.pause();
+    needsTap=false;
+    render(); ui();
+  }
+  function reset(){
+    stopLoops(); stopFade();
+    state="idle"; remaining=DURATION; lastShown=-1; needsTap=false;
+    song.pause();
+    try{ song.currentTime=0; }catch(e){}
+    try{ chime.pause(); }catch(e){}
+    gain=1; applyVolume();
+    if(songStatus.textContent!=="Song not loaded") setSongStatus("");
+    render(); ui(); updateSongTime();
+  }
+  function finish(){
+    stopLoops();
+    remaining=0; state="done"; needsTap=false;
+    render();
+    fadeOutSong();
+    playChime();
+    ui();
+  }
+  function toggle(){ if(state==="running") pause(); else start(); }
+
+  function toggleMute(){
+    muted=!muted;
+    applyVolume();
+    if(muted){ try{ chime.pause(); }catch(e){} }
+    muteB.setAttribute("aria-pressed", muted?"true":"false");
+    muteText.textContent = muted ? "Muted" : "Mute";
+    waves.style.display = muted ? "none" : "";
+    cross.style.display = muted ? "" : "none";
+  }
+
+  function setVolFromSlider(){
+    var v=Number(vol.value);
+    baseVol=v/100;
+    vol.style.setProperty("--p", v+"%");
+    vol.setAttribute("aria-valuetext", v+" per cent");
+    applyVolume();
+  }
+
+  function updateSongTime(){
+    if(songFailed){ songTime.textContent=""; return; }
+    var d=song.duration;
+    if(!isFinite(d) || d<=0){ songTime.textContent=""; return; }
+    songTime.textContent=mmss(Math.floor(song.currentTime||0))+" / "+mmss(Math.round(d));
+  }
+
+  song.addEventListener("error", markSongMissing);
+  song.addEventListener("loadedmetadata", function(){ songFailed=false; if(songStatus.textContent==="Song not loaded") setSongStatus(""); updateSongTime(); });
+  song.addEventListener("timeupdate", updateSongTime);
+  song.addEventListener("durationchange", updateSongTime);
+  if(song.error || song.networkState===3) markSongMissing();
+
+  /* Views */
+  function fsElement(){ return document.fullscreenElement || document.webkitFullscreenElement || null; }
+  function isTimerMode(){
+    var q;
+    try{ q=new URLSearchParams(location.search).get("mode"); }catch(e){ q=null; }
+    return q==="timer" || location.hash==="#timer";
+  }
+  function applyView(){
+    var tm=isTimerMode(), fs=fsElement()===stage;
+    document.body.classList.toggle("timer-mode", tm);
+    stage.classList.toggle("focus", tm || fs);
+    var t = fs ? "Exit full screen" : "Full screen";
+    fsOuter.textContent=t; fsInner.textContent=t;
+    exitB.setAttribute("aria-label", fs && !tm ? "Exit full screen" : "Exit timer only view");
+  }
+  function enterTimerMode(){
+    if(!isTimerMode()){
+      try{ history.pushState(null, "", "?mode=timer"); }
+      catch(e){ location.hash="timer"; return; }
+    }
+    applyView();
+  }
+  function exitFs(){
+    var x=document.exitFullscreen || document.webkitExitFullscreen;
+    if(x){ try{ var p=x.call(document); if(p && p.catch) p.catch(function(){}); }catch(e){} }
+  }
+  function exitAll(){
+    if(fsElement()) exitFs();
+    if(isTimerMode()){
+      try{ history.pushState(null, "", location.pathname); }
+      catch(e){ location.hash=""; }
+    }
+    applyView();
+  }
+  function toggleFs(){
+    if(fsElement()){ exitFs(); return; }
+    var req=stage.requestFullscreen || stage.webkitRequestFullscreen;
+    if(req){
+      try{
+        var p=req.call(stage);
+        if(p && p.catch) p.catch(function(){ enterTimerMode(); });
+      }catch(e){ enterTimerMode(); }
+    } else {
+      if(isTimerMode()) exitAll(); else enterTimerMode();
+    }
+  }
+  document.addEventListener("fullscreenchange", applyView);
+  document.addEventListener("webkitfullscreenchange", applyView);
+  window.addEventListener("popstate", applyView);
+  window.addEventListener("hashchange", applyView);
+
+  /* Wiring */
+  startB.addEventListener("click", function(){ if(startB.getAttribute("aria-disabled")!=="true" || needsTap) start(); });
+  pauseB.addEventListener("click", pause);
+  resetB.addEventListener("click", reset);
+  muteB.addEventListener("click", toggleMute);
+  vol.addEventListener("input", setVolFromSlider);
+  timerOnlyB.addEventListener("click", enterTimerMode);
+  fsOuter.addEventListener("click", toggleFs);
+  fsInner.addEventListener("click", toggleFs);
+  exitB.addEventListener("click", exitAll);
+
+  function isSpace(e){ return e.key===" " || e.key==="Spacebar" || e.code==="Space"; }
+  document.addEventListener("keydown", function(e){
+    if(e.ctrlKey || e.metaKey || e.altKey) return;
+    var t=e.target, tag=t && t.tagName;
+    if(tag==="TEXTAREA" || tag==="SELECT" || (tag==="INPUT" && t.type!=="range") || (t && t.isContentEditable)) return;
+    var onRange = tag==="INPUT" && t.type==="range";
+    if(isSpace(e)){
+      if(onRange) return;
+      e.preventDefault();
+      if(!e.repeat) toggle();
+      return;
+    }
+    if(e.repeat) return;
+    var k=(e.key||"").toLowerCase();
+    if(k==="r"){ e.preventDefault(); reset(); }
+    else if(k==="m"){ e.preventDefault(); toggleMute(); }
+    else if(k==="f"){ e.preventDefault(); toggleFs(); }
+    else if(k==="escape" && isTimerMode() && !fsElement()){ exitAll(); }
+  });
+  // Stop a focused button from also firing its own click when Space toggles the timer.
+  document.addEventListener("keyup", function(e){
+    if(isSpace(e) && e.target && e.target.tagName==="BUTTON") e.preventDefault();
+  });
+
+  setVolFromSlider();
+  applyVolume();
+  render();
+  ui();
+  applyView();
+})();
+</script>
+</body>
+</html>
