@@ -510,6 +510,151 @@ html.reveal [data-r].in{animation:rise .8s var(--ease) var(--d,0ms) both}
  .cur,.spot{display:none!important}
  .hd.away{transform:none}
 }
+/* ===== Type scale v2 (AI Marketing Team brand kit v2, 27 Nov 2026) =====
+   Typography tokens copied from tokens.css (colour/layout tokens already live in :root above),
+   followed by site-type-scale.css. Last in the cascade on purpose. */
+:root{
+ --fs-fine:clamp(0.9375rem, 0.9143rem + 0.0952vw, 1rem); /* 15 → 16px */
+ --fs-small:clamp(1.0313rem, 0.9964rem + 0.1429vw, 1.125rem); /* 16.5 → 18px */
+ --fs-body:clamp(1.1875rem, 1.1062rem + 0.3333vw, 1.4063rem); /* 19 → 22.5px */
+ --fs-lead:clamp(1.3125rem, 1.1964rem + 0.4762vw, 1.625rem); /* 21 → 26px */
+ --fs-h4:clamp(1.5rem, 1.2679rem + 0.9524vw, 2.125rem); /* 24 → 34px */
+ --fs-h3:clamp(1.75rem, 1.4714rem + 1.1429vw, 2.5rem); /* 28 → 40px */
+ --fs-h3-lg:clamp(2.125rem, 1.6607rem + 1.9048vw, 3.375rem); /* 34 → 54px */
+ --fs-h2:clamp(2.375rem, 1.5857rem + 3.2381vw, 4.5rem); /* 38 → 72px */
+ --fs-quote:clamp(2.25rem, 1.4607rem + 3.2381vw, 4.375rem); /* 36 → 70px */
+ --fs-h1:clamp(3rem, 2.0714rem + 3.8095vw, 5.5rem); /* 48 → 88px */
+ --fs-display:clamp(2.75rem, 1.6821rem + 4.381vw, 5.625rem); /* 44 → 90px */
+ --fs-price:clamp(3.75rem, 2.8214rem + 3.8095vw, 6.25rem); /* 60 → 100px */
+ --fs-price-sm:clamp(2.25rem, 1.7857rem + 1.9048vw, 3.5rem); /* 36 → 56px */
+ --fs-label:clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem); /* 13 → 14px */
+ --fs-nav:clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem); /* 13 → 14px */
+ --fs-wordmark:clamp(0.75rem, 0.7036rem + 0.1905vw, 0.875rem); /* 12 → 14px */
+ --fs-btn:clamp(0.875rem, 0.8518rem + 0.0952vw, 0.9375rem); /* 14 → 15px */
+ --fs-btn-sm:clamp(0.8125rem, 0.7893rem + 0.0952vw, 0.875rem); /* 13 → 14px */
+ --fs-tag:clamp(0.75rem, 0.7268rem + 0.0952vw, 0.8125rem); /* 12 → 13px */
+ --lh-hero:0.95;
+ --lh-price:0.92;
+ --lh-display:1.04;
+ --lh-heading:1.12;
+ --lh-quote:1.1;
+ --lh-statement:1.2;
+ --lh-label:1.4;
+ --lh-lead:1.55;
+ --lh-body:1.65;
+ --lh-ui:1;
+ --ls-hero:-0.028em;
+ --ls-display:-0.018em;
+ --ls-tight:-0.01em;
+ --ls-body:0;
+ --ls-label:0.24em;
+ --ls-nav:0.16em;
+ --ls-wordmark:0.24em;
+ --ls-btn:0.18em;
+ --ls-tag:0.12em;
+ --measure:36rem;
+ --measure-lead:34rem;
+}
+@media (max-width:600px){:root{--ls-btn:.14em;--ls-wordmark:.16em}}
+/* ---------- shared: home + sales pages ---------- */
+body{font-size:var(--fs-body);line-height:var(--lh-body)}
+.cap{font-size:var(--fs-label);letter-spacing:var(--ls-label)}
+.brand{font-size:var(--fs-wordmark);letter-spacing:var(--ls-wordmark)}
+.hd nav.cap{font-size:var(--fs-nav);letter-spacing:var(--ls-nav)}
+.hbtn{font-size:var(--fs-btn-sm);letter-spacing:var(--ls-btn)}
+.btn{font-size:var(--fs-btn);letter-spacing:var(--ls-btn);min-height:52px;max-width:100%;white-space:normal;text-align:center;line-height:1.25}
+.stub .btn,.cert .cr .btn{width:100%;padding-inline:1rem;letter-spacing:.14em}
+.btn.ghost{font-size:var(--fs-btn-sm);min-height:48px}
+.lk{font-size:var(--fs-btn-sm);letter-spacing:var(--ls-btn)}
+.tag{font-size:var(--fs-tag);letter-spacing:var(--ls-tag);padding:.4rem .6rem}
+
+.hero h1{font-size:var(--fs-h1)}
+.hero p.lead{font-size:var(--fs-lead);line-height:var(--lh-lead);max-width:var(--measure-lead)}
+.h2{font-size:var(--fs-h2)}
+.pane h3,.fr h3,.fg h4,.mem .no{font-size:var(--fs-label);letter-spacing:var(--ls-label)}
+.pane .big,.hown,.fr.y li,summary{font-size:var(--fs-h4)}
+.fr.y li::before,.hd nav li a::before,.hd .nl a::before{font-size:var(--fs-tag)}
+.fr.y li{padding-left:3.4rem}.fr.y li:hover{padding-left:3.8rem}
+.mem h3,.wy.main h3,.cert .cl h3{font-size:var(--fs-h3-lg)}
+.wv h3,.hw h3,.wy h3,.ledger h3,.cert .cr h3,.cmp .o h3,.stub h3{font-size:var(--fs-h3)}
+.mem p,.sevn{max-width:var(--measure)}
+.hw p{max-width:26rem}
+.wv p.d{max-width:36ch}
+.ans p{max-width:42rem}
+.wy p{max-width:var(--measure)}
+.wy.main p,.band p,.sub,.guar p.q{font-size:var(--fs-lead);line-height:var(--lh-lead)}
+.band p{max-width:var(--measure)}
+.band blockquote{font-size:var(--fs-quote)}
+footer h2{font-size:var(--fs-display)}
+.sevn,.fr.n li,.u5 .m,.conote,.ringcap,.faqw .t .sub,.cert .terms,.cert.slim .cl p+p{font-size:var(--fs-small)}
+.fine,.legal,.hprice .terms,.cert .fine2,.stub .fine2,.fg .who-line{font-size:var(--fs-fine)}
+
+/* sales components */
+.hprice .amt,.cmp .o .pr{font-size:var(--fs-price-sm)}
+.cert .amt,.cert.slim .amt,.stub .amt{font-size:var(--fs-price)}
+.amt i{font-size:max(.24em,var(--fs-tag))}
+.spec dd{font-size:var(--fs-lead)}
+.guar .h2{font-size:var(--fs-h3-lg)}
+.ledger .no{font-size:var(--fs-label);letter-spacing:var(--ls-label)}
+.ofh,.ofp a small,.cmp .here-t,.fg li small,.bar .bn,.bar .bp small{font-size:var(--fs-tag);letter-spacing:var(--ls-tag)}
+.ofp a{font-size:var(--fs-lead)}
+@media(min-width:1101px){.ofp{width:26rem}}
+
+/* SVG engravings are in viewBox units, so they shrink with the instrument */
+.watch .nd .lbl{font-size:19px;letter-spacing:.08em}
+.watch .nd .num{font-size:19px}
+.seats .hs{font-size:12px;letter-spacing:.18em}
+.seats .sn text{font-size:15px}
+@media(min-width:1280px){.watch .nd .lbl{font-size:15px;letter-spacing:.1em}.watch .nd .num{font-size:17px}}
+@media(max-width:900px){.watch .nd .lbl{font-size:23px;letter-spacing:.04em}.watch .nd .num{font-size:21px}.seats .hs{font-size:14px;letter-spacing:.1em}.seats .sn text{font-size:17px}}
+
+/* ---------- apply page ---------- */
+.back,.book a{font-size:var(--fs-btn-sm);letter-spacing:var(--ls-btn)}
+.eyebrow,.next h2,.steps .n{font-size:var(--fs-label);letter-spacing:var(--ls-label)}
+.badge,.fit p b{font-size:var(--fs-tag);letter-spacing:var(--ls-tag)}
+.page .intro h1{font-size:var(--fs-h1)}
+.lead{font-size:var(--fs-lead);line-height:var(--lh-lead)}
+.card h2{font-size:var(--fs-h3-lg)}
+.steps b{font-size:var(--fs-h4)}
+.status h3{font-size:var(--fs-h3)}
+.steps p,.fit,label,legend,.cc,.pop li,.book p,.consent label,.pop input[type=search]{font-size:var(--fs-small)}
+.opt,.hint,.err,.small,.pop .none,footer{font-size:var(--fs-fine)}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{font-size:var(--fs-body)}
+.status pre{font-size:.9375rem}
+
+/* ---------- nav: one line per link; the homepage menu now collapses at 1180px (was 1000px) ---------- */
+.hd nav > ul > li > a,.ofb{white-space:nowrap}
+@media(max-width:1180px){
+ .js .hd:not(:has(.nl)) .menu-btn{display:inline-flex}
+ .hd:not(:has(.nl)) nav{display:none}
+ .js .hd:not(:has(.nl)) nav{display:flex;position:fixed;inset:0;z-index:-1;flex-direction:column;justify-content:center;gap:2.6rem;padding:6.5rem var(--pi) 3rem;background:radial-gradient(90% 60% at 80% 0%,rgba(217,181,107,.12),transparent 60%),radial-gradient(70% 50% at 0% 100%,rgba(143,107,46,.12),transparent 60%),var(--bk);opacity:0;visibility:hidden;transition:opacity .5s var(--ease),visibility 0s linear .5s;overflow-y:auto}
+ html.menu-open .hd:not(:has(.nl)) nav{opacity:1;visibility:visible;transition:opacity .5s var(--ease)}
+ .hd:not(:has(.nl)) nav ul{flex-direction:column;gap:0;counter-reset:n}
+ .hd:not(:has(.nl)) nav li{border-top:1px solid var(--hair2);counter-increment:n;opacity:0;transform:translateY(12px);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+ .hd:not(:has(.nl)) nav li:last-child{border-bottom:1px solid var(--hair2)}
+ html.menu-open .hd:not(:has(.nl)) nav li{opacity:1;transform:none}
+ .hd:not(:has(.nl)) nav li a{display:flex;align-items:baseline;gap:1.2rem;padding:1rem 0;font:italic 300 clamp(1.9rem,7vw,2.6rem)/1.05 var(--c);letter-spacing:0;text-transform:none;color:var(--au2);white-space:normal}
+ .hd:not(:has(.nl)) nav li a::before{content:counter(n,upper-roman);font:500 var(--fs-tag)/1 var(--r);letter-spacing:.2em;color:var(--au);min-width:2.2rem;font-style:normal}
+ .hd:not(:has(.nl)) nav li a::after{display:none}
+ .hd:not(:has(.nl)) .sheet-cta{display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap}
+ html.menu-open .hd:not(:has(.nl)){background-color:transparent;box-shadow:none}
+ html.menu-open{overflow:hidden}
+}
+
+/* ---------- phones ---------- */
+@media(max-width:600px){
+ .hd{gap:.5rem}
+ .brand{gap:.55rem}
+ .hbtn{padding:.7rem .8rem;letter-spacing:.14em}
+ .hero .kick,.eyebrow{font-size:var(--fs-label);letter-spacing:.14em;text-wrap:balance}
+ .hero .kick::before{width:1.4rem}
+ .btn{padding:1.1rem 1.4rem}
+ .btn.ghost{padding:1rem 1.2rem}
+}
+@media(max-width:380px){
+ .brand{letter-spacing:.1em}
+}
+/* ===== end type scale v2 ===== */
 </style>
 </head>
 <body data-cursor>
